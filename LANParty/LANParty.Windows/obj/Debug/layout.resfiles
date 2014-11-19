@@ -8,5 +8,6 @@ LANParty.Windows.xr.xml
 Pages\CreateParty.xbf
 Pages\EditProfile.xbf
 Pages\MainPage.xbf
+Pages\PartiesSearch.xbf
 Pages\ProfilePage.xbf
 Pages\RegisterPage.xbf

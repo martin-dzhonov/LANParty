@@ -54,6 +54,7 @@
                 <TextBlock FontSize="25" Name="username" Text="{Binding Username}" ></TextBlock>
                 <Button Content="Create Party" Click="Button_Click"></Button>
                 <Button Content="Edit Profile" Click="Edit_Profile_Click"></Button>
+                <Button Content="Search for party" Click="Button_Click_1"></Button>
             </StackPanel>
         </Grid>
     </Grid>

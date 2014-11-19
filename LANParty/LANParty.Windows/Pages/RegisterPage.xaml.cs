@@ -136,7 +136,5 @@ namespace LANParty.Pages
                 this.log.Text = ex.Message;
             }
         }
-
-
     }
 }

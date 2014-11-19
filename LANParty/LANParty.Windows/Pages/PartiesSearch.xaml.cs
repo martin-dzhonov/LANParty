@@ -1,5 +1,4 @@
 ﻿using LANParty.Common;
-using LANParty.ViewModels;
 using Parse;
 using System;
 using System.Collections.Generic;
@@ -8,19 +7,14 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.Media.Capture;
-using Windows.Storage;
-using Windows.Storage.Pickers;
-using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
-
+using LANParty.Models;
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace LANParty.Pages
@@ -28,7 +22,7 @@ namespace LANParty.Pages
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class EditProfile : Page
+    public sealed partial class PartiesSearch : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -52,13 +46,12 @@ namespace LANParty.Pages
         }
 
 
-        public EditProfile()
+        public PartiesSearch()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            this.DataContext = new ProfileViewModel(ParseUser.CurrentUser);
         }
 
         /// <summary>
@@ -111,68 +104,11 @@ namespace LANParty.Pages
 
         #endregion
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            ParseUser currentUser = ParseUser.CurrentUser;
-            currentUser.Username = this.username.Text;
-            var image = this.profilePic;
-            currentUser.SaveAsync();
-        }
-        private async void PickFile()
-        {
-           
-        }
-        async private void CameraCapture()
-        {
-            // Remember to set permissions in the manifest!
+            ParseDatabaseRequester requester = new ParseDatabaseRequester();
+            var result = await requester.GetPartiesByCategory("Dota2");
 
-            // using Windows.Media.Capture;
-            // using Windows.Storage;
-            // using Windows.UI.Xaml.Media.Imaging;
-
-            CameraCaptureUI cameraUI = new CameraCaptureUI();
-
-            cameraUI.PhotoSettings.AllowCropping = false;
-            cameraUI.PhotoSettings.MaxResolution = CameraCaptureUIMaxPhotoResolution.MediumXga;
-
-            Windows.Storage.StorageFile capturedMedia =
-                await cameraUI.CaptureFileAsync(CameraCaptureUIMode.Photo);
-
-            if (capturedMedia != null)
-            {
-                using (var streamCamera = await capturedMedia.OpenAsync(FileAccessMode.Read))
-                {
-
-                    BitmapImage bitmapCamera = new BitmapImage();
-                    bitmapCamera.SetSource(streamCamera);
-                    // To display the image in a XAML image object, do this:
-                    // myImage.Source = bitmapCamera;
-
-                    // Convert the camera bitap to a WriteableBitmap object, 
-                    // which is often a more useful format.
-
-                    int width = bitmapCamera.PixelWidth;
-                    int height = bitmapCamera.PixelHeight;
-
-                    WriteableBitmap wBitmap = new WriteableBitmap(width, height);
-
-                    using (var stream = await capturedMedia.OpenAsync(FileAccessMode.Read))
-                    {
-                        wBitmap.SetSource(stream);
-                        this.profilePic.Source = wBitmap;
-                    }
-                }
-            }
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.CameraCapture();
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            this.PickFile();
         }
     }
 }

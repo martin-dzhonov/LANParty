@@ -14,7 +14,7 @@ namespace LANParty.ViewModels
             {
                 return this._username;
             }
-            private set
+            set
             {
                 if (value == this._username)
                 {
@@ -32,13 +32,14 @@ namespace LANParty.ViewModels
             {
                 return this._profilePic;
             }
-            private set
+            set
             {
                 if (value == this._profilePic)
                 {
                     return;
                 }
                 this._profilePic = value;
+                
                 OnPropertyChanged();
             }
         }
