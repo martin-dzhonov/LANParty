@@ -1,1 +1,0 @@
-C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\LANParty.Windows.csproj;neutral
