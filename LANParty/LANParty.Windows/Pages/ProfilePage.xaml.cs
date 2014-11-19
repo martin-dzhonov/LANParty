@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Parse;
+using LANParty.ViewModels;
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace LANParty.Pages
@@ -51,7 +52,7 @@ namespace LANParty.Pages
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            this.username.Text = ParseUser.CurrentUser.Username;
+            this.DataContext = new ProfileViewModel(ParseUser.CurrentUser);
         }
 
         /// <summary>

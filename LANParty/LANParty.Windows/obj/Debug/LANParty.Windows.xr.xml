@@ -4,6 +4,8 @@
     <RootPropertyPathName Name="DefaultViewModel" />
     <RootPropertyPathName Name="NavigationHelper" />
     <RootPropertyPathName Name="GoBackCommand" />
+    <RootPropertyPathName Name="Username" />
+    <RootPropertyPathName Name="ProfilePic" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application" />
