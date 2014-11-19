@@ -46,6 +46,12 @@
             <TextBlock x:Name="pageTitle" Text="Edit Profile" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
+        <Grid Grid.Row="1">
+            <StackPanel>
+                <Image Name="profilePic" Height="100" Width="100" HorizontalAlignment="Left"></Image>
+                <TextBox Name="username"></TextBox>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>
 

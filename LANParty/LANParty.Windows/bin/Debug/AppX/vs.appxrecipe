@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-11-19T17:45:20.445</Modified>
+      <Modified>2014-11-19T18:03:32.775</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\LANParty.Windows.exe">
       <PackagePath>LANParty.Windows.exe</PackagePath>
-      <Modified>2014-11-19T17:52:55.934</Modified>
+      <Modified>2014-11-19T18:03:32.583</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\packages\parse.1.3.1\lib\netcore45\Parse.dll">
       <PackagePath>Parse.dll</PackagePath>
@@ -70,7 +70,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\EditProfile.xbf">
       <PackagePath>Pages\EditProfile.xbf</PackagePath>
-      <Modified>2014-11-19T16:10:41.500</Modified>
+      <Modified>2014-11-19T18:03:32.283</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\MainPage.xbf">
       <PackagePath>Pages\MainPage.xbf</PackagePath>
@@ -86,11 +86,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\LANParty.Windows.xr.xml">
       <PackagePath>LANParty.Windows.xr.xml</PackagePath>
-      <Modified>2014-11-19T16:01:38.311</Modified>
+      <Modified>2014-11-19T18:03:32.236</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-11-19T17:45:20.217</Modified>
+      <Modified>2014-11-19T18:03:32.681</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
