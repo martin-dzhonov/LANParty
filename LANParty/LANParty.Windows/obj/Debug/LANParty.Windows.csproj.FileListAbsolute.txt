@@ -36,3 +36,46 @@ c:\users\martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty
 c:\users\martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\obj\Debug\qualifiers.txt.intermediate
 c:\users\martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 c:\users\martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\obj\Debug\ProjectArchitectures.txt
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\App.xbf
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\LANParty.Windows.xr.xml
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\LANParty.Windows.exe
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\LANParty.Windows.pdb
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\resources.pri
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\AppxManifest.xml
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\LANParty.Windows.build.appxrecipe
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Parse.dll
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Parse.WinRT.dll
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Parse.xml
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Parse.WinRT.xml
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\LANParty.Windows.csprojResolveAssemblyReference.cache
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\App.g.i.cs
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\App.g.cs
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\XamlTypeInfo.g.cs
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\App.xaml
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\App.xbf
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\XamlSaveStateFile.xml
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\LANParty.Windows.exe
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\LANParty.Windows.pdb
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\LANParty.Windows.csproj.GenerateResource.Cache
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\priconfig.xml
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\priconfig.xml.intermediate
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\layout.resfiles
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\layout.resfiles.intermediate
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\resources.resfiles
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\resources.resfiles.intermediate
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\pri.resfiles
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\pri.resfiles.intermediate
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\qualifiers.txt
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\qualifiers.txt.intermediate
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\ProjectArchitectures.txt
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\MainPage.xbf
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Pages\MainPage.g.i.cs
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Pages\MainPage.g.cs
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Pages\MainPage.xaml
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Pages\MainPage.xbf
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\MainPage.xbf
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\MainPage.g.i.cs
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\MainPage.g.cs
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\MainPage.xaml
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\MainPage.xbf
