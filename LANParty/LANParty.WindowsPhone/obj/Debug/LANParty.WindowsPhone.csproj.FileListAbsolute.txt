@@ -1,0 +1,10 @@
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.WindowsPhone\obj\Debug\App.g.i.cs
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.WindowsPhone\obj\Debug\App.g.cs
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.WindowsPhone\obj\Debug\Pages\MainPage.g.i.cs
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.WindowsPhone\obj\Debug\Pages\MainPage.g.cs
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.WindowsPhone\obj\Debug\XamlTypeInfo.g.cs
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.WindowsPhone\obj\Debug\App.xaml
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.WindowsPhone\obj\Debug\Pages\MainPage.xaml
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.WindowsPhone\obj\Debug\App.xbf
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.WindowsPhone\obj\Debug\Pages\MainPage.xbf
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.WindowsPhone\obj\Debug\XamlSaveStateFile.xml

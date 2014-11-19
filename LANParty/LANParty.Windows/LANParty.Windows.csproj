@@ -103,6 +103,7 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Converters\ParseFileToBitmapImageConverter.cs" />
     <Compile Include="Pages\CreateParty.xaml.cs">
       <DependentUpon>CreateParty.xaml</DependentUpon>
     </Compile>
