@@ -48,8 +48,8 @@
         </Grid>
         <Grid Grid.Row="1">
             <StackPanel>
-                <TextBox Name="username"></TextBox>
-                <TextBox Name="password"></TextBox>
+                <TextBox Name="username" Text="Gosho"></TextBox>
+                <TextBox Name="password" Text="pass"></TextBox>
                 <Button x:ConnectionId='1' Content="Login"                       ></Button>
                 <Button x:ConnectionId='2' Content="Register"                     ></Button>
                 <TextBlock Name="log" Text="log"></TextBlock>

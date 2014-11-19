@@ -114,6 +114,7 @@ namespace LANParty.Pages
             try
             {
                 await ParseUser.LogInAsync(this.username.Text, this.password.Text);
+                this.log.Text = "SUCCESS";
                 this.Frame.Navigate(typeof(ProfilePage));
             }
             catch (Exception)

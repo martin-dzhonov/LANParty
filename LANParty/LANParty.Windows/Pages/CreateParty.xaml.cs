@@ -21,7 +21,7 @@ namespace LANParty.Pages
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class ProfilePage : Page
+    public sealed partial class CreateParty : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -45,13 +45,12 @@ namespace LANParty.Pages
         }
 
 
-        public ProfilePage()
+        public CreateParty()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            this.username.Text = ParseUser.CurrentUser.Username;
         }
 
         /// <summary>
@@ -104,9 +103,24 @@ namespace LANParty.Pages
 
         #endregion
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(CreateParty));
+            ParseObject party = new ParseObject("Party");
+            party["title"] = this.title.Text;
+            party["description"] = this.description.Text;
+            party["date"] = this.GetDate();
+            party["hostId"] = ParseUser.CurrentUser;
+            party["spots"] = 5;
+            await party.SaveAsync();
+        }
+
+        private DateTime GetDate()
+        {
+            DateTime date = this.datePicker.Date.DateTime;
+            int hour = this.timePicker.Time.Hours;
+            int minutes = this.timePicker.Time.Minutes;
+            DateTime dateTime = new DateTime(date.Year, date.Month, date.Day, hour, minutes, 0);
+            return dateTime;
         }
     }
 }

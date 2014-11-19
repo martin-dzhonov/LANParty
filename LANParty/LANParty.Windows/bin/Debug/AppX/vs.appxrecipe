@@ -7,7 +7,7 @@
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>5deedb4e-8ff9-4606-87be-19fac209dcce</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\obj\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\</IntermediateOutputPath>
     <RegisteredManifestChecksum>7F2B0AA93DD411956F107EECD87BA2ACEB48A9AB25B939A98E0589536244EA58</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>5deedb4e-8ff9-4606-87be-19fac209dcce_1.0.0.0_neutral__n6fhnfby9ccnm</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>5deedb4e-8ff9-4606-87be-19fac209dcce_n6fhnfby9ccnm!App</RegisteredUserModeAppID>
@@ -17,68 +17,72 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-11-19T14:57:43.071</Modified>
+      <Modified>2014-11-19T14:59:14.459</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\bin\Debug\LANParty.Windows.exe">
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\LANParty.Windows.exe">
       <PackagePath>LANParty.Windows.exe</PackagePath>
-      <Modified>2014-11-19T14:57:42.844</Modified>
+      <Modified>2014-11-19T15:39:43.947</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\packages\parse.1.3.1\lib\netcore45\Parse.dll">
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\packages\parse.1.3.1\lib\netcore45\Parse.dll">
       <PackagePath>Parse.dll</PackagePath>
       <Modified>2014-11-19T13:08:06.240</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\packages\parse.1.3.1\lib\netcore45\Parse.WinRT.dll">
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\packages\parse.1.3.1\lib\netcore45\Parse.WinRT.dll">
       <PackagePath>Parse.WinRT.dll</PackagePath>
       <Modified>2014-11-19T13:08:06.252</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2014-03-14T08:55:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2014-03-14T08:55:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2014-03-14T08:55:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2014-03-14T08:55:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
       <Modified>2014-11-19T12:53:17.349</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\CreateParty.xbf">
+      <PackagePath>Pages\CreateParty.xbf</PackagePath>
+      <Modified>2014-11-19T15:39:43.663</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\MainPage.xbf">
       <PackagePath>Pages\MainPage.xbf</PackagePath>
-      <Modified>2014-11-19T13:29:16.752</Modified>
+      <Modified>2014-11-19T15:24:50.681</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\ProfilePage.xbf">
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\ProfilePage.xbf">
       <PackagePath>Pages\ProfilePage.xbf</PackagePath>
-      <Modified>2014-11-19T13:34:09.401</Modified>
+      <Modified>2014-11-19T15:24:50.682</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\RegisterPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\RegisterPage.xbf">
       <PackagePath>Pages\RegisterPage.xbf</PackagePath>
       <Modified>2014-11-19T13:29:16.753</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\bin\Debug\LANParty.Windows.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\LANParty.Windows.xr.xml">
       <PackagePath>LANParty.Windows.xr.xml</PackagePath>
-      <Modified>2014-11-19T14:57:10.980</Modified>
+      <Modified>2014-11-19T15:24:50.628</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-11-19T14:57:42.921</Modified>
+      <Modified>2014-11-19T14:59:14.204</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

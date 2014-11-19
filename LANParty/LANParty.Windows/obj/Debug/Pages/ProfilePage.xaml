@@ -48,7 +48,8 @@
         </Grid>
         <Grid Grid.Row="1">
             <StackPanel>
-                <TextBlock Name="username" Text="Name here"></TextBlock>
+                <TextBlock FontSize="25" Name="username" Text="Name here"></TextBlock>
+                <Button x:ConnectionId='1' Content="Create Party"                     ></Button>
             </StackPanel>
         </Grid>
     </Grid>

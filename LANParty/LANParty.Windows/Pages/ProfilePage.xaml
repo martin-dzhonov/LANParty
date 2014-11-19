@@ -48,7 +48,8 @@
         </Grid>
         <Grid Grid.Row="1">
             <StackPanel>
-                <TextBlock Name="username" Text="Name here"></TextBlock>
+                <TextBlock FontSize="25" Name="username" Text="Name here"></TextBlock>
+                <Button Content="Create Party" Click="Button_Click"></Button>
             </StackPanel>
         </Grid>
     </Grid>
