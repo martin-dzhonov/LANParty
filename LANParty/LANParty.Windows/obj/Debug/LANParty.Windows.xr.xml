@@ -99,6 +99,7 @@
     <RootType FullName="LANParty.Pages.MainPage" />
     <RootType FullName="LANParty.Pages.PartiesSearch" />
     <RootType FullName="LANParty.Pages.ProfilePage" />
+    <RootType FullName="LANParty.Pages.ProfileVisitorPage" />
     <RootType FullName="LANParty.Pages.RegisterPage" />
   </Roots.RootTypes>
 </Roots>

@@ -1,4 +1,6 @@
 ﻿using LANParty.Common;
+using LANParty.ViewModels;
+using Parse;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,7 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Parse;
+
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace LANParty.Pages
@@ -21,7 +23,7 @@ namespace LANParty.Pages
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class ProfileVisitorPage : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -45,7 +47,7 @@ namespace LANParty.Pages
         }
 
 
-        public MainPage()
+        public ProfileVisitorPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
@@ -66,6 +68,8 @@ namespace LANParty.Pages
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            ParseUser name = e.NavigationParameter as ParseUser;
+            this.DataContext = new ProfileViewModel(name);
         }
 
         /// <summary>
@@ -78,6 +82,7 @@ namespace LANParty.Pages
         /// serializable state.</param>
         private void navigationHelper_SaveState(object sender, SaveStateEventArgs e)
         {
+           
         }
 
         #region NavigationHelper registration
@@ -101,31 +106,7 @@ namespace LANParty.Pages
             navigationHelper.OnNavigatedFrom(e);
         }
 
+
         #endregion
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(RegisterPage));
-        }
-
-
-        private async void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                await ParseUser.LogInAsync(this.username.Text, this.password.Text);
-                this.log.Text = "SUCCESS";
-                this.Frame.Navigate(typeof(ProfilePage));
-            }
-            catch (Exception)
-            {
-                this.log.Text = "ERROR";
-            }
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(ProfileVisitorPage), ParseUser.CurrentUser);
-        }
     }
 }

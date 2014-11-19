@@ -1,6 +1,6 @@
 ﻿<Page
     x:Name="pageRoot"
-    x:Class="LANParty.Pages.MainPage"
+    x:Class="LANParty.Pages.ProfileVisitorPage"
     DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,11 +8,13 @@
     xmlns:common="using:LANParty.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:converters="using:LANParty.Converters"
     mc:Ignorable="d">
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">My Application</x:String>
+        <converters:ParseFileToBitmapImageConverter x:Name="ParseConverter"></converters:ParseFileToBitmapImageConverter>
     </Page.Resources>
 
     <!--
@@ -43,21 +45,15 @@
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button"/>
-            <TextBlock x:Name="pageTitle" Text="Login" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+            <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
+        
         <Grid Grid.Row="1">
             <StackPanel>
-                <TextBox Name="username" Text="Gosho"></TextBox>
-                <TextBox Name="password" Text="pass"></TextBox>
-                <Button x:ConnectionId='1' Content="Login"                       ></Button>
-                <Button x:ConnectionId='2' Content="Register"                     ></Button>
-                <Button x:ConnectionId='3' Content="DO SHIT"                       ></Button>
-                <TextBlock Name="log" Text="log"></TextBlock>
+                <Image Name="profilePic" Height="100" Width="100" HorizontalAlignment="Left" Source="{Binding ProfilePic, Converter={StaticResource ParseConverter}}"></Image>
+                <TextBlock FontSize="25" Name="username" Text="{Binding Username}" ></TextBlock>
             </StackPanel>
         </Grid>
-
     </Grid>
-    
 </Page>
-

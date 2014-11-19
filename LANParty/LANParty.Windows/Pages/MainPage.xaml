@@ -52,6 +52,7 @@
                 <TextBox Name="password" Text="pass"></TextBox>
                 <Button Content="Login" Click="Button_Click_1"></Button>
                 <Button Content="Register" Click="Button_Click"></Button>
+                <Button Content="DO SHIT" Click="Button_Click_2"></Button>
                 <TextBlock Name="log" Text="log"></TextBlock>
             </StackPanel>
         </Grid>
