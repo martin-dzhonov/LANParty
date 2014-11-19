@@ -17,5 +17,14 @@ namespace LANParty.Models
             IEnumerable<ParseObject> results = await query.FindAsync();
             return results;
         }
+
+        public async Task<IEnumerable<ParseObject>> GetPartiesForUser(ParseUser user)
+        {
+            var query = from gameScore in ParseObject.GetQuery("Party")
+                        where gameScore.Get<ParseUser>("hostId").Equals(user)
+                        select gameScore;
+            IEnumerable<ParseObject> results = await query.FindAsync();
+            return results;
+        }
     }
 }

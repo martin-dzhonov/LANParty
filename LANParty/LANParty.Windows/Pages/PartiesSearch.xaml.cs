@@ -107,8 +107,8 @@ namespace LANParty.Pages
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             ParseDatabaseRequester requester = new ParseDatabaseRequester();
-            var result = await requester.GetPartiesByCategory("Dota2");
-
+            var result = await requester.GetPartiesForUser(ParseUser.CurrentUser);
+            int i = 5;
         }
     }
 }
