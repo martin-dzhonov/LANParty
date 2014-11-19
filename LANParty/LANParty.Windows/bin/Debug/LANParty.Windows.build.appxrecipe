@@ -44,9 +44,6 @@
     <AppxPackagedFile Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\bin\Debug\MainPage.xbf">
-      <PackagePath>MainPage.xbf</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\MainPage.xbf">
       <PackagePath>Pages\MainPage.xbf</PackagePath>
     </AppxPackagedFile>

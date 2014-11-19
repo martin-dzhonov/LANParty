@@ -124,31 +124,29 @@ namespace LANParty.LANParty_Windows_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[11];
-            _typeNameTable[0] = "LANParty.MainPage";
+            _typeNameTable = new string[10];
+            _typeNameTable[0] = "LANParty.Pages.MainPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "LANParty.Pages.MainPage";
-            _typeNameTable[4] = "LANParty.Common.ObservableDictionary";
-            _typeNameTable[5] = "Object";
-            _typeNameTable[6] = "String";
-            _typeNameTable[7] = "LANParty.Common.NavigationHelper";
-            _typeNameTable[8] = "Windows.UI.Xaml.DependencyObject";
-            _typeNameTable[9] = "LANParty.Pages.ProfilePage";
-            _typeNameTable[10] = "LANParty.Pages.RegisterPage";
+            _typeNameTable[3] = "LANParty.Common.ObservableDictionary";
+            _typeNameTable[4] = "Object";
+            _typeNameTable[5] = "String";
+            _typeNameTable[6] = "LANParty.Common.NavigationHelper";
+            _typeNameTable[7] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[8] = "LANParty.Pages.ProfilePage";
+            _typeNameTable[9] = "LANParty.Pages.RegisterPage";
 
-            _typeTable = new global::System.Type[11];
-            _typeTable[0] = typeof(global::LANParty.MainPage);
+            _typeTable = new global::System.Type[10];
+            _typeTable[0] = typeof(global::LANParty.Pages.MainPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::LANParty.Pages.MainPage);
-            _typeTable[4] = typeof(global::LANParty.Common.ObservableDictionary);
-            _typeTable[5] = typeof(global::System.Object);
-            _typeTable[6] = typeof(global::System.String);
-            _typeTable[7] = typeof(global::LANParty.Common.NavigationHelper);
-            _typeTable[8] = typeof(global::Windows.UI.Xaml.DependencyObject);
-            _typeTable[9] = typeof(global::LANParty.Pages.ProfilePage);
-            _typeTable[10] = typeof(global::LANParty.Pages.RegisterPage);
+            _typeTable[3] = typeof(global::LANParty.Common.ObservableDictionary);
+            _typeTable[4] = typeof(global::System.Object);
+            _typeTable[5] = typeof(global::System.String);
+            _typeTable[6] = typeof(global::LANParty.Common.NavigationHelper);
+            _typeTable[7] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[8] = typeof(global::LANParty.Pages.ProfilePage);
+            _typeTable[9] = typeof(global::LANParty.Pages.RegisterPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -183,12 +181,11 @@ namespace LANParty.LANParty_Windows_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_MainPage() { return new global::LANParty.MainPage(); }
-        private object Activate_3_MainPage() { return new global::LANParty.Pages.MainPage(); }
-        private object Activate_4_ObservableDictionary() { return new global::LANParty.Common.ObservableDictionary(); }
-        private object Activate_9_ProfilePage() { return new global::LANParty.Pages.ProfilePage(); }
-        private object Activate_10_RegisterPage() { return new global::LANParty.Pages.RegisterPage(); }
-        private void MapAdd_4_ObservableDictionary(object instance, object key, object item)
+        private object Activate_0_MainPage() { return new global::LANParty.Pages.MainPage(); }
+        private object Activate_3_ObservableDictionary() { return new global::LANParty.Common.ObservableDictionary(); }
+        private object Activate_8_ProfilePage() { return new global::LANParty.Pages.ProfilePage(); }
+        private object Activate_9_RegisterPage() { return new global::LANParty.Pages.RegisterPage(); }
+        private void MapAdd_3_ObservableDictionary(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
             var newKey = (global::System.String)key;
@@ -206,9 +203,11 @@ namespace LANParty.LANParty_Windows_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  LANParty.MainPage
+            case 0:   //  LANParty.Pages.MainPage
                 userType = new global::LANParty.LANParty_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_0_MainPage;
+                userType.AddMemberName("DefaultViewModel");
+                userType.AddMemberName("NavigationHelper");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -221,54 +220,45 @@ namespace LANParty.LANParty_Windows_XamlTypeInfo
                 xamlType = new global::LANParty.LANParty_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 3:   //  LANParty.Pages.MainPage
-                userType = new global::LANParty.LANParty_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_3_MainPage;
-                userType.AddMemberName("DefaultViewModel");
-                userType.AddMemberName("NavigationHelper");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 4:   //  LANParty.Common.ObservableDictionary
+            case 3:   //  LANParty.Common.ObservableDictionary
                 userType = new global::LANParty.LANParty_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.DictionaryAdd = MapAdd_4_ObservableDictionary;
+                userType.DictionaryAdd = MapAdd_3_ObservableDictionary;
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 5:   //  Object
+            case 4:   //  Object
                 xamlType = new global::LANParty.LANParty_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 6:   //  String
+            case 5:   //  String
                 xamlType = new global::LANParty.LANParty_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 7:   //  LANParty.Common.NavigationHelper
+            case 6:   //  LANParty.Common.NavigationHelper
                 userType = new global::LANParty.LANParty_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  Windows.UI.Xaml.DependencyObject
+            case 7:   //  Windows.UI.Xaml.DependencyObject
                 xamlType = new global::LANParty.LANParty_Windows_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 9:   //  LANParty.Pages.ProfilePage
+            case 8:   //  LANParty.Pages.ProfilePage
                 userType = new global::LANParty.LANParty_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_ProfilePage;
+                userType.Activator = Activate_8_ProfilePage;
                 userType.AddMemberName("DefaultViewModel");
                 userType.AddMemberName("NavigationHelper");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 10:   //  LANParty.Pages.RegisterPage
+            case 9:   //  LANParty.Pages.RegisterPage
                 userType = new global::LANParty.LANParty_Windows_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_10_RegisterPage;
+                userType.Activator = Activate_9_RegisterPage;
                 userType.AddMemberName("DefaultViewModel");
                 userType.AddMemberName("NavigationHelper");
                 userType.SetIsLocalType();
