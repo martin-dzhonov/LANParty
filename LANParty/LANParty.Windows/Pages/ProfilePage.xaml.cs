@@ -108,5 +108,9 @@ namespace LANParty.Pages
         {
             this.Frame.Navigate(typeof(CreateParty));
         }
+        private void Edit_Profile_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(EditProfile));
+        }
     }
 }

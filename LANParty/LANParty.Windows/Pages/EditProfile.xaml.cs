@@ -13,11 +13,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Parse;
-using Windows.UI.Xaml.Media.Imaging;
-using System.Threading.Tasks;
-using Windows.Storage;
-using Windows.Storage.Streams;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -26,7 +21,7 @@ namespace LANParty.Pages
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class RegisterPage : Page
+    public sealed partial class EditProfile : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -50,7 +45,7 @@ namespace LANParty.Pages
         }
 
 
-        public RegisterPage()
+        public EditProfile()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
@@ -107,36 +102,5 @@ namespace LANParty.Pages
         }
 
         #endregion
-
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var user = new ParseUser()
-            {
-                Username = this.username.Text,
-                Password = this.passowrd.Text,
-                Email = this.email.Text
-            };
-            var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/DefaultProfilePic.jpg"));
-            var bytes = new Byte[0];
-            using (IRandomAccessStream fileStream = await file.OpenAsync(FileAccessMode.Read))
-            {
-                var reader = new DataReader(fileStream.GetInputStreamAt(0));
-                bytes = new Byte[fileStream.Size];
-                await reader.LoadAsync((uint)fileStream.Size);
-                reader.ReadBytes(bytes);
-            }
-            ParseFile imgFile = new ParseFile("profilePic.jpg", bytes);
-            user["profilePic"] = imgFile;
-            try
-            {   
-                 await user.SignUpAsync();
-            }
-            catch (Exception ex)
-            {
-                this.log.Text = ex.Message;
-            }
-        }
-
-
     }
 }

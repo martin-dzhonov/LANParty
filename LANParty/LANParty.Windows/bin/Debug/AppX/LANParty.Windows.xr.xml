@@ -81,7 +81,15 @@
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="LANParty.Pages.CreateParty" />
+    <RootType FullName="LANParty.Pages.EditProfile" />
     <RootType FullName="LANParty.Pages.MainPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Source" />
+    </RootType>
     <RootType FullName="LANParty.Pages.ProfilePage" />
     <RootType FullName="LANParty.Pages.RegisterPage" />
   </Roots.RootTypes>

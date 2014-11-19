@@ -104,3 +104,8 @@ C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\qu
 C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\qualifiers.txt.intermediate
 C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\ProjectArchitectures.txt
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\EditProfile.xbf
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Pages\EditProfile.g.i.cs
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Pages\EditProfile.g.cs
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Pages\EditProfile.xaml
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Pages\EditProfile.xbf
