@@ -1,0 +1,1 @@
+C:\Users\Martin\documents\visual studio 2013\Projects\LANParty\LANParty\LANParty.Windows\LANParty.Windows.csproj;neutral
