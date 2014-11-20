@@ -68,8 +68,8 @@ namespace LANParty.Pages
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            ParseUser name = e.NavigationParameter as ParseUser;
-            this.DataContext = new ProfileViewModel(name);
+            string userId = e.NavigationParameter as string;
+            this.DataContext = new ProfileViewModel(userId);
         }
 
         /// <summary>

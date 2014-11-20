@@ -52,7 +52,7 @@ namespace LANParty.Pages
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            this.DataContext = new ProfileViewModel(ParseUser.CurrentUser);
+            this.DataContext = new ProfileViewModel(ParseUser.CurrentUser.ObjectId);
         }
 
         /// <summary>

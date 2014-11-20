@@ -17,7 +17,13 @@ namespace LANParty.Models
             IEnumerable<ParseObject> results = await query.FindAsync();
             return results;
         }
+        public async Task<ParseUser> GetUserById(string objectId)
+        {
+            var query2 = ParseUser.Query.WhereEqualTo("objectId", objectId);
+            ParseUser result = await query2.FirstOrDefaultAsync();
 
+            return result;
+        }
         public async Task<ParseObject> GetPartyById(string objectId)
         {
             var query = from party in ParseObject.GetQuery("Party")
@@ -44,7 +50,7 @@ namespace LANParty.Models
             List<ParseObject> results2 = new List<ParseObject>();
             foreach (ParseObject item in results)
             {
-                results2.Add( await this.GetPartyById((string)item["partyId"]));
+                results2.Add(await this.GetPartyById((string)item["partyId"]));
             }
             return results2;
         }
@@ -64,7 +70,7 @@ namespace LANParty.Models
                         select application;
             IEnumerable<ParseObject> results = await query.FindAsync();
             List<ParseUser> results2 = new List<ParseUser>();
-            foreach (ParseObject item  in results)
+            foreach (ParseObject item in results)
             {
                 results2.Add((ParseUser)item["host"]);
             }

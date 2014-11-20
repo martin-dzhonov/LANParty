@@ -126,7 +126,8 @@ namespace LANParty.Pages
 
         private void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            var partyId = ((UserProfile)e.ClickedItem).ObjectId;
+            this.Frame.Navigate(typeof(ProfileVisitorPage), partyId);
         }
     }
 }
