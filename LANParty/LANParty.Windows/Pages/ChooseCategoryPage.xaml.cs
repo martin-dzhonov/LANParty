@@ -1,5 +1,4 @@
 ﻿using LANParty.Common;
-using Parse;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,8 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using LANParty.Models;
-using LANParty.ViewModels;
+
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace LANParty.Pages
@@ -23,7 +21,7 @@ namespace LANParty.Pages
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class PartiesSearch : Page
+    public sealed partial class ChooseCategoryPage : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -47,7 +45,7 @@ namespace LANParty.Pages
         }
 
 
-        public PartiesSearch()
+        public ChooseCategoryPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
@@ -68,8 +66,6 @@ namespace LANParty.Pages
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            this.DataContext = new PartiesViewModel((String)e.NavigationParameter);
-
         }
 
         /// <summary>
@@ -107,10 +103,10 @@ namespace LANParty.Pages
 
         #endregion
 
-        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var partyId = ((Party)e.ClickedItem).ObjectId;
-            this.Frame.Navigate(typeof(PartyDetailsPage), partyId);
+            var category = ((TextBlock)this.categoryComboBox.SelectedItem).Text;
+            this.Frame.Navigate(typeof(PartiesSearch), category);
         }
     }
 }

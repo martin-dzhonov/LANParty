@@ -30,13 +30,13 @@ namespace LANParty.ViewModels
         public PartiesViewModel(string category)
         {
             this._parties = new ObservableCollection<Party>();
-            this.PopulateParties();
+            this.PopulateParties(category);
         }
 
-        private async void PopulateParties()
+        private async void PopulateParties(string category)
         {
             ParseDatabaseRequester dbRequester = new ParseDatabaseRequester();
-            IEnumerable<ParseObject> asd = await dbRequester.GetPartiesByCategory("Dota2");
+            IEnumerable<ParseObject> asd = await dbRequester.GetPartiesByCategory(category);
             foreach (ParseObject obj in asd)
             {
                 this._parties.Add(new Party(obj));
