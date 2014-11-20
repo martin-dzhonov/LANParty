@@ -53,7 +53,13 @@
                 <StackPanel Orientation="Horizontal">
                     <TimePicker  Name="timePicker"></TimePicker>
                     <DatePicker Margin="20 0 0 0" Name="datePicker" ></DatePicker>
+                    
                 </StackPanel>
+                <ComboBox Name="categoryComboBox">
+                    <TextBlock Text="Dota2"></TextBlock>
+                    <TextBlock Text="League Of Legends"></TextBlock>
+                    <TextBlock Text="Other"></TextBlock>
+                </ComboBox>
                 <Button x:ConnectionId='1'  Content="Go"                     ></Button>
             </StackPanel>
         </Grid>

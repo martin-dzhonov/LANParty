@@ -50,6 +50,7 @@
         <Grid Grid.Row="1">
             <StackPanel>
                 <TextBlock Text="{Binding Title}"></TextBlock>
+                <Button Content="Apply" Click="Button_Click"></Button>
             </StackPanel>
         </Grid>
     </Grid>

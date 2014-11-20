@@ -11,6 +11,23 @@ namespace LANParty.ViewModels
     {
         private Party _party;
         private ParseDatabaseRequester dbrequester;
+
+        public string ObjectId
+        {
+            get
+            {
+                return this._party.ObjectId;
+            }
+            set
+            {
+                if (value == this._party.ObjectId)
+                {
+                    return;
+                }
+                this._party.ObjectId = value;
+                OnPropertyChanged();
+            }
+        }
         public string Title
         {
             get

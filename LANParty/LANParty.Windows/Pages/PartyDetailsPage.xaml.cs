@@ -1,6 +1,7 @@
 ﻿using LANParty.Common;
 using LANParty.Models;
 using LANParty.ViewModels;
+using Parse;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -107,5 +108,18 @@ namespace LANParty.Pages
         }
 
         #endregion
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ParseDatabaseRequester requester = new ParseDatabaseRequester();
+            var asd = ((PartyViewModel)this.DataContext).ObjectId;
+            ParseObject party = await requester.GetPartyById(asd);
+
+            ParseObject application = new ParseObject("Application");
+            application["party"] = party;
+            application["host"] = party["host"];
+            application["guest"] = ParseUser.CurrentUser;
+            await application.SaveAsync();
+        }
     }
 }

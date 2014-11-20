@@ -105,11 +105,14 @@ namespace LANParty.Pages
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
+            var category = ((TextBlock)this.categoryComboBox.SelectedItem).Text;
+
             ParseObject party = new ParseObject("Party");
             party["title"] = this.title.Text;
             party["description"] = this.description.Text;
+            party["category"] = category;
             party["date"] = this.GetDate();
-            party["hostId"] = ParseUser.CurrentUser;
+            party["host"] = ParseUser.CurrentUser;
             party["spots"] = 5;
             await party.SaveAsync();
         }
