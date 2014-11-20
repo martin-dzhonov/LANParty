@@ -24,6 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\ParseDatabaseRequester.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Party.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\UserProfile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ApplicationsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PartiesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PartyViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProfileViewModel.cs" />

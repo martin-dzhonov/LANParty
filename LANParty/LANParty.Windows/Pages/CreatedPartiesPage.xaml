@@ -50,6 +50,8 @@
         <Grid Grid.Row="1">
             <StackPanel>
                 <ListView ItemsSource="{Binding Parties}"
+                          IsItemClickEnabled="True"
+                          ItemClick="ListView_ItemClick"
                          >
                     <ListView.ItemTemplate>
                         <DataTemplate>

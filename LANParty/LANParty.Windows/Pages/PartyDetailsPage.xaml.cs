@@ -112,11 +112,11 @@ namespace LANParty.Pages
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             ParseDatabaseRequester requester = new ParseDatabaseRequester();
-            var asd = ((PartyViewModel)this.DataContext).ObjectId;
-            ParseObject party = await requester.GetPartyById(asd);
+            var partyId = ((PartyViewModel)this.DataContext).ObjectId;
+            ParseObject party = await requester.GetPartyById(partyId);
 
             ParseObject application = new ParseObject("Application");
-            application["party"] = party;
+            application["partyId"] = partyId;
             application["host"] = party["host"];
             application["guest"] = ParseUser.CurrentUser;
             await application.SaveAsync();

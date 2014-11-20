@@ -11,31 +11,52 @@ namespace LANParty.Models
 
         public async Task<IEnumerable<ParseObject>> GetPartiesByCategory(string category)
         {
-            var query = from gameScore in ParseObject.GetQuery("Party")
-                        where gameScore.Get<string>("category") == category
-                        select gameScore;
+            var query = from party in ParseObject.GetQuery("Party")
+                        where party.Get<string>("category") == category
+                        select party;
             IEnumerable<ParseObject> results = await query.FindAsync();
             return results;
         }
 
         public async Task<ParseObject> GetPartyById(string objectId)
         {
-            var query = from gameScore in ParseObject.GetQuery("Party")
-                        where gameScore.Get<string>("objectId").Equals(objectId)
-                     select gameScore;
-            
-           ParseObject result = await query.FirstOrDefaultAsync();
-            
+            var query = from party in ParseObject.GetQuery("Party")
+                        where party.Get<string>("objectId").Equals(objectId)
+                        select party;
+            ParseObject result = await query.FirstOrDefaultAsync();
             return result;
         }
 
         public async Task<IEnumerable<ParseObject>> GetCreatedPartiesForUser(ParseUser user)
         {
-            var query = from gameScore in ParseObject.GetQuery("Party")
-                        where gameScore.Get<ParseUser>("host").Equals(user)
-                        select gameScore;
+            var query = from party in ParseObject.GetQuery("Party")
+                        where party.Get<ParseUser>("host").Equals(user)
+                        select party;
             IEnumerable<ParseObject> results = await query.FindAsync();
             return results;
+        }
+
+        public async Task<IEnumerable<ParseObject>> GetApplicationsForParty(string partyId)
+        {
+            var query = from application in ParseObject.GetQuery("Application")
+                        where application.Get<string>("partyId").Equals(partyId)
+                        select application;
+            IEnumerable<ParseObject> results = await query.FindAsync();
+            return results;
+        }
+
+        public async Task<IEnumerable<ParseObject>> GetApplicantsForParty(string partyId)
+        {
+            var query = from application in ParseObject.GetQuery("Application")
+                        where application.Get<string>("partyId").Equals(partyId)
+                        select application;
+            IEnumerable<ParseObject> results = await query.FindAsync();
+            List<ParseUser> results2 = new List<ParseUser>();
+            foreach (ParseObject item  in results)
+            {
+                results2.Add((ParseUser)item["host"]);
+            }
+            return results2;
         }
     }
 }

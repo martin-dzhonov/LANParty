@@ -1,4 +1,5 @@
 ﻿using LANParty.Common;
+using LANParty.Models;
 using LANParty.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -105,5 +106,11 @@ namespace LANParty.Pages
         }
 
         #endregion
+
+        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var partyId = ((Party)e.ClickedItem).ObjectId;
+            this.Frame.Navigate(typeof(ManageApplicationsPage), partyId);
+        }
     }
 }

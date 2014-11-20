@@ -10,11 +10,10 @@ namespace LANParty.Models
 
         public ParseFile ProfilePic { get; set; }
 
-        public UserProfile()
+        public UserProfile(ParseUser user)
         {
-            ParseUser currentUser = ParseUser.CurrentUser;
-            this.Username = currentUser.Username;
-            this.ProfilePic = (ParseFile)currentUser["profilePic"];
+            this.Username = user.Username;
+            this.ProfilePic = (ParseFile)user["profilePic"];
         }
     }
 }
