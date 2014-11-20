@@ -26,7 +26,7 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\LANParty.Windows.exe">
       <PackagePath>LANParty.Windows.exe</PackagePath>
-      <Modified>2014-11-20T23:06:39.530</Modified>
+      <Modified>2014-11-20T23:22:37.956</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\packages\parse.1.3.1\lib\netcore45\Parse.dll">
       <PackagePath>Parse.dll</PackagePath>
@@ -94,15 +94,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\ManageApplicationsPage.xbf">
       <PackagePath>Pages\ManageApplicationsPage.xbf</PackagePath>
-      <Modified>2014-11-20T16:24:35.035</Modified>
+      <Modified>2014-11-20T23:22:05.757</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\PartiesSearch.xbf">
       <PackagePath>Pages\PartiesSearch.xbf</PackagePath>
-      <Modified>2014-11-20T21:19:15.437</Modified>
+      <Modified>2014-11-20T23:22:05.758</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\PartyDetailsPage.xbf">
       <PackagePath>Pages\PartyDetailsPage.xbf</PackagePath>
-      <Modified>2014-11-20T22:49:15.116</Modified>
+      <Modified>2014-11-20T23:22:05.759</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\ProfilePage.xbf">
       <PackagePath>Pages\ProfilePage.xbf</PackagePath>

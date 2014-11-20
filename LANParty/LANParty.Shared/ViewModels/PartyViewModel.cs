@@ -11,8 +11,7 @@ namespace LANParty.ViewModels
     public class PartyViewModel : Bindable
     {
         private Party _party;
-        private ParseDatabaseRequester dbrequester;
-
+        private ParseDatabaseRequester _dbRequester;
         private ObservableCollection<UserProfile> _users;
         public ObservableCollection<UserProfile> Users
         {
@@ -83,7 +82,7 @@ namespace LANParty.ViewModels
         public PartyViewModel(ParseObject objectId)
         {
             this._users = new ObservableCollection<UserProfile>();
-            this.dbrequester = new ParseDatabaseRequester();
+            this._dbRequester = new ParseDatabaseRequester();
             this.PopulateData(objectId);
         }
 
@@ -93,7 +92,7 @@ namespace LANParty.ViewModels
             ParseUser parseHost = await ((ParseUser)parseParty["host"]).FetchIfNeededAsync();
             this._users.Add(new UserProfile(parseHost));
 
-            var approvedUsers = await this.dbrequester.GetApprovedUsersForParty(parseParty.ObjectId);
+            var approvedUsers = await this._dbRequester.GetApprovedUsersForParty(parseParty.ObjectId);
             foreach (ParseUser user in approvedUsers)
             {
                 this._users.Add(new UserProfile(user));

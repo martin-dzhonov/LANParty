@@ -128,7 +128,7 @@ namespace LANParty.Pages
         {
             ParseDatabaseRequester req = new ParseDatabaseRequester();
             var asd = await req.GetApplicationsForParty("Fbb2YWBNDZ");
-            this.Frame.Navigate(typeof(ProfileVisitorPage), ParseUser.CurrentUser);
+            this.Frame.Navigate(typeof(ProfileVisitorPage), ParseUser.CurrentUser.ObjectId);
         }
     }
 }

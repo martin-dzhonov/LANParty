@@ -11,6 +11,7 @@ namespace LANParty.ViewModels
     class UserPartiesViewModel : Bindable
     {
         private ObservableCollection<Party> _parties;
+        private ParseDatabaseRequester _dbRequester;
         public ObservableCollection<Party> Parties
         {
             get
@@ -29,6 +30,7 @@ namespace LANParty.ViewModels
         }
         public UserPartiesViewModel(string category)
         {
+            this._dbRequester = new ParseDatabaseRequester();
             this._parties = new ObservableCollection<Party>();
             this.PopulateParties(category);
         }
@@ -37,8 +39,7 @@ namespace LANParty.ViewModels
         {
             if (category == "Created")
             {
-                ParseDatabaseRequester dbRequester = new ParseDatabaseRequester();
-                IEnumerable<ParseObject> asd = await dbRequester.GetCreatedPartiesForUser(ParseUser.CurrentUser);
+                IEnumerable<ParseObject> asd = await this._dbRequester.GetCreatedPartiesForUser(ParseUser.CurrentUser);
                 foreach (ParseObject obj in asd)
                 {
                     this._parties.Add(new Party(obj));
@@ -46,8 +47,7 @@ namespace LANParty.ViewModels
             }
             if (category == "Joined")
             {
-                ParseDatabaseRequester dbRequester = new ParseDatabaseRequester();
-                IEnumerable<ParseObject> asd = await dbRequester.GetJoinedPartiesForUser(ParseUser.CurrentUser);
+                IEnumerable<ParseObject> asd = await this._dbRequester.GetJoinedPartiesForUser(ParseUser.CurrentUser);
                 foreach (ParseObject obj in asd)
                 {
                     this._parties.Add(new Party(obj));

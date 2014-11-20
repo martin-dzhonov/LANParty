@@ -10,6 +10,7 @@ namespace LANParty.ViewModels
 {
     public class MessagesViewModel : Bindable
     {
+        private ParseDatabaseRequester _dbRequester;
         private ObservableCollection<Message> _messages;
         public ObservableCollection<Message> Messages
         {
@@ -30,13 +31,13 @@ namespace LANParty.ViewModels
         public MessagesViewModel()
         {
             this._messages = new ObservableCollection<Message>();
-            this.PopulateParties();
+            this._dbRequester = new ParseDatabaseRequester();
+            this.PopulateData();
         }
 
-        private async void PopulateParties()
+        private async void PopulateData()
         {
-            ParseDatabaseRequester dbRequester = new ParseDatabaseRequester();
-            IEnumerable<ParseObject> asd = await dbRequester.GetMessagesForCurrentUser();
+            IEnumerable<ParseObject> asd = await this._dbRequester.GetMessagesForCurrentUser();
             foreach (ParseObject obj in asd)
             {
                 this._messages.Add(new Message(obj));

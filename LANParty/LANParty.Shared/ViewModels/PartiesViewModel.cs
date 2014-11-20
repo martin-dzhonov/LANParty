@@ -10,8 +10,8 @@ namespace LANParty.ViewModels
 {
     public class PartiesViewModel : Bindable
     {
+        private ParseDatabaseRequester _dbRequester;
         private ObservableCollection<Party> _parties;
-       
 
         public ObservableCollection<Party> Parties
         {
@@ -30,17 +30,17 @@ namespace LANParty.ViewModels
             }
         }
 
-       
+
         public PartiesViewModel(string category)
         {
+            this._dbRequester = new ParseDatabaseRequester();
             this._parties = new ObservableCollection<Party>();
             this.PopulateData(category);
         }
 
         private async void PopulateData(string category)
         {
-            ParseDatabaseRequester dbRequester = new ParseDatabaseRequester();
-            IEnumerable<ParseObject> parseParties = await dbRequester.GetPartiesByCategory(category);
+            IEnumerable<ParseObject> parseParties = await this._dbRequester.GetPartiesByCategory(category);
             foreach (ParseObject obj in parseParties)
             {
                 this._parties.Add(new Party(obj));
