@@ -50,7 +50,9 @@
             <StackPanel>
                 <ListView ItemsSource="{Binding Parties}"
                           IsItemClickEnabled="True"
-                          ItemClick="ListView_ItemClick">
+                          ItemClick="ListView_ItemClick"
+                          ManipulationMode="All"
+                          >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>

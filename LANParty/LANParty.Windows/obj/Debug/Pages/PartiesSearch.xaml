@@ -50,7 +50,9 @@
             <StackPanel>
                 <ListView x:ConnectionId='1' ItemsSource="{Binding Parties}"
                           IsItemClickEnabled="True"
-                                                        >
+                          IsSwipeEnabled="True"    
+                                                        
+                          >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel>

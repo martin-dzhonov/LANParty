@@ -15,7 +15,10 @@
     <RootPropertyPathName Name="Description" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
-    <RootType FullName="Windows.UI.Xaml.Application" />
+    <RootType FullName="Windows.UI.Xaml.Application">
+      <RootProperty Name="Resources" />
+    </RootType>
+    <RootType FullName="LANParty.Converters.ParseFileToBitmapImageConverter" />
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="DataContext" />
       <RootProperty Name="Resources" />
@@ -88,6 +91,7 @@
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="IsSwipeEnabled" />
       <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
@@ -106,7 +110,6 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="LANParty.Pages.CreateParty" />
-    <RootType FullName="LANParty.Converters.ParseFileToBitmapImageConverter" />
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Name" />
       <RootProperty Name="Height" />

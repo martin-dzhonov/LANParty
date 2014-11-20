@@ -8,13 +8,11 @@
     xmlns:common="using:LANParty.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:converters="using:LANParty.Converters"
     mc:Ignorable="d">
 
     <Page.Resources>
         <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
         <x:String x:Key="AppName">My Application</x:String>
-        <converters:ParseFileToBitmapImageConverter x:Name="ParseConverter"></converters:ParseFileToBitmapImageConverter>
     </Page.Resources>
 
     <!--
@@ -51,7 +49,7 @@
         
         <Grid Grid.Row="1">
             <StackPanel>
-                <Image Name="profilePic" Height="100" Width="100" HorizontalAlignment="Left" Source="{Binding ProfilePic, Converter={StaticResource ParseConverter}}"></Image>
+                <Image Name="profilePic" Height="100" Width="100" HorizontalAlignment="Left" Source="{Binding ProfilePic, Converter={StaticResource ParseFileToBitmapImageConverter}}"></Image>
                 <TextBlock FontSize="25" Name="username" Text="{Binding Username}" ></TextBlock>
             </StackPanel>
         </Grid>
