@@ -11,6 +11,7 @@
     <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="ProfilePic" />
+    <RootPropertyPathName Name="Messages" />
     <RootPropertyPathName Name="Users" />
     <RootPropertyPathName Name="Description" />
   </Roots.PropertyPathNames>
@@ -117,6 +118,7 @@
       <RootProperty Name="Source" />
     </RootType>
     <RootType FullName="LANParty.Pages.EditProfile" />
+    <RootType FullName="LANParty.Pages.InboxPage" />
     <RootType FullName="LANParty.Pages.JoinedParties" />
     <RootType FullName="LANParty.Pages.MainPage" />
     <RootType FullName="LANParty.Pages.ManageApplicationsPage" />

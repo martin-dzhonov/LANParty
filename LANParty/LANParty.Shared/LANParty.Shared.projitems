@@ -21,10 +21,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ParseFileToBitmapImageConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Message.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ParseDatabaseRequester.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Party.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\UserProfile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ApplicationsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MessagesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PartiesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PartyViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProfileViewModel.cs" />

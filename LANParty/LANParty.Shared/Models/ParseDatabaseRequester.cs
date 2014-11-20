@@ -84,5 +84,14 @@ namespace LANParty.Models
             }
             return results2;
         }
+
+        public async Task<IEnumerable<ParseObject>> GetMessagesForCurrentUser()
+        {
+            var query = from application in ParseObject.GetQuery("Message")
+                        where application.Get<string>("recieverId").Equals(ParseUser.CurrentUser.ObjectId)
+                        select application;
+            IEnumerable<ParseObject> results = await query.FindAsync();
+            return results;
+        }
     }
 }
