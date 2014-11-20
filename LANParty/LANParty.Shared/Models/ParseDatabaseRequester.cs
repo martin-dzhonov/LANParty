@@ -70,5 +70,19 @@ namespace LANParty.Models
             }
             return results2;
         }
+
+        public async Task<IEnumerable<ParseObject>> GetApprovedUsersForParty(string partyId)
+        {
+            var query = from application in ParseObject.GetQuery("Application")
+                        where application.Get<string>("partyId").Equals(partyId) && application.Get<bool>("approved") == true
+                        select application;
+            IEnumerable<ParseObject> results = await query.FindAsync();
+            List<ParseUser> results2 = new List<ParseUser>();
+            foreach (ParseObject item in results)
+            {
+                results2.Add((ParseUser)item["guest"]);
+            }
+            return results2;
+        }
     }
 }

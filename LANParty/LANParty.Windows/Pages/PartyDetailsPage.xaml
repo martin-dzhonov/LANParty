@@ -50,6 +50,17 @@
         <Grid Grid.Row="1">
             <StackPanel>
                 <TextBlock Text="{Binding Title}"></TextBlock>
+                <ListView ItemsSource="{Binding Users}"
+                          IsItemClickEnabled="True"
+                          ItemClick="ListView_ItemClick">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock FontSize="25" Text="{Binding Username}"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
                 <Button Content="Apply" Click="Button_Click"></Button>
             </StackPanel>
         </Grid>

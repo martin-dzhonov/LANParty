@@ -123,5 +123,10 @@ namespace LANParty.Pages
             application["declined"] = false;
             await application.SaveAsync();
         }
+
+        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

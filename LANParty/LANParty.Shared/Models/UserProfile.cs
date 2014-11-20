@@ -13,7 +13,7 @@ namespace LANParty.Models
         public UserProfile(ParseUser user)
         {
             this.Username = user.Username;
-            this.ProfilePic = (ParseFile)user["profilePic"];
+            //this.ProfilePic = (ParseFile)user["profilePic"];
         }
     }
 }

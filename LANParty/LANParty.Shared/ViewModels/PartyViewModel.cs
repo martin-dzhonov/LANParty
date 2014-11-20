@@ -3,6 +3,7 @@ using LANParty.Models;
 using Parse;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace LANParty.ViewModels
@@ -11,6 +12,24 @@ namespace LANParty.ViewModels
     {
         private Party _party;
         private ParseDatabaseRequester dbrequester;
+
+        private ObservableCollection<UserProfile> _users;
+        public ObservableCollection<UserProfile> Users
+        {
+            get
+            {
+                return this._users;
+            }
+            set
+            {
+                if (value == this._users)
+                {
+                    return;
+                }
+                this._users = value;
+                OnPropertyChanged();
+            }
+        }
 
         public string ObjectId
         {
@@ -46,13 +65,24 @@ namespace LANParty.ViewModels
         }
         public PartyViewModel(ParseObject objectId)
         {
-            this._party = new Party(objectId);
+            this._users = new ObservableCollection<UserProfile>();
+            this.dbrequester = new ParseDatabaseRequester();
+            this.LoadParty(objectId);
         }
 
-        private async void LoadParty(string objectId)
+        private async void LoadParty(ParseObject parseParty)
         {
-            ParseObject parseParty = await dbrequester.GetPartyById(objectId);
             this._party = new Party(parseParty);
+            ParseUser parseHost = await ((ParseUser)parseParty["host"]).FetchAsync();
+            this._users.Add(new UserProfile(parseHost));
+
+            var approvedUsers = await this.dbrequester.GetApprovedUsersForParty(parseParty.ObjectId);
+            foreach (ParseUser user in approvedUsers)
+            {
+                await user.FetchAsync();
+                this._users.Add(new UserProfile(user));
+            }
+            
         }
     }
 }
