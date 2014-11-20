@@ -1,5 +1,6 @@
 ﻿using LANParty.Common;
-using Parse;
+using LANParty.Models;
+using LANParty.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,8 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using LANParty.Models;
-using LANParty.ViewModels;
+
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace LANParty.Pages
@@ -23,7 +23,7 @@ namespace LANParty.Pages
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class PartiesSearch : Page
+    public sealed partial class PartyDetailsPage : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -47,13 +47,12 @@ namespace LANParty.Pages
         }
 
 
-        public PartiesSearch()
+        public PartyDetailsPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            this.DataContext = new PartiesViewModel("Dota2");
         }
 
         /// <summary>
@@ -67,8 +66,11 @@ namespace LANParty.Pages
         /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested and
         /// a dictionary of state preserved by this page during an earlier
         /// session. The state will be null the first time a page is visited.</param>
-        private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
+        private async void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            ParseDatabaseRequester dbrequester = new ParseDatabaseRequester();
+            var partyId = await dbrequester.GetPartyById(((String)e.NavigationParameter));
+            this.DataContext = new PartyViewModel(partyId);
         }
 
         /// <summary>
@@ -105,11 +107,5 @@ namespace LANParty.Pages
         }
 
         #endregion
-
-        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var partyId = ((Party)e.ClickedItem).ObjectId;
-            this.Frame.Navigate(typeof(PartyDetailsPage), partyId);
-        }
     }
 }

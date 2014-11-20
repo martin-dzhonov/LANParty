@@ -115,6 +115,9 @@
     <Compile Include="Pages\PartiesSearch.xaml.cs">
       <DependentUpon>PartiesSearch.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PartyDetailsPage.xaml.cs">
+      <DependentUpon>PartyDetailsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ProfilePage.xaml.cs">
       <DependentUpon>ProfilePage.xaml</DependentUpon>
     </Compile>
@@ -154,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PartiesSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PartyDetailsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

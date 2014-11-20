@@ -43,13 +43,22 @@
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button"/>
-            <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+            <TextBlock x:Name="pageTitle" Text="Parties" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         <Grid Grid.Row="1">
             <StackPanel>
-                <Button x:ConnectionId='1' Content="asd"                     ></Button>
-                <ItemsControl ItemsSource="{Binding Parties}" DisplayMemberPath="Title"></ItemsControl>
+                <ListView x:ConnectionId='1' ItemsSource="{Binding Parties}"
+                          IsItemClickEnabled="True"
+                                                        >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock FontSize="25" Text="{Binding Title}"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackPanel>
         </Grid>
     </Grid>

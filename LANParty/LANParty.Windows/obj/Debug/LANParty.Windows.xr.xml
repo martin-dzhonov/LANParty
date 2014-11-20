@@ -10,6 +10,7 @@
     <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="ProfilePic" />
     <RootPropertyPathName Name="Parties" />
+    <RootPropertyPathName Name="Title" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application" />
@@ -98,11 +99,17 @@
     </RootType>
     <RootType FullName="LANParty.Pages.EditProfile" />
     <RootType FullName="LANParty.Pages.MainPage" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ItemsControl">
+    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemsSource" />
-      <RootProperty Name="DisplayMemberPath" />
+      <RootProperty Name="IsItemClickEnabled" />
+      <RootProperty Name="ItemTemplate" />
+      <RootEvent Name="ItemClick" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.DataTemplate">
+      <RootProperty Name="Template" />
     </RootType>
     <RootType FullName="LANParty.Pages.PartiesSearch" />
+    <RootType FullName="LANParty.Pages.PartyDetailsPage" />
     <RootType FullName="LANParty.Pages.ProfilePage" />
     <RootType FullName="LANParty.Pages.ProfileVisitorPage" />
     <RootType FullName="LANParty.Pages.RegisterPage" />
