@@ -108,7 +108,7 @@ namespace LANParty.Pages
 
         #endregion
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+        private async void Register_Click(object sender, RoutedEventArgs e)
         {
             var user = new ParseUser()
             {
@@ -133,7 +133,7 @@ namespace LANParty.Pages
             }
             catch (Exception ex)
             {
-                this.log.Text = ex.Message;
+                
             }
         }
     }

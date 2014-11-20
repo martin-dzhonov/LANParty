@@ -54,7 +54,6 @@ namespace LANParty.Pages
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
             this.DataContext = new UserPartiesViewModel("Created");
-            int i = 5;
         }
 
         /// <summary>

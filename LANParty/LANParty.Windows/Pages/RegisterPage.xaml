@@ -51,8 +51,7 @@
                 <TextBox Name="email" Text="asd@asd.bg"></TextBox>
                 <TextBox Name="username" Text="Gosho"></TextBox>
                 <TextBox Name="passowrd" Text="pass"></TextBox>
-                <Button Content="Register" Click="Button_Click"></Button>
-                <TextBlock Name="log" Text="LOG"></TextBlock>
+                <Button Content="Register" Click="Register_Click"></Button>
             </StackPanel>
            
         </Grid>

@@ -35,7 +35,19 @@ namespace LANParty.Models
             IEnumerable<ParseObject> results = await query.FindAsync();
             return results;
         }
-
+        public async Task<IEnumerable<ParseObject>> GetJoinedPartiesForUser(ParseUser user)
+        {
+            var query = from party in ParseObject.GetQuery("Application")
+                        where party.Get<ParseUser>("host").Equals(user) && party.Get<bool>("approved") == true
+                        select party;
+            IEnumerable<ParseObject> results = await query.FindAsync();
+            List<ParseObject> results2 = new List<ParseObject>();
+            foreach (ParseObject item in results)
+            {
+                results2.Add( await this.GetPartyById((string)item["partyId"]));
+            }
+            return results2;
+        }
         public async Task<IEnumerable<ParseObject>> GetApplicationsForParty(string partyId)
         {
             var query = from application in ParseObject.GetQuery("Application")

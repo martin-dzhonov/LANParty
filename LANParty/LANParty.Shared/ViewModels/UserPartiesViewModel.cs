@@ -44,6 +44,15 @@ namespace LANParty.ViewModels
                     this._parties.Add(new Party(obj));
                 }
             }
+            if (category == "Joined")
+            {
+                ParseDatabaseRequester dbRequester = new ParseDatabaseRequester();
+                IEnumerable<ParseObject> asd = await dbRequester.GetJoinedPartiesForUser(ParseUser.CurrentUser);
+                foreach (ParseObject obj in asd)
+                {
+                    this._parties.Add(new Party(obj));
+                }
+            }
         }
     }
 }

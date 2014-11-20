@@ -114,6 +114,7 @@
       <RootProperty Name="Source" />
     </RootType>
     <RootType FullName="LANParty.Pages.EditProfile" />
+    <RootType FullName="LANParty.Pages.JoinedParties" />
     <RootType FullName="LANParty.Pages.MainPage" />
     <RootType FullName="LANParty.Pages.ManageApplicationsPage" />
     <RootType FullName="LANParty.Pages.PartiesSearch" />

@@ -119,6 +119,8 @@ namespace LANParty.Pages
             application["partyId"] = partyId;
             application["host"] = party["host"];
             application["guest"] = ParseUser.CurrentUser;
+            application["approved"] = false;
+            application["declined"] = false;
             await application.SaveAsync();
         }
     }
