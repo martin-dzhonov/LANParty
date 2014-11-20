@@ -47,7 +47,10 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         <Grid Grid.Row="1">
-            <Button x:ConnectionId='1' Content="asd"                     ></Button>
+            <StackPanel>
+                <Button x:ConnectionId='1' Content="asd"                     ></Button>
+                <ItemsControl ItemsSource="{Binding Parties}" DisplayMemberPath="Title"></ItemsControl>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>

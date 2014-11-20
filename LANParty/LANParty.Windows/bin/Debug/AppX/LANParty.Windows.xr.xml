@@ -9,6 +9,7 @@
     <RootPropertyPathName Name="GoBackCommand" />
     <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="ProfilePic" />
+    <RootPropertyPathName Name="Parties" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application" />
@@ -97,6 +98,10 @@
     </RootType>
     <RootType FullName="LANParty.Pages.EditProfile" />
     <RootType FullName="LANParty.Pages.MainPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ItemsControl">
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="DisplayMemberPath" />
+    </RootType>
     <RootType FullName="LANParty.Pages.PartiesSearch" />
     <RootType FullName="LANParty.Pages.ProfilePage" />
     <RootType FullName="LANParty.Pages.ProfileVisitorPage" />

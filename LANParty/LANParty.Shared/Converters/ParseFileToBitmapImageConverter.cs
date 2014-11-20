@@ -19,7 +19,6 @@ namespace LANParty.Converters
             image.UriSource = new Uri(asd.Url.ToString(), UriKind.RelativeOrAbsolute);
 
             return image;
-
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, string language)

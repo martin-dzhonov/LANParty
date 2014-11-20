@@ -22,8 +22,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ParseFileToBitmapImageConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ParseDatabaseRequester.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Party.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\UserProfile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ParseModels\Party.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PartiesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProfileViewModel.cs" />
   </ItemGroup>
 </Project>
