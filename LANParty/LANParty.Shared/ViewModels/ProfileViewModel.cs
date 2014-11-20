@@ -7,6 +7,24 @@ namespace LANParty.ViewModels
 {
     public class ProfileViewModel : Bindable
     {
+        private string _objectId;
+        public string ObjectId
+        {
+            get
+            {
+                return this._objectId;
+            }
+            set
+            {
+                if (value == this._objectId)
+                {
+                    return;
+                }
+                this._objectId = value;
+                OnPropertyChanged();
+            }
+        }
+
         private string _username;
         public string Username
         {
@@ -46,6 +64,7 @@ namespace LANParty.ViewModels
 
         public ProfileViewModel(ParseUser user)
         {
+            this._objectId = user.ObjectId;
             this._username = user.Username;
             this._profilePic = (ParseFile)user["profilePic"];
         }

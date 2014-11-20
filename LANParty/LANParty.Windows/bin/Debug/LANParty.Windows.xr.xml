@@ -91,7 +91,6 @@
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemTemplate" />
-      <RootProperty Name="IsSwipeEnabled" />
       <RootEvent Name="ItemClick" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
@@ -126,5 +125,6 @@
     <RootType FullName="LANParty.Pages.ProfilePage" />
     <RootType FullName="LANParty.Pages.ProfileVisitorPage" />
     <RootType FullName="LANParty.Pages.RegisterPage" />
+    <RootType FullName="LANParty.Pages.SendMessagePage" />
   </Roots.RootTypes>
 </Roots>

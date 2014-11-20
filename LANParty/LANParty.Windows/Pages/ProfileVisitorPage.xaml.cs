@@ -108,5 +108,11 @@ namespace LANParty.Pages
 
 
         #endregion
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+           var objectId =  ((ProfileViewModel)this.DataContext).ObjectId;
+           this.Frame.Navigate(typeof(SendMessagePage), objectId);
+        }
     }
 }

@@ -14,9 +14,6 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using LANParty.Models;
-using LANParty.ViewModels;
-using Windows.UI.Input;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -25,7 +22,7 @@ namespace LANParty.Pages
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class PartiesSearch : Page
+    public sealed partial class SendMessagePage : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -49,14 +46,14 @@ namespace LANParty.Pages
         }
 
 
-        public PartiesSearch()
+        public SendMessagePage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
         }
-        
+
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also
         /// provided when recreating a page from a prior session.
@@ -68,10 +65,12 @@ namespace LANParty.Pages
         /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested and
         /// a dictionary of state preserved by this page during an earlier
         /// session. The state will be null the first time a page is visited.</param>
+
+        private string recieverId = null;
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            this.DataContext = new PartiesViewModel((String)e.NavigationParameter);
-
+            string id = e.NavigationParameter as string;
+            this.recieverId = id;
         }
 
         /// <summary>
@@ -109,10 +108,15 @@ namespace LANParty.Pages
 
         #endregion
 
-        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            var partyId = ((Party)e.ClickedItem).ObjectId;
-            this.Frame.Navigate(typeof(PartyDetailsPage), partyId);
+
+            ParseObject party = new ParseObject("Message");
+            party["senderId"] = ParseUser.CurrentUser.ObjectId;
+            party["recieverId"] = this.recieverId;
+            party["title"] = this.title.Text;
+            party["body"] = this.description.Text;
+            await party.SaveAsync();
         }
     }
 }
