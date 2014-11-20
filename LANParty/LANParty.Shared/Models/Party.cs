@@ -10,6 +10,7 @@ namespace LANParty.Models
         public string ObjectId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
+        public int Spots { get; set; }
 
         public Party(ParseObject obj)
         {

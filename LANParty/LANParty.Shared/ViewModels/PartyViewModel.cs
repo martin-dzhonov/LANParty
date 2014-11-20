@@ -63,26 +63,41 @@ namespace LANParty.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public string Description
+        {
+            get
+            {
+                return this._party.Description;
+            }
+            set
+            {
+                if (value == this._party.Description)
+                {
+                    return;
+                }
+                this._party.Description = value;
+                OnPropertyChanged();
+            }
+        }
         public PartyViewModel(ParseObject objectId)
         {
             this._users = new ObservableCollection<UserProfile>();
             this.dbrequester = new ParseDatabaseRequester();
-            this.LoadParty(objectId);
+            this.PopulateData(objectId);
         }
 
-        private async void LoadParty(ParseObject parseParty)
+        private async void PopulateData(ParseObject parseParty)
         {
             this._party = new Party(parseParty);
-            ParseUser parseHost = await ((ParseUser)parseParty["host"]).FetchAsync();
+            ParseUser parseHost = await ((ParseUser)parseParty["host"]).FetchIfNeededAsync();
             this._users.Add(new UserProfile(parseHost));
 
             var approvedUsers = await this.dbrequester.GetApprovedUsersForParty(parseParty.ObjectId);
             foreach (ParseUser user in approvedUsers)
             {
-                await user.FetchAsync();
                 this._users.Add(new UserProfile(user));
             }
-            
         }
     }
 }

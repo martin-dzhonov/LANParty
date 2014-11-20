@@ -80,7 +80,7 @@ namespace LANParty.Models
             List<ParseUser> results2 = new List<ParseUser>();
             foreach (ParseObject item in results)
             {
-                results2.Add((ParseUser)item["guest"]);
+                results2.Add(await ((ParseUser)item["guest"]).FetchIfNeededAsync());
             }
             return results2;
         }

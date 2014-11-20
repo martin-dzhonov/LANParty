@@ -12,6 +12,7 @@
     <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="ProfilePic" />
     <RootPropertyPathName Name="Users" />
+    <RootPropertyPathName Name="Description" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application" />
