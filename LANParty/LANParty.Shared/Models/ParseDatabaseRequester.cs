@@ -29,10 +29,10 @@ namespace LANParty.Models
             return result;
         }
 
-        public async Task<IEnumerable<ParseObject>> GetPartiesForUser(ParseUser user)
+        public async Task<IEnumerable<ParseObject>> GetCreatedPartiesForUser(ParseUser user)
         {
             var query = from gameScore in ParseObject.GetQuery("Party")
-                        where gameScore.Get<ParseUser>("hostId").Equals(user)
+                        where gameScore.Get<ParseUser>("host").Equals(user)
                         select gameScore;
             IEnumerable<ParseObject> results = await query.FindAsync();
             return results;

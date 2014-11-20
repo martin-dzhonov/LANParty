@@ -1,14 +1,14 @@
 ﻿using LANParty.Common;
+using LANParty.Models;
+using Parse;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
-using LANParty.Models;
-using Parse;
 
 namespace LANParty.ViewModels
 {
-    public class PartiesViewModel : Bindable
+    class UserPartiesViewModel : Bindable
     {
         private ObservableCollection<Party> _parties;
         public ObservableCollection<Party> Parties
@@ -27,19 +27,22 @@ namespace LANParty.ViewModels
                 OnPropertyChanged();
             }
         }
-        public PartiesViewModel(string category)
+        public UserPartiesViewModel(string category)
         {
             this._parties = new ObservableCollection<Party>();
-            this.PopulateParties();
+            this.PopulateParties(category);
         }
 
-        private async void PopulateParties()
+        private async void PopulateParties(string category)
         {
-            ParseDatabaseRequester dbRequester = new ParseDatabaseRequester();
-            IEnumerable<ParseObject> asd = await dbRequester.GetPartiesByCategory("Dota2");
-            foreach (ParseObject obj in asd)
+            if (category == "Created")
             {
-                this._parties.Add(new Party(obj));
+                ParseDatabaseRequester dbRequester = new ParseDatabaseRequester();
+                IEnumerable<ParseObject> asd = await dbRequester.GetCreatedPartiesForUser(ParseUser.CurrentUser);
+                foreach (ParseObject obj in asd)
+                {
+                    this._parties.Add(new Party(obj));
+                }
             }
         }
     }

@@ -55,6 +55,7 @@
                 <Button x:ConnectionId='1' Content="Create Party"                     ></Button>
                 <Button x:ConnectionId='2' Content="Edit Profile"                           ></Button>
                 <Button x:ConnectionId='3' Content="Search for party"                       ></Button>
+                <Button x:ConnectionId='4' Content="Parites Created"                       ></Button>
             </StackPanel>
         </Grid>
     </Grid>

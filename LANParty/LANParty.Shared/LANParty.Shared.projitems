@@ -27,8 +27,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PartiesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PartyViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProfileViewModel.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)ParseModels\" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserPartiesViewModel.cs" />
   </ItemGroup>
 </Project>
