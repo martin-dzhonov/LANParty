@@ -1,4 +1,5 @@
 ﻿using LANParty.Common;
+using LANParty.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,8 +14,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Parse;
-using LANParty.ViewModels;
+
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace LANParty.Pages
@@ -22,7 +22,7 @@ namespace LANParty.Pages
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class ProfilePage : Page
+    public sealed partial class InboxPage : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -46,13 +46,13 @@ namespace LANParty.Pages
         }
 
 
-        public ProfilePage()
+        public InboxPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            this.DataContext = new ProfileViewModel(ParseUser.CurrentUser);
+            this.DataContext = new MessagesViewModel();
         }
 
         /// <summary>
@@ -104,35 +104,5 @@ namespace LANParty.Pages
         }
 
         #endregion
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(CreateParty));
-        }
-        private void Edit_Profile_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(EditProfile));
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(ChooseCategoryPage));
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(CreatedPartiesPage));
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(JoinedParties));
-
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(InboxPage));
-        }
     }
 }
