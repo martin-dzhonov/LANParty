@@ -129,6 +129,32 @@ namespace LANParty.ViewModels
                 return this._loginCommand;
             }
         }
+
+        private ICommand _logoutuser;
+        public ICommand Logout
+        {
+            get
+            {
+                if (this._logoutuser == null)
+                {
+                    this._logoutuser = new DelegateCommand(this.LogoutUser);
+                }
+                return this._logoutuser;
+            }
+        }
+        private async void LogoutUser()
+        {
+            try
+            {
+                ParseUser.LogOut();
+                App.RootFrame.Navigate(typeof(MainPage));
+            }
+            catch (Exception ex)
+            {
+                MessageDialog msgDialog = new MessageDialog(ex.Message, "Error");
+                msgDialog.ShowAsync();
+            }
+        }
         private async void LoginUser()
         {
             try
@@ -189,7 +215,15 @@ namespace LANParty.ViewModels
 
         private async void PopulateData(string userId)
         {
-            ParseUser user = await this._dbRequester.GetUserById(userId);
+            ParseUser user;
+            if (userId == ParseUser.CurrentUser.ObjectId)
+            {
+                user = ParseUser.CurrentUser;
+            }
+            else
+            {
+                user = await this._dbRequester.GetUserById(userId);
+            }
             this._objectId = user.ObjectId;
             this._username = user.Username;
             this._profilePic = (ParseFile)user["profilePic"];

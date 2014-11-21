@@ -55,13 +55,14 @@
                        Source="{Binding ProfilePic, Converter={StaticResource ParseFileToBitmapImageConverter}}"></Image>
                 <TextBlock FontSize="25" 
                            Name="username"
-                           Text="{Binding Username}" ></TextBlock>
+                           Text="{Binding Username, Mode=TwoWay}" ></TextBlock>
                 <Button x:ConnectionId='1' Content="Inbox"                       ></Button>
                 <Button x:ConnectionId='2' Content="Create Party"                     ></Button>
                 <Button x:ConnectionId='3' Content="Edit Profile"                           ></Button>
                 <Button x:ConnectionId='4' Content="Search for party"                       ></Button>
                 <Button x:ConnectionId='5' Content="Parites Created"                       ></Button>
                 <Button x:ConnectionId='6' Content="Parties Joined"                       ></Button>
+                <Button Content="Logout" Command="{Binding Logout}"></Button>
             </StackPanel>
         </Grid>
     </Grid>

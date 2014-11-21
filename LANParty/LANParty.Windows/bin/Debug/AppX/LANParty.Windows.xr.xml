@@ -17,6 +17,7 @@
     <RootPropertyPathName Name="Users" />
     <RootPropertyPathName Name="Apply" />
     <RootPropertyPathName Name="Description" />
+    <RootPropertyPathName Name="Logout" />
     <RootPropertyPathName Name="Register" />
     <RootPropertyPathName Name="Email" />
   </Roots.PropertyPathNames>
