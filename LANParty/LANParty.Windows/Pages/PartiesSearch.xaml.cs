@@ -116,5 +116,20 @@ namespace LANParty.Pages
             ParseObject parseParty = await dbRequester.GetPartyById(partyId);
             this.Frame.Navigate(typeof(PartyDetailsPage), parseParty);
         }
+
+        private void ListView_Holding(object sender, HoldingRoutedEventArgs e)
+        {
+            int itemIndex = 0;
+            Double coY = e.GetPosition((UIElement)sender).Y;
+            ListView lv = sender as ListView;
+            if (sender is ListView)
+            {
+                lv.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+                Size lvSize = lv.DesiredSize;
+                itemIndex = (int)(coY / lvSize.Height * lv.Items.Count);
+                itemIndex = itemIndex > lv.Items.Count ? lv.Items.Count : itemIndex;
+            }
+            int i = 5;
+        }
     }
 }

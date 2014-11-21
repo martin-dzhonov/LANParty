@@ -54,6 +54,7 @@
                 <Button Content="Register" Click="Button_Click"></Button>
                 <Button Content="DO SHIT" Click="Button_Click_2"></Button>
                 <TextBlock Name="log" Text="log"></TextBlock>
+                <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
             </StackPanel>
         </Grid>
 

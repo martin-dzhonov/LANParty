@@ -16,6 +16,7 @@ namespace LANParty.ViewModels
         private ParseDatabaseRequester _dbRequester;
 
         private string _objectId;
+
         public string ObjectId
         {
             get
@@ -34,6 +35,7 @@ namespace LANParty.ViewModels
         }
 
         private string _username;
+
         public string Username
         {
             get
@@ -52,6 +54,7 @@ namespace LANParty.ViewModels
         }
 
         private string _email;
+
         public string Email
         {
             get
@@ -71,6 +74,7 @@ namespace LANParty.ViewModels
         }
 
         private string _password;
+
         public string Password
         {
             get
@@ -89,6 +93,7 @@ namespace LANParty.ViewModels
         }
 
         private ParseFile _profilePic;
+
         public ParseFile ProfilePic
         {
             get
@@ -107,7 +112,27 @@ namespace LANParty.ViewModels
             }
         }
 
+        private bool _isLoading;
+
+        public bool IsLoading
+        {
+            get
+            {
+                return this._isLoading;
+            }
+            set
+            {
+                if (value == this._isLoading)
+                {
+                    return;
+                }
+                this._isLoading = value;
+                OnPropertyChanged();
+            }
+        }
+
         private ICommand _registerCommand;
+
         public ICommand Register
         {
             get
@@ -117,60 +142,6 @@ namespace LANParty.ViewModels
                     this._registerCommand = new DelegateCommand(this.RegisterUser);
                 }
                 return this._registerCommand;
-            }
-        }
-
-        private ICommand _loginCommand;
-        public ICommand Login
-        {
-            get
-            {
-                if (this._loginCommand == null)
-                {
-                    this._loginCommand = new DelegateCommand(this.LoginUser);
-                }
-                return this._loginCommand;
-            }
-        }
-
-        private ICommand _logoutuser;
-        public ICommand Logout
-        {
-            get
-            {
-                if (this._logoutuser == null)
-                {
-                    this._logoutuser = new DelegateCommand(this.LogoutUser);
-                }
-                return this._logoutuser;
-            }
-        }
-
-        private void LogoutUser()
-        {
-            try
-            {
-                ParseUser.LogOut();
-                App.RootFrame.Navigate(typeof(MainPage));
-            }
-            catch (Exception ex)
-            {
-                MessageDialog msgDialog = new MessageDialog(ex.Message, "Error");
-                msgDialog.ShowAsync();
-            }
-        }
-
-        private async void LoginUser()
-        {
-            try
-            {
-                await ParseUser.LogInAsync(this.Username, this.Password);
-                App.RootFrame.Navigate(typeof(ProfilePage));
-            }
-            catch (Exception ex)
-            {
-                MessageDialog msgDialog = new MessageDialog(ex.Message, "Error");
-                msgDialog.ShowAsync();
             }
         }
 
@@ -209,7 +180,67 @@ namespace LANParty.ViewModels
             }
         }
 
+        private ICommand _loginCommand;
+
+        public ICommand Login
+        {
+            get
+            {
+                if (this._loginCommand == null)
+                {
+                    this._loginCommand = new DelegateCommand(this.LoginUser);
+                }
+                return this._loginCommand;
+            }
+        }
+
+        private async void LoginUser()
+        {
+            try
+            {
+                this.IsLoading = true;
+                await ParseUser.LogInAsync(this.Username, this.Password);
+                this.IsLoading = false;
+                App.RootFrame.Navigate(typeof(ProfilePage));
+            }
+            catch (Exception ex)
+            {
+                this.IsLoading = false;
+                MessageDialog msgDialog = new MessageDialog(ex.Message, "Error");
+                msgDialog.ShowAsync();
+            }
+        }
+
+        private ICommand _logoutuser;
+
+        public ICommand Logout
+        {
+            get
+            {
+                if (this._logoutuser == null)
+                {
+                    this._logoutuser = new DelegateCommand(this.LogoutUser);
+                }
+                return this._logoutuser;
+            }
+        }
+
+        private void LogoutUser()
+        {
+            try
+            {
+                ParseUser.LogOut();
+                App.RootFrame.Navigate(typeof(MainPage));
+            }
+            catch (Exception ex)
+            {
+                MessageDialog msgDialog = new MessageDialog(ex.Message, "Error");
+                msgDialog.ShowAsync();
+            }
+        }
+
         private ICommand _friendsAdd;
+
         public ICommand FriendsAdd
         {
             get

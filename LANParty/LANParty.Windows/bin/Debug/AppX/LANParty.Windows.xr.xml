@@ -12,6 +12,7 @@
     <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="ProfilePic" />
     <RootPropertyPathName Name="Messages" />
+    <RootPropertyPathName Name="IsLoading" />
     <RootPropertyPathName Name="Login" />
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="Users" />
@@ -101,8 +102,10 @@
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemTemplate" />
       <RootProperty Name="IsDoubleTapEnabled" />
+      <RootProperty Name="IsHoldingEnabled" />
       <RootEvent Name="ItemClick" />
       <RootEvent Name="DoubleTapped" />
+      <RootEvent Name="Holding" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
@@ -130,6 +133,11 @@
     <RootType FullName="LANParty.Pages.EditProfile" />
     <RootType FullName="LANParty.Pages.InboxPage" />
     <RootType FullName="LANParty.Pages.JoinedParties" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressRing">
+      <RootProperty Name="IsActive" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+    </RootType>
     <RootType FullName="LANParty.Pages.MainPage" />
     <RootType FullName="LANParty.Pages.ManageApplicationsPage" />
     <RootType FullName="LANParty.Pages.PartiesSearch" />

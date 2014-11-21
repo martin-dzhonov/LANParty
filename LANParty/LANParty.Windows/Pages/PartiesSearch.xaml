@@ -51,6 +51,8 @@
                 <ListView ItemsSource="{Binding Parties}"
                           IsItemClickEnabled="True"
                           ItemClick="ListView_ItemClick"
+                          IsHoldingEnabled="True"
+                          Holding="ListView_Holding"
                           >
                     <ListView.ItemTemplate>
                         <DataTemplate>

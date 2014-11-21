@@ -113,9 +113,9 @@ namespace LANParty.Pages
 
         private async void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            ParseDatabaseRequester req = new ParseDatabaseRequester();
-            var asd = await req.GetApplicationsForParty("Fbb2YWBNDZ");
-            this.Frame.Navigate(typeof(ProfileVisitorPage), ParseUser.CurrentUser.ObjectId);
+           // ParseDatabaseRequester req = new ParseDatabaseRequester();
+            //var asd = await req.GetApplicationsForParty("Fbb2YWBNDZ");
+           // this.Frame.Navigate(typeof(ProfileVisitorPage), ParseUser.CurrentUser.ObjectId);
         }
     }
 }
