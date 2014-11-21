@@ -67,10 +67,9 @@ namespace LANParty.Pages
         /// <see cref="Frame.Navigate(Type, Object)"/> when this page was initially requested and
         /// a dictionary of state preserved by this page during an earlier
         /// session. The state will be null the first time a page is visited.</param>
-        private async void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
+        private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            ParseDatabaseRequester dbrequester = new ParseDatabaseRequester();
-            var partyId = await dbrequester.GetPartyById(((String)e.NavigationParameter));
+            var partyId = (String)e.NavigationParameter;
             this.DataContext = new PartyViewModel(partyId);
         }
 
@@ -108,21 +107,6 @@ namespace LANParty.Pages
         }
 
         #endregion
-
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            ParseDatabaseRequester requester = new ParseDatabaseRequester();
-            var partyId = ((PartyViewModel)this.DataContext).ObjectId;
-            ParseObject party = await requester.GetPartyById(partyId);
-
-            ParseObject application = new ParseObject("Application");
-            application["partyId"] = partyId;
-            application["host"] = party["host"];
-            application["guest"] = ParseUser.CurrentUser;
-            application["approved"] = false;
-            application["declined"] = false;
-            await application.SaveAsync();
-        }
 
         private void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {

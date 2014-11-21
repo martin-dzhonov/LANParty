@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Parse;
 using LANParty.Models;
+using LANParty.ViewModels;
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace LANParty.Pages
@@ -52,6 +53,7 @@ namespace LANParty.Pages
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
+            this.DataContext = new UserViewModel();
         }
 
         /// <summary>
@@ -107,21 +109,6 @@ namespace LANParty.Pages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(RegisterPage));
-        }
-
-
-        private async void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                await ParseUser.LogInAsync(this.username.Text, this.password.Text);
-                this.log.Text = "SUCCESS";
-                this.Frame.Navigate(typeof(ProfilePage));
-            }
-            catch (Exception)
-            {
-                this.log.Text = "ERROR";
-            }
         }
 
         private async void Button_Click_2(object sender, RoutedEventArgs e)

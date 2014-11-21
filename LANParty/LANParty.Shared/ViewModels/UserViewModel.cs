@@ -117,6 +117,31 @@ namespace LANParty.ViewModels
             }
         }
 
+        private ICommand _loginCommand;
+        public ICommand Login
+        {
+            get
+            {
+                if (this._loginCommand == null)
+                {
+                    this._loginCommand = new DelegateCommand(this.LoginUser);
+                }
+                return this._loginCommand;
+            }
+        }
+        private async void LoginUser()
+        {
+            try
+            {
+                await ParseUser.LogInAsync(this.Username, this.Password);
+                App.RootFrame.Navigate(typeof(ProfilePage));
+            }
+            catch (Exception ex)
+            {
+                MessageDialog msgDialog = new MessageDialog(ex.Message, "Error");
+                msgDialog.ShowAsync();
+            }
+        }
         private async void RegisterUser()
         {
             var user = new ParseUser()
@@ -144,7 +169,6 @@ namespace LANParty.ViewModels
                 this.Password = "";
                 this.Email = "";
                 msgDialog.ShowAsync();
-
             }
             catch (Exception ex)
             {
@@ -155,7 +179,6 @@ namespace LANParty.ViewModels
         public UserViewModel()
         {
             this._dbRequester = new ParseDatabaseRequester();
-            App.RootFrame.Navigate(typeof(MainPage));
         }
 
         public UserViewModel(string userId)

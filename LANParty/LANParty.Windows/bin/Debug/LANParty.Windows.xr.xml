@@ -12,10 +12,12 @@
     <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="ProfilePic" />
     <RootPropertyPathName Name="Messages" />
+    <RootPropertyPathName Name="Login" />
+    <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="Users" />
+    <RootPropertyPathName Name="Apply" />
     <RootPropertyPathName Name="Description" />
     <RootPropertyPathName Name="Register" />
-    <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="Email" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>

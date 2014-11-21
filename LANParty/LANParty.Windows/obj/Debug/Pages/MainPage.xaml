@@ -48,11 +48,11 @@
         </Grid>
         <Grid Grid.Row="1">
             <StackPanel>
-                <TextBox Name="username" Text="Gosho"></TextBox>
-                <TextBox Name="password" Text="pass"></TextBox>
-                <Button x:ConnectionId='1' Content="Login"                       ></Button>
-                <Button x:ConnectionId='2' Content="Register"                     ></Button>
-                <Button x:ConnectionId='3' Content="DO SHIT"                       ></Button>
+                <TextBox Name="username" Text="{Binding Username, Mode=TwoWay}"></TextBox>
+                <TextBox Name="password" Text="{Binding Password, Mode=TwoWay}"></TextBox>
+                <Button Content="Login" Command="{Binding Login}"></Button>
+                <Button x:ConnectionId='1' Content="Register"                     ></Button>
+                <Button x:ConnectionId='2' Content="DO SHIT"                       ></Button>
                 <TextBlock Name="log" Text="log"></TextBlock>
             </StackPanel>
         </Grid>

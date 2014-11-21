@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows.Input;
 
 namespace LANParty.ViewModels
 {
@@ -79,15 +80,53 @@ namespace LANParty.ViewModels
                 OnPropertyChanged();
             }
         }
-        public PartyViewModel(ParseObject objectId)
+
+        private ICommand _applyCommand;
+        public ICommand Apply
         {
+            get
+            {
+                if (this._applyCommand == null)
+                {
+                    this._applyCommand = new DelegateCommand(this.ApplyForParty);
+                }
+                return this._applyCommand;
+            }
+        }
+        private async void ApplyForParty()
+        {
+            ParseObject party = await this._dbRequester.GetPartyById(this._party.ObjectId);
+
+            ParseObject application = new ParseObject("Application");
+            application["partyId"] = party.ObjectId;
+            application["host"] = party["host"];
+            application["guest"] = ParseUser.CurrentUser;
+            application["approved"] = false;
+            application["declined"] = false;
+            try
+            {
+                await application.SaveAsync();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private string _partyId;
+        public PartyViewModel(string objectId)
+        {
+            this._party = new Party();
+            this._partyId = objectId;
             this._users = new ObservableCollection<UserProfile>();
             this._dbRequester = new ParseDatabaseRequester();
             this.PopulateData(objectId);
         }
 
-        private async void PopulateData(ParseObject parseParty)
+        private async void PopulateData(string partyId)
         {
+            ParseObject parseParty = await this._dbRequester.GetPartyById(partyId);
+
             this._party = new Party(parseParty);
             ParseUser parseHost = await ((ParseUser)parseParty["host"]).FetchIfNeededAsync();
             this._users.Add(new UserProfile(parseHost));

@@ -113,23 +113,18 @@ namespace LANParty.Pages
         {
             this.Frame.Navigate(typeof(EditProfile));
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(ChooseCategoryPage));
         }
-
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(CreatedPartiesPage));
         }
-
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(JoinedParties));
-
         }
-
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(InboxPage));

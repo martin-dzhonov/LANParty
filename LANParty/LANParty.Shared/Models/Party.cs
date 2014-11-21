@@ -12,6 +12,10 @@ namespace LANParty.Models
         public string Description { get; set; }
         public int Spots { get; set; }
 
+        public Party()
+        {
+
+        }
         public Party(ParseObject obj)
         {
             this.ObjectId = obj.ObjectId;
