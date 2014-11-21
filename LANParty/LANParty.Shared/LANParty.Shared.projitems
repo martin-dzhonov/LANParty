@@ -16,6 +16,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Common\Bindable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Common\DelegateCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\NavigationHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\ObservableDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
@@ -30,6 +31,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PartiesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PartyViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProfileViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RegistrationViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserPartiesViewModel.cs" />
   </ItemGroup>
 </Project>

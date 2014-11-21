@@ -14,6 +14,9 @@
     <RootPropertyPathName Name="Messages" />
     <RootPropertyPathName Name="Users" />
     <RootPropertyPathName Name="Description" />
+    <RootPropertyPathName Name="Register" />
+    <RootPropertyPathName Name="Password" />
+    <RootPropertyPathName Name="Email" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -29,6 +32,7 @@
       <RootProperty Name="RelativeSource" />
       <RootProperty Name="ElementName" />
       <RootProperty Name="Converter" />
+      <RootProperty Name="Mode" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.RelativeSource" />
     <RootType FullName="System.String" />

@@ -18,6 +18,7 @@ using Windows.UI.Xaml.Media.Imaging;
 using System.Threading.Tasks;
 using Windows.Storage;
 using Windows.Storage.Streams;
+using LANParty.ViewModels;
 
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
@@ -56,6 +57,7 @@ namespace LANParty.Pages
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
+            this.DataContext = new RegistrationViewModel();
         }
 
         /// <summary>
