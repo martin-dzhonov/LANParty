@@ -30,6 +30,25 @@ namespace LANParty.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        private bool _isLoading;
+
+        public bool IsLoading
+        {
+            get
+            {
+                return this._isLoading;
+            }
+            set
+            {
+                if (value == this._isLoading)
+                {
+                    return;
+                }
+                this._isLoading = value;
+                OnPropertyChanged();
+            }
+        }
         public ApplicationsViewModel(string partyId)
         {
             this._dbRequester = new ParseDatabaseRequester();
@@ -40,6 +59,7 @@ namespace LANParty.ViewModels
 
         private async void PopulateParties(string partyId)
         {
+            this.IsLoading = true;
             IEnumerable<ParseObject> asd = await this._dbRequester.GetApplicationsForParty(partyId);
             foreach (ParseObject obj in asd)
             {
@@ -47,6 +67,7 @@ namespace LANParty.ViewModels
                 this._users.Add(new UserProfile((ParseUser)obj["guest"]));
                 this._applicationsIds.Add(obj.ObjectId.ToString());
             }
+            this.IsLoading = false;
         }
 
         private int _index;

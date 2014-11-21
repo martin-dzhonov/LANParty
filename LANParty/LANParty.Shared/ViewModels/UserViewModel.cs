@@ -292,7 +292,7 @@ namespace LANParty.ViewModels
                 user = await this._dbRequester.GetUserById(userId);
             }
             this._objectId = user.ObjectId;
-            this._username = user.Username;
+            this.Username = user.Username;
             this._profilePic = (ParseFile)user["profilePic"];
         }
     }

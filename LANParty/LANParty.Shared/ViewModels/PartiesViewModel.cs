@@ -12,7 +12,24 @@ namespace LANParty.ViewModels
     {
         private ParseDatabaseRequester _dbRequester;
         private ObservableCollection<Party> _parties;
+        private bool _isLoading;
 
+        public bool IsLoading
+        {
+            get
+            {
+                return this._isLoading;
+            }
+            set
+            {
+                if (value == this._isLoading)
+                {
+                    return;
+                }
+                this._isLoading = value;
+                OnPropertyChanged();
+            }
+        }
         public ObservableCollection<Party> Parties
         {
             get
@@ -40,11 +57,13 @@ namespace LANParty.ViewModels
 
         private async void PopulateData(string category)
         {
+            this.IsLoading = true;
             IEnumerable<ParseObject> parseParties = await this._dbRequester.GetPartiesByCategory(category);
             foreach (ParseObject obj in parseParties)
             {
                 this._parties.Add(new Party(obj));
             }
+            this.IsLoading = false;
         }
     }
 }

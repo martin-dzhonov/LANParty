@@ -80,7 +80,24 @@ namespace LANParty.ViewModels
                 OnPropertyChanged();
             }
         }
+        private bool _isLoading;
 
+        public bool IsLoading
+        {
+            get
+            {
+                return this._isLoading;
+            }
+            set
+            {
+                if (value == this._isLoading)
+                {
+                    return;
+                }
+                this._isLoading = value;
+                OnPropertyChanged();
+            }
+        }
         private ICommand _applyCommand;
         public ICommand Apply
         {
@@ -125,6 +142,7 @@ namespace LANParty.ViewModels
 
         private async void PopulateData(ParseObject parseParty)
         {
+            this.IsLoading = true;
             ParseUser parseHost = await ((ParseUser)parseParty["host"]).FetchIfNeededAsync();
             this._users.Add(new UserProfile(parseHost));
 
@@ -133,6 +151,7 @@ namespace LANParty.ViewModels
             {
                 this._users.Add(new UserProfile(user));
             }
+            this.IsLoading = false;
         }
     }
 }

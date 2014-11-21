@@ -48,6 +48,7 @@
         </Grid>
 
         <Grid Grid.Row="1">
+            <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
             <StackPanel>
                 <TextBlock FontSize="25" Text="{Binding Title, Mode=TwoWay}"></TextBlock>
                 <TextBlock FontSize="25" Text="{Binding Description, Mode=TwoWay}"></TextBlock>

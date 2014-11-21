@@ -9,10 +9,10 @@
     <RootPropertyPathName Name="GoBackCommand" />
     <RootPropertyPathName Name="Parties" />
     <RootPropertyPathName Name="Title" />
+    <RootPropertyPathName Name="IsLoading" />
     <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="ProfilePic" />
     <RootPropertyPathName Name="Messages" />
-    <RootPropertyPathName Name="IsLoading" />
     <RootPropertyPathName Name="Login" />
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="Users" />
@@ -36,8 +36,8 @@
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="RelativeSource" />
       <RootProperty Name="ElementName" />
-      <RootProperty Name="Converter" />
       <RootProperty Name="Mode" />
+      <RootProperty Name="Converter" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.RelativeSource" />
     <RootType FullName="System.String" />
@@ -97,6 +97,11 @@
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="LANParty.Pages.ChooseCategoryPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressRing">
+      <RootProperty Name="IsActive" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
@@ -133,11 +138,6 @@
     <RootType FullName="LANParty.Pages.EditProfile" />
     <RootType FullName="LANParty.Pages.InboxPage" />
     <RootType FullName="LANParty.Pages.JoinedParties" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ProgressRing">
-      <RootProperty Name="IsActive" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Height" />
-    </RootType>
     <RootType FullName="LANParty.Pages.MainPage" />
     <RootType FullName="LANParty.Pages.ManageApplicationsPage" />
     <RootType FullName="LANParty.Pages.PartiesSearch" />

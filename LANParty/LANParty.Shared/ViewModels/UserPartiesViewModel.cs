@@ -28,6 +28,24 @@ namespace LANParty.ViewModels
                 OnPropertyChanged();
             }
         }
+        private bool _isLoading;
+
+        public bool IsLoading
+        {
+            get
+            {
+                return this._isLoading;
+            }
+            set
+            {
+                if (value == this._isLoading)
+                {
+                    return;
+                }
+                this._isLoading = value;
+                OnPropertyChanged();
+            }
+        }
         public UserPartiesViewModel(string category)
         {
             this._dbRequester = new ParseDatabaseRequester();
@@ -39,19 +57,23 @@ namespace LANParty.ViewModels
         {
             if (category == "Created")
             {
+                this.IsLoading = true;
                 IEnumerable<ParseObject> asd = await this._dbRequester.GetCreatedPartiesForUser(ParseUser.CurrentUser);
                 foreach (ParseObject obj in asd)
                 {
                     this._parties.Add(new Party(obj));
                 }
+                this.IsLoading = false;
             }
             if (category == "Joined")
             {
+                this.IsLoading = true;
                 IEnumerable<ParseObject> asd = await this._dbRequester.GetJoinedPartiesForUser(ParseUser.CurrentUser);
                 foreach (ParseObject obj in asd)
                 {
                     this._parties.Add(new Party(obj));
                 }
+                this.IsLoading = false;
             }
         }
     }
