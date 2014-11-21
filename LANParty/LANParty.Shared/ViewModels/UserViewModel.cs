@@ -7,6 +7,8 @@ using LANParty.Models;
 using System.Windows.Input;
 using Windows.Storage;
 using Windows.Storage.Streams;
+using LANParty.Pages;
+using Windows.UI.Popups;
 namespace LANParty.ViewModels
 {
     public class UserViewModel : Bindable
@@ -137,16 +139,23 @@ namespace LANParty.ViewModels
             try
             {
                 await user.SignUpAsync();
+                MessageDialog msgDialog = new MessageDialog("Registration succesfull");
+                this.Username = "";
+                this.Password = "";
+                this.Email = "";
+                msgDialog.ShowAsync();
+
             }
             catch (Exception ex)
             {
-                string asd = ex.Message;
-                int i = 5;
+                MessageDialog msgDialog = new MessageDialog(ex.Message, "Error");
+                msgDialog.ShowAsync();
             }
         }
         public UserViewModel()
         {
             this._dbRequester = new ParseDatabaseRequester();
+            App.RootFrame.Navigate(typeof(MainPage));
         }
 
         public UserViewModel(string userId)
