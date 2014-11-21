@@ -69,7 +69,6 @@ namespace LANParty.Pages
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
             this.DataContext = new ApplicationsViewModel((String)e.NavigationParameter);
-            int i = 5;
         }
 
         /// <summary>
@@ -112,6 +111,46 @@ namespace LANParty.Pages
         {
             var partyId = ((UserProfile)e.ClickedItem).ObjectId;
             this.Frame.Navigate(typeof(ProfileVisitorPage), partyId);
+        }
+
+        private void ListView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            int item = 0;
+
+            Double coY = e.GetPosition((UIElement)sender).Y;
+
+            ListView lv = sender as ListView;
+            if (sender is ListView)
+            {
+                lv.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+                Size lvSize = lv.DesiredSize;
+                item = (int)(coY / lvSize.Height * lv.Items.Count);
+                item = item > lv.Items.Count ? lv.Items.Count : item;
+            }
+            ((ApplicationsViewModel)this.DataContext).Users.RemoveAt(item);
+        }
+
+        private void ListView_Holding(object sender, HoldingRoutedEventArgs e)
+        {
+
+        }
+
+        private void ListView_DragOver(object sender, DragEventArgs e)
+        {
+            int item = 0;
+
+            Double coY = e.GetPosition((UIElement)sender).Y;
+
+            ListView lv = sender as ListView;
+            if (sender is ListView)
+            {
+                lv.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+                Size lvSize = lv.DesiredSize;
+                item = (int)(coY / lvSize.Height * lv.Items.Count);
+                item = item > lv.Items.Count ? lv.Items.Count : item;
+            }
+            ((ApplicationsViewModel)this.DataContext).Users.RemoveAt(item);
+            int i = 5;
         }
     }
 }

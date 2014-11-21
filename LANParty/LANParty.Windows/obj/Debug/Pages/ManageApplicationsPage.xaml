@@ -50,8 +50,11 @@
         <Grid Grid.Row="1">
             <StackPanel>
                 <ListView x:ConnectionId='1' ItemsSource="{Binding Users}"
-                          IsItemClickEnabled="True"
-                                                        >
+                          IsItemClickEnabled="False"
+                                                        
+                                                      
+                          IsDoubleTapEnabled="True"
+                                                              >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
