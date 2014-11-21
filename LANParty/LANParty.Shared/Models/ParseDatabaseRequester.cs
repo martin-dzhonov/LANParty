@@ -99,5 +99,14 @@ namespace LANParty.Models
             IEnumerable<ParseObject> results = await query.FindAsync();
             return results;
         }
+
+        public async Task<ParseObject> GetApplicationById(string objectId)
+        {
+            var query = from party in ParseObject.GetQuery("Application")
+                        where party.Get<string>("objectId").Equals(objectId)
+                        select party;
+            ParseObject result = await query.FirstOrDefaultAsync();
+            return result;
+        }
     }
 }

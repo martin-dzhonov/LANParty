@@ -32,6 +32,7 @@ namespace LANParty.ViewModels
                 OnPropertyChanged();
             }
         }
+
         private string _username;
         public string Username
         {
@@ -49,6 +50,7 @@ namespace LANParty.ViewModels
                 OnPropertyChanged();
             }
         }
+
         private string _email;
         public string Email
         {
@@ -67,6 +69,7 @@ namespace LANParty.ViewModels
                 OnPropertyChanged();
             }
         }
+
         private string _password;
         public string Password
         {
@@ -142,7 +145,8 @@ namespace LANParty.ViewModels
                 return this._logoutuser;
             }
         }
-        private async void LogoutUser()
+
+        private void LogoutUser()
         {
             try
             {
@@ -155,6 +159,7 @@ namespace LANParty.ViewModels
                 msgDialog.ShowAsync();
             }
         }
+
         private async void LoginUser()
         {
             try
@@ -168,6 +173,7 @@ namespace LANParty.ViewModels
                 msgDialog.ShowAsync();
             }
         }
+
         private async void RegisterUser()
         {
             var user = new ParseUser()
@@ -202,6 +208,36 @@ namespace LANParty.ViewModels
                 msgDialog.ShowAsync();
             }
         }
+
+        private ICommand _friendsAdd;
+        public ICommand FriendsAdd
+        {
+            get
+            {
+                if (this._friendsAdd == null)
+                {
+                    this._friendsAdd = new DelegateCommand(this.AddToFriends);
+                }
+                return this._friendsAdd;
+            }
+        }
+
+        private async void AddToFriends()
+        {
+            ParseObject application = new ParseObject("Friend");
+            application["userId"] = ParseUser.CurrentUser.ObjectId;
+            ParseUser friend = await this._dbRequester.GetUserById(this._objectId);
+            application["friend"] = friend;
+            try
+            {
+                await application.SaveAsync();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
         public UserViewModel()
         {
             this._dbRequester = new ParseDatabaseRequester();

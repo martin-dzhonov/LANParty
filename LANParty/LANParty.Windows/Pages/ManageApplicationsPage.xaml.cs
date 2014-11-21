@@ -6,8 +6,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -106,76 +108,35 @@ namespace LANParty.Pages
         }
 
         #endregion
-
-        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        private bool singleTap = false;
+        private async void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var partyId = ((UserProfile)e.ClickedItem).ObjectId;
-            this.Frame.Navigate(typeof(ProfileVisitorPage), partyId);
+            this.singleTap = true;
+            await Task.Delay(200);
+            if (this.singleTap)
+            {
+                var partyId = ((UserProfile)e.ClickedItem).ObjectId;
+                this.Frame.Navigate(typeof(ProfileVisitorPage), partyId);
+            }
         }
 
-        private void ListView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        private async void ListView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
-            int item = 0;
+            this.singleTap = false;
 
+            int itemIndex = 0;
             Double coY = e.GetPosition((UIElement)sender).Y;
-
             ListView lv = sender as ListView;
             if (sender is ListView)
             {
                 lv.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
                 Size lvSize = lv.DesiredSize;
-                item = (int)(coY / lvSize.Height * lv.Items.Count);
-                item = item > lv.Items.Count ? lv.Items.Count : item;
+                itemIndex = (int)(coY / lvSize.Height * lv.Items.Count);
+                itemIndex = itemIndex > lv.Items.Count ? lv.Items.Count : itemIndex;
             }
-            ((ApplicationsViewModel)this.DataContext).Users.RemoveAt(item);
-        }
-
-        private void ListView_Holding(object sender, HoldingRoutedEventArgs e)
-        {
-
-        }
-
-        private void ListView_DragOver(object sender, DragEventArgs e)
-        {
-            int item = 0;
-
-            Double coY = e.GetPosition((UIElement)sender).Y;
-
-            ListView lv = sender as ListView;
-            if (sender is ListView)
-            {
-                lv.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
-                Size lvSize = lv.DesiredSize;
-                item = (int)(coY / lvSize.Height * lv.Items.Count);
-                item = item > lv.Items.Count ? lv.Items.Count : item;
-            }
-            ((ApplicationsViewModel)this.DataContext).Users.RemoveAt(item);
-            int i = 5;
-        }
-
-        private void ListView_DragEnter(object sender, DragEventArgs e)
-        {
             
+            ((ApplicationsViewModel)this.DataContext).RemoveUserAtIndex(itemIndex);
         }
-
-        private void ListView_DragItemsStarting(object sender, DragItemsStartingEventArgs e)
-        {
-            Double coY = e.GetPosition((UIElement)sender).Y;
-
-            this.log.Text = coY.ToString();
-            int i = 5;
-        }
-
-        private void ListView_DragLeave(object sender, DragEventArgs e)
-        {
-            int i = 5;
-
-        }
-
-        private void ListView_Drop(object sender, DragEventArgs e)
-        {
-            int i = 5;
-
-        }
+       
     }
 }

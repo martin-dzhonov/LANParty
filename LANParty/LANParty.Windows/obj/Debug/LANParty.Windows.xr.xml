@@ -18,6 +18,7 @@
     <RootPropertyPathName Name="Apply" />
     <RootPropertyPathName Name="Description" />
     <RootPropertyPathName Name="Logout" />
+    <RootPropertyPathName Name="FriendsAdd" />
     <RootPropertyPathName Name="Register" />
     <RootPropertyPathName Name="Email" />
   </Roots.PropertyPathNames>
@@ -99,14 +100,8 @@
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemTemplate" />
-      <RootProperty Name="CanDragItems" />
       <RootProperty Name="IsDoubleTapEnabled" />
       <RootEvent Name="ItemClick" />
-      <RootEvent Name="DragEnter" />
-      <RootEvent Name="DragItemsStarting" />
-      <RootEvent Name="DragLeave" />
-      <RootEvent Name="Drop" />
-      <RootEvent Name="DragOver" />
       <RootEvent Name="DoubleTapped" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">

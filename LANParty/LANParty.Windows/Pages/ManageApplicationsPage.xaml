@@ -51,14 +51,8 @@
             <StackPanel>
                 <TextBlock Name="log"></TextBlock>
                 <ListView ItemsSource="{Binding Users}"
-                          IsItemClickEnabled="False"
+                          IsItemClickEnabled="True"
                           ItemClick="ListView_ItemClick"
-                          CanDragItems="True"
-                          DragEnter="ListView_DragEnter"
-                          DragItemsStarting="ListView_DragItemsStarting"
-                          DragLeave="ListView_DragLeave"
-                          Drop="ListView_Drop"
-                          DragOver="ListView_DragOver"
                           IsDoubleTapEnabled="True"
                           DoubleTapped="ListView_DoubleTapped">
                     <ListView.ItemTemplate>

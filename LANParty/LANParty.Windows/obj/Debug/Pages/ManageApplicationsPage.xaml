@@ -51,14 +51,8 @@
             <StackPanel>
                 <TextBlock Name="log"></TextBlock>
                 <ListView x:ConnectionId='1' ItemsSource="{Binding Users}"
-                          IsItemClickEnabled="False"
+                          IsItemClickEnabled="True"
                                                         
-                          CanDragItems="True"
-                                                        
-                                                                        
-                                                        
-                                              
-                                                      
                           IsDoubleTapEnabled="True"
                                                               >
                     <ListView.ItemTemplate>

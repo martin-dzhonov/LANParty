@@ -46,7 +46,7 @@
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
-        
+
         <Grid Grid.Row="1">
             <StackPanel>
                 <Image Name="profilePic" 
@@ -58,6 +58,9 @@
                            Name="username" 
                            Text="{Binding Username}"></TextBlock>
                 <Button x:ConnectionId='1' Content="Send Message"                     ></Button>
+                <Button Content="Add to Friends" Command="{Binding FriendsAdd}"></Button>
+                <Button Content="Logout" Command="{Binding Logout}"></Button>
+
             </StackPanel>
         </Grid>
     </Grid>
