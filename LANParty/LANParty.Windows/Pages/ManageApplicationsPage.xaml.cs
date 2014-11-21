@@ -112,7 +112,7 @@ namespace LANParty.Pages
         private async void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.singleTap = true;
-            await Task.Delay(200);
+            await Task.Delay(250);
             if (this.singleTap)
             {
                 var partyId = ((UserProfile)e.ClickedItem).ObjectId;
@@ -123,7 +123,7 @@ namespace LANParty.Pages
         private async void ListView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             this.singleTap = false;
-
+            //get listview item index
             int itemIndex = 0;
             Double coY = e.GetPosition((UIElement)sender).Y;
             ListView lv = sender as ListView;
@@ -135,7 +135,7 @@ namespace LANParty.Pages
                 itemIndex = itemIndex > lv.Items.Count ? lv.Items.Count : itemIndex;
             }
             
-            ((ApplicationsViewModel)this.DataContext).RemoveUserAtIndex(itemIndex);
+            ((ApplicationsViewModel)this.DataContext).ApproveUserAtIndex(itemIndex);
         }
        
     }

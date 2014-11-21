@@ -50,22 +50,19 @@ namespace LANParty.ViewModels
         }
 
         private int _index;
-        public async void RemoveUserAtIndex(int index)
+        public async void ApproveUserAtIndex(int index)
         {
             this._index = index;
             MessageDialog msgDialog = new MessageDialog("Approve user ?");
 
-            //OK Button
             UICommand okBtn = new UICommand("OK");
             okBtn.Invoked = OkBtnClick;
             msgDialog.Commands.Add(okBtn);
 
-            //Cancel Button
             UICommand cancelBtn = new UICommand("Cancel");
             cancelBtn.Invoked = CancelBtnClick;
             msgDialog.Commands.Add(cancelBtn);
 
-            //Show message
             msgDialog.ShowAsync();
         }
         private async void CancelBtnClick(IUICommand command)
@@ -76,11 +73,14 @@ namespace LANParty.ViewModels
         private async void OkBtnClick(IUICommand command)
         {
             ParseObject application = await this._dbRequester.GetApplicationById(this._applicationsIds[_index]);
+            ParseObject party = await this._dbRequester.GetPartyById(application["partyId"].ToString());
+            party["spots"] = (Int64)party["spots"] -1;
             application["approved"] = true;
 
             try
             {
                 await application.SaveAsync();
+                await party.SaveAsync();
                 this.Users.RemoveAt(this._index);
                 MessageDialog msgDialog = new MessageDialog("User approved !");
                 msgDialog.ShowAsync();
@@ -88,10 +88,9 @@ namespace LANParty.ViewModels
             }
             catch (Exception ex)
             {
-
+                MessageDialog msgDialog = new MessageDialog(ex.Message);
+                msgDialog.ShowAsync();
             }
-
-
         }
     }
 }
