@@ -152,5 +152,30 @@ namespace LANParty.Pages
             ((ApplicationsViewModel)this.DataContext).Users.RemoveAt(item);
             int i = 5;
         }
+
+        private void ListView_DragEnter(object sender, DragEventArgs e)
+        {
+            
+        }
+
+        private void ListView_DragItemsStarting(object sender, DragItemsStartingEventArgs e)
+        {
+            Double coY = e.GetPosition((UIElement)sender).Y;
+
+            this.log.Text = coY.ToString();
+            int i = 5;
+        }
+
+        private void ListView_DragLeave(object sender, DragEventArgs e)
+        {
+            int i = 5;
+
+        }
+
+        private void ListView_Drop(object sender, DragEventArgs e)
+        {
+            int i = 5;
+
+        }
     }
 }

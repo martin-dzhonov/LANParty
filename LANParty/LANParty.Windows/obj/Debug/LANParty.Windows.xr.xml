@@ -99,8 +99,13 @@
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="CanDragItems" />
       <RootProperty Name="IsDoubleTapEnabled" />
       <RootEvent Name="ItemClick" />
+      <RootEvent Name="DragEnter" />
+      <RootEvent Name="DragItemsStarting" />
+      <RootEvent Name="DragLeave" />
+      <RootEvent Name="Drop" />
       <RootEvent Name="DragOver" />
       <RootEvent Name="DoubleTapped" />
     </RootType>

@@ -49,9 +49,15 @@
 
         <Grid Grid.Row="1">
             <StackPanel>
+                <TextBlock Name="log"></TextBlock>
                 <ListView ItemsSource="{Binding Users}"
                           IsItemClickEnabled="False"
                           ItemClick="ListView_ItemClick"
+                          CanDragItems="True"
+                          DragEnter="ListView_DragEnter"
+                          DragItemsStarting="ListView_DragItemsStarting"
+                          DragLeave="ListView_DragLeave"
+                          Drop="ListView_Drop"
                           DragOver="ListView_DragOver"
                           IsDoubleTapEnabled="True"
                           DoubleTapped="ListView_DoubleTapped">
