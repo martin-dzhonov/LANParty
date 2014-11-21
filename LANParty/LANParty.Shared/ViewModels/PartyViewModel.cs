@@ -114,20 +114,17 @@ namespace LANParty.ViewModels
         }
 
         private string _partyId;
-        public PartyViewModel(string objectId)
+        public PartyViewModel(ParseObject party)
         {
-            this._party = new Party();
-            this._partyId = objectId;
+            this._party = new Party(party);
+            this._partyId = party.ObjectId;
             this._users = new ObservableCollection<UserProfile>();
             this._dbRequester = new ParseDatabaseRequester();
-            this.PopulateData(objectId);
+            this.PopulateData(party);
         }
 
-        private async void PopulateData(string partyId)
+        private async void PopulateData(ParseObject parseParty)
         {
-            ParseObject parseParty = await this._dbRequester.GetPartyById(partyId);
-
-            this._party = new Party(parseParty);
             ParseUser parseHost = await ((ParseUser)parseParty["host"]).FetchIfNeededAsync();
             this._users.Add(new UserProfile(parseHost));
 

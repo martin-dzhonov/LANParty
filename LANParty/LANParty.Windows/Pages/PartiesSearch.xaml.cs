@@ -109,10 +109,12 @@ namespace LANParty.Pages
 
         #endregion
 
-        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        private async void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
             var partyId = ((Party)e.ClickedItem).ObjectId;
-            this.Frame.Navigate(typeof(PartyDetailsPage), partyId);
+            ParseDatabaseRequester dbRequester = new ParseDatabaseRequester();
+            ParseObject parseParty = await dbRequester.GetPartyById(partyId);
+            this.Frame.Navigate(typeof(PartyDetailsPage), parseParty);
         }
     }
 }
