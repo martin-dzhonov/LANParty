@@ -57,7 +57,7 @@ namespace LANParty.Pages
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            this.DataContext = new RegistrationViewModel();
+            this.DataContext = new UserViewModel();
         }
 
         /// <summary>
@@ -110,33 +110,5 @@ namespace LANParty.Pages
 
         #endregion
 
-        private async void Register_Click(object sender, RoutedEventArgs e)
-        {
-            var user = new ParseUser()
-            {
-                Username = this.username.Text,
-                Password = this.passowrd.Text,
-                Email = this.email.Text
-            };
-            var file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///Assets/DefaultProfilePic.jpg"));
-            var bytes = new Byte[0];
-            using (IRandomAccessStream fileStream = await file.OpenAsync(FileAccessMode.Read))
-            {
-                var reader = new DataReader(fileStream.GetInputStreamAt(0));
-                bytes = new Byte[fileStream.Size];
-                await reader.LoadAsync((uint)fileStream.Size);
-                reader.ReadBytes(bytes);
-            }
-            ParseFile imgFile = new ParseFile("profilePic.jpg", bytes);
-            user["profilePic"] = imgFile;
-            try
-            {   
-                 await user.SignUpAsync();
-            }
-            catch (Exception ex)
-            {
-                
-            }
-        }
     }
 }

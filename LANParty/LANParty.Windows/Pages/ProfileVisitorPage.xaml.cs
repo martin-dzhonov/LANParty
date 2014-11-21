@@ -69,7 +69,7 @@ namespace LANParty.Pages
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
             string userId = e.NavigationParameter as string;
-            this.DataContext = new ProfileViewModel(userId);
+            this.DataContext = new UserViewModel(userId);
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace LANParty.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-           var objectId =  ((ProfileViewModel)this.DataContext).ObjectId;
+           var objectId =  ((UserViewModel)this.DataContext).ObjectId;
            this.Frame.Navigate(typeof(SendMessagePage), objectId);
         }
     }
