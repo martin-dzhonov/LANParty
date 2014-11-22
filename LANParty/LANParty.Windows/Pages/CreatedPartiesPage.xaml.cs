@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -105,11 +106,38 @@ namespace LANParty.Pages
         }
 
         #endregion
-
-        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        private bool singleTap = false;
+        private async void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var partyId = ((Party)e.ClickedItem).ObjectId;
-            this.Frame.Navigate(typeof(ManageApplicationsPage), partyId);
+            this.singleTap = true;
+            await Task.Delay(250);
+            if (this.singleTap)
+            {
+                var partyId = ((Party)e.ClickedItem).ObjectId;
+                this.Frame.Navigate(typeof(ManageApplicationsPage), partyId);
+            }
+        }
+
+        private void ListView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            
+            this.singleTap = false;
+
+            int itemIndex = 0;
+            Double coY = e.GetPosition((UIElement)sender).Y;
+            ListView lv = sender as ListView;
+            if (sender is ListView)
+            {
+                lv.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+                Size lvSize = lv.DesiredSize;
+                itemIndex = (int)(coY / lvSize.Height * lv.Items.Count);
+                itemIndex = itemIndex > lv.Items.Count ? lv.Items.Count : itemIndex;
+            }
+
+            string partyId =  ((UserPartiesViewModel)this.DataContext).Parties[itemIndex].ObjectId;
+
+            this.Frame.Navigate(typeof(PartyDetailsPage), partyId);
+
         }
     }
 }

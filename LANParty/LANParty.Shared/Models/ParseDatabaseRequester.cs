@@ -57,7 +57,9 @@ namespace LANParty.Models
         public async Task<IEnumerable<ParseObject>> GetApplicationsForParty(string partyId)
         {
             var query = from application in ParseObject.GetQuery("Application")
-                        where application.Get<string>("partyId").Equals(partyId)
+                        where application.Get<string>("partyId").Equals(partyId) && 
+                        application.Get<bool>("approved").Equals(false) && 
+                        application.Get<bool>("declined").Equals(false)
                         select application;
             IEnumerable<ParseObject> results = await query.FindAsync();
             return results;
@@ -66,7 +68,7 @@ namespace LANParty.Models
         public async Task<IEnumerable<ParseObject>> GetApplicantsForParty(string partyId)
         {
             var query = from application in ParseObject.GetQuery("Application")
-                        where application.Get<string>("partyId").Equals(partyId)
+                        where application.Get<string>("partyId").Equals(partyId) && application.Get<bool>("declined").Equals(false)
                         select application;
             IEnumerable<ParseObject> results = await query.FindAsync();
             List<ParseUser> results2 = new List<ParseUser>();

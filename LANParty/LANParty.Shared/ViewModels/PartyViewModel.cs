@@ -102,6 +102,7 @@ namespace LANParty.ViewModels
             }
             else
             {
+                this.IsLoading = true;
                 ParseObject application = new ParseObject("Application");
 
                 application["partyId"] = party.ObjectId;
@@ -113,11 +114,14 @@ namespace LANParty.ViewModels
                 {
                     await application.SaveAsync();
                     MessageDialog msgDialog = new MessageDialog("Successfully applied.");
+                    this.IsLoading = false;
                     await msgDialog.ShowAsync();
                 }
                 catch (Exception ex)
                 {
-
+                    MessageDialog msgDialog = new MessageDialog(ex.Message);
+                    this.IsLoading = false;
+                    msgDialog.ShowAsync();
                 }
             }
         }

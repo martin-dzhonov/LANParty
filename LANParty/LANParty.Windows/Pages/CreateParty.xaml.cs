@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Parse;
+using Windows.UI.Popups;
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace LANParty.Pages
@@ -114,7 +115,19 @@ namespace LANParty.Pages
             party["date"] = this.GetDate();
             party["host"] = ParseUser.CurrentUser;
             party["spots"] = 5;
-            await party.SaveAsync();
+            try
+            {
+                await party.SaveAsync();
+                MessageDialog msg = new MessageDialog("Party created !");
+                this.title.Text = "";
+                this.description.Text = "";
+                await msg.ShowAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageDialog msg = new MessageDialog(ex.Message);
+                msg.ShowAsync();
+            }
         }
 
         private DateTime GetDate()

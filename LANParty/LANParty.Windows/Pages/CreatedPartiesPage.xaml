@@ -54,6 +54,8 @@
                 <ListView ItemsSource="{Binding Parties}"
                           IsItemClickEnabled="True"
                           ItemClick="ListView_ItemClick"
+                          IsDoubleTapEnabled="True"
+                          DoubleTapped="ListView_DoubleTapped"
                          >
                     <ListView.ItemTemplate>
                         <DataTemplate>

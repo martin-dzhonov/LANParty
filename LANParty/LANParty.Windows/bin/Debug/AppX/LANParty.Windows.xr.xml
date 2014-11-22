@@ -110,8 +110,8 @@
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
-      <RootProperty Name="ItemTemplate" />
       <RootProperty Name="IsDoubleTapEnabled" />
+      <RootProperty Name="ItemTemplate" />
       <RootProperty Name="IsHoldingEnabled" />
       <RootEvent Name="ItemClick" />
       <RootEvent Name="DoubleTapped" />

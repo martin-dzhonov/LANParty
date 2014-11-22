@@ -54,6 +54,8 @@
                 <ListView x:ConnectionId='1' ItemsSource="{Binding Parties}"
                           IsItemClickEnabled="True"
                                                         
+                          IsDoubleTapEnabled="True"
+                                                              
                          >
                     <ListView.ItemTemplate>
                         <DataTemplate>

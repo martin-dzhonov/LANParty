@@ -81,6 +81,7 @@ namespace LANParty.ViewModels
             {
                 await application.SaveAsync();
                 this._users.RemoveAt(_index);
+                this._applicationsIds.RemoveAt(_index);
                 this.IsLoading = false;
             }
             catch (Exception ex)
@@ -115,25 +116,37 @@ namespace LANParty.ViewModels
             this.IsLoading = true;
             ParseObject application = await this._dbRequester.GetApplicationById(this._applicationsIds[_index]);
             ParseObject party = await this._dbRequester.GetPartyById(application["partyId"].ToString());
-            party["spots"] = (Int64)party["spots"] - 1;
-            application["approved"] = true;
-
-            try
+            long spots = (Int64)party["spots"];
+            if (spots <= 0)
             {
-                await application.SaveAsync();
-                await party.SaveAsync();
-                this.Users.RemoveAt(this._index);
-                MessageDialog msgDialog = new MessageDialog("User approved !");
-                this.IsLoading = false;
-                msgDialog.ShowAsync();
-
-            }
-            catch (Exception ex)
-            {
-                MessageDialog msgDialog = new MessageDialog(ex.Message);
+                MessageDialog msgDialog = new MessageDialog("No more spots left !");
                 this.IsLoading = false;
                 msgDialog.ShowAsync();
             }
+            else
+            {
+                party["spots"] = spots - 1;
+                application["approved"] = true;
+
+                try
+                {
+                    await application.SaveAsync();
+                    await party.SaveAsync();
+                    this.Users.RemoveAt(this._index);
+                    this._applicationsIds.RemoveAt(this._index);
+                    MessageDialog msgDialog = new MessageDialog("User approved !");
+                    this.IsLoading = false;
+                    msgDialog.ShowAsync();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageDialog msgDialog = new MessageDialog(ex.Message);
+                    this.IsLoading = false;
+                    msgDialog.ShowAsync();
+                }
+            }
+
         }
     }
 }

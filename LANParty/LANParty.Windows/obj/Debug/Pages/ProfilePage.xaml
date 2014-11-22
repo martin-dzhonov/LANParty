@@ -64,8 +64,8 @@
                 </StackPanel>
                 <Button x:ConnectionId='1' Content="Create Party"                     ></Button>
                 <Button x:ConnectionId='2' Content="Search for party"                       ></Button>
-                <Button x:ConnectionId='3' Content="Parites Created"                       ></Button>
-                <Button x:ConnectionId='4' Content="Parties Joined"                       ></Button>
+                <Button x:ConnectionId='3' Content="Created parties"                       ></Button>
+                <Button x:ConnectionId='4' Content="Joined parties"                       ></Button>
             </StackPanel>
         </Grid>
     </Grid>

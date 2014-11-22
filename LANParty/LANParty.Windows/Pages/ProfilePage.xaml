@@ -64,8 +64,8 @@
                 </StackPanel>
                 <Button Content="Create Party" Click="Button_Click"></Button>
                 <Button Content="Search for party" Click="Button_Click_1"></Button>
-                <Button Content="Parites Created" Click="Button_Click_2"></Button>
-                <Button Content="Parties Joined" Click="Button_Click_3"></Button>
+                <Button Content="Created parties" Click="Button_Click_2"></Button>
+                <Button Content="Joined parties" Click="Button_Click_3"></Button>
             </StackPanel>
         </Grid>
     </Grid>
