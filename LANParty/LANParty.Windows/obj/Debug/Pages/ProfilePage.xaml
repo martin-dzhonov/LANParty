@@ -48,19 +48,24 @@
         </Grid>
         <Grid Grid.Row="1">
             <StackPanel>
-                <Image Name="profilePic" 
+                <StackPanel Orientation="Horizontal">
+                    <Image Name="profilePic" 
                        Height="100" 
                        Width="100" 
                        HorizontalAlignment="Left" 
                        Source="{Binding ProfilePic, Converter={StaticResource ParseFileToBitmapImageConverter}}"></Image>
-                <TextBlock FontSize="25" 
+                    <StackPanel>
+                    <TextBlock FontSize="25"
                            Name="username"
                            Text="{Binding Username, Mode=TwoWay}" ></TextBlock>
+                        <Button x:ConnectionId='5' Content="Edit Profile"                           ></Button>
+
+                    </StackPanel>
+                </StackPanel>
                 <Button x:ConnectionId='1' Content="Create Party"                     ></Button>
-                <Button x:ConnectionId='2' Content="Edit Profile"                           ></Button>
-                <Button x:ConnectionId='3' Content="Search for party"                       ></Button>
-                <Button x:ConnectionId='4' Content="Parites Created"                       ></Button>
-                <Button x:ConnectionId='5' Content="Parties Joined"                       ></Button>
+                <Button x:ConnectionId='2' Content="Search for party"                       ></Button>
+                <Button x:ConnectionId='3' Content="Parites Created"                       ></Button>
+                <Button x:ConnectionId='4' Content="Parties Joined"                       ></Button>
             </StackPanel>
         </Grid>
     </Grid>
