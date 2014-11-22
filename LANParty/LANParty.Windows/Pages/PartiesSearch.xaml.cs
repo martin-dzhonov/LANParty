@@ -114,7 +114,7 @@ namespace LANParty.Pages
             var partyId = ((Party)e.ClickedItem).ObjectId;
             ParseDatabaseRequester dbRequester = new ParseDatabaseRequester();
             ParseObject parseParty = await dbRequester.GetPartyById(partyId);
-            this.Frame.Navigate(typeof(PartyDetailsPage), parseParty);
+            this.Frame.Navigate(typeof(PartyDetailsPage), partyId);
         }
 
         private void ListView_Holding(object sender, HoldingRoutedEventArgs e)
@@ -129,7 +129,6 @@ namespace LANParty.Pages
                 itemIndex = (int)(coY / lvSize.Height * lv.Items.Count);
                 itemIndex = itemIndex > lv.Items.Count ? lv.Items.Count : itemIndex;
             }
-            int i = 5;
         }
     }
 }

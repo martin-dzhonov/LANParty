@@ -69,7 +69,7 @@ namespace LANParty.Pages
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
-            var parseParty = (ParseObject)e.NavigationParameter;
+            var parseParty = (string)e.NavigationParameter;
             this.DataContext = new PartyViewModel(parseParty);
         }
 

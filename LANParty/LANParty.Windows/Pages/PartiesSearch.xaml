@@ -59,6 +59,9 @@
                         <DataTemplate>
                             <StackPanel>
                                 <TextBlock FontSize="25" Text="{Binding Title}"></TextBlock>
+                                <TextBlock FontSize="25" Text="{Binding Spots}"></TextBlock>
+                                <TextBlock FontSize="25" Text="{Binding Date}"></TextBlock>
+
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>

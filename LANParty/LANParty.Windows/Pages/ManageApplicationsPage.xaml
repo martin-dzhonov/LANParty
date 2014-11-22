@@ -52,10 +52,12 @@
             <StackPanel>
                 <TextBlock Name="log"></TextBlock>
                 <ListView ItemsSource="{Binding Users}"
-                          IsItemClickEnabled="True"
+                          IsItemClickEnabled="False"
                           ItemClick="ListView_ItemClick"
                           IsDoubleTapEnabled="True"
-                          DoubleTapped="ListView_DoubleTapped">
+                          DoubleTapped="ListView_DoubleTapped"
+                          IsHoldingEnabled="True"
+                          Holding="ListView_Holding">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">

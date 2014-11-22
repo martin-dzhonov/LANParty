@@ -88,15 +88,22 @@ namespace LANParty.ViewModels
         private async void ApplyForParty()
         {
             ParseObject party = await this._dbRequester.GetPartyById(this._party.ObjectId);
+            var spots = (Int64)party["spots"];
+
             if (((ParseUser)party["host"]).ObjectId == ParseUser.CurrentUser.ObjectId)
             {
                 MessageDialog msgDialog = new MessageDialog("This is your party, dummy !");
-                msgDialog.ShowAsync();
+                await msgDialog.ShowAsync();
+            }
+            else if (spots <= 0)
+            {
+                MessageDialog msgDialog = new MessageDialog("No spots left !");
+                await msgDialog.ShowAsync();
             }
             else
             {
                 ParseObject application = new ParseObject("Application");
-                
+
                 application["partyId"] = party.ObjectId;
                 application["host"] = party["host"];
                 application["guest"] = ParseUser.CurrentUser;
@@ -106,7 +113,7 @@ namespace LANParty.ViewModels
                 {
                     await application.SaveAsync();
                     MessageDialog msgDialog = new MessageDialog("Successfully applied.");
-                    msgDialog.ShowAsync();
+                    await msgDialog.ShowAsync();
                 }
                 catch (Exception ex)
                 {
@@ -115,17 +122,28 @@ namespace LANParty.ViewModels
             }
         }
 
-        public PartyViewModel(ParseObject party)
+        public PartyViewModel(string partyId)
         {
-            this._party = new Party(party);
+            this._party = new Party();
             this._users = new ObservableCollection<UserProfile>();
             this._dbRequester = new ParseDatabaseRequester();
-            this.PopulateData(party);
+            this.PopulateData(partyId);
         }
 
-        private async void PopulateData(ParseObject parseParty)
+        private async void PopulateData(string partyId)
         {
             this.IsLoading = true;
+
+            ParseObject parseParty = await this._dbRequester.GetPartyById(partyId);
+            DateTime date = (DateTime)parseParty["date"];
+            string title = parseParty["title"].ToString();
+
+            this._party.ObjectId = parseParty.ObjectId;
+            this._party.Title = title;
+            this._party.Description = parseParty["description"].ToString();
+            this._party.Spots = parseParty["spots"].ToString();
+            this._party.Date = date;
+
             ParseUser parseHost = await ((ParseUser)parseParty["host"]).FetchIfNeededAsync();
             this._users.Add(new UserProfile(parseHost));
 

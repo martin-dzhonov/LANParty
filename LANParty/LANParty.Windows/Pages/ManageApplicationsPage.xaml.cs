@@ -109,6 +109,7 @@ namespace LANParty.Pages
 
         #endregion
         private bool singleTap = false;
+        private bool holdingFired = false;
         private async void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.singleTap = true;
@@ -120,10 +121,10 @@ namespace LANParty.Pages
             }
         }
 
-        private async void ListView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+        private void ListView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
             this.singleTap = false;
-            //get listview item index
+
             int itemIndex = 0;
             Double coY = e.GetPosition((UIElement)sender).Y;
             ListView lv = sender as ListView;
@@ -134,9 +135,29 @@ namespace LANParty.Pages
                 itemIndex = (int)(coY / lvSize.Height * lv.Items.Count);
                 itemIndex = itemIndex > lv.Items.Count ? lv.Items.Count : itemIndex;
             }
-            
-            ((ApplicationsViewModel)this.DataContext).ApproveUserAtIndex(itemIndex);
+
+            ((ApplicationsViewModel)this.DataContext).DeclineUserAtIndex(itemIndex);
         }
-       
+
+        private void ListView_Holding(object sender, HoldingRoutedEventArgs e)
+        {
+            this.singleTap = false;
+            this.holdingFired = !holdingFired;
+            int itemIndex = 0;
+            Double coY = e.GetPosition((UIElement)sender).Y;
+            ListView lv = sender as ListView;
+            if (sender is ListView)
+            {
+                lv.Measure(new Size(double.PositiveInfinity, double.PositiveInfinity));
+                Size lvSize = lv.DesiredSize;
+                itemIndex = (int)(coY / lvSize.Height * lv.Items.Count);
+                itemIndex = itemIndex > lv.Items.Count ? lv.Items.Count : itemIndex;
+            }
+            if (holdingFired)
+            {
+                ((ApplicationsViewModel)this.DataContext).ApproveUserAtIndex(itemIndex);
+            }
+        }
+
     }
 }

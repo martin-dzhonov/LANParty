@@ -6,5 +6,6 @@
     xmlns:local="using:LANParty">
     <Application.Resources>
         <converters:ParseFileToBitmapImageConverter x:Name="ParseFileToBitmapImageConverter"></converters:ParseFileToBitmapImageConverter>
+        
     </Application.Resources>
 </Application>

@@ -52,8 +52,9 @@
             <StackPanel>
                 <StackPanel DataContext="{Binding Party}">
                     <TextBlock FontSize="25" Text="{Binding Title}"></TextBlock>
-                    <TextBlock FontSize="25" Text="{Binding Description, Mode=TwoWay}"></TextBlock>
-                    <Button Content="Apply" Command="{Binding Apply}"></Button>
+                    <TextBlock FontSize="25" Text="{Binding Description}"></TextBlock>
+                    <TextBlock FontSize="25" Text="{Binding Spots}"></TextBlock>
+                    <TextBlock FontSize="25" Text="{Binding Date}"></TextBlock>
                 </StackPanel>
                 <StackPanel>
                     <ListView ItemsSource="{Binding Users}"
@@ -69,6 +70,7 @@
                         </ListView.ItemTemplate>
                     </ListView>
                 </StackPanel>
+                <Button Content="Apply" Command="{Binding Apply}"></Button>
             </StackPanel>
         </Grid>
     </Grid>

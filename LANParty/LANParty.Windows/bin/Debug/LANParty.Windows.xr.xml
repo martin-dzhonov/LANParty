@@ -8,6 +8,8 @@
     <RootPropertyPathName Name="NavigationHelper" />
     <RootPropertyPathName Name="GoBackCommand" />
     <RootPropertyPathName Name="Parties" />
+    <RootPropertyPathName Name="Date" />
+    <RootPropertyPathName Name="Spots" />
     <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="IsLoading" />
     <RootPropertyPathName Name="Username" />
@@ -16,8 +18,8 @@
     <RootPropertyPathName Name="Login" />
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="Users" />
-    <RootPropertyPathName Name="Party" />
     <RootPropertyPathName Name="Apply" />
+    <RootPropertyPathName Name="Party" />
     <RootPropertyPathName Name="Description" />
     <RootPropertyPathName Name="Logout" />
     <RootPropertyPathName Name="FriendsAdd" />
