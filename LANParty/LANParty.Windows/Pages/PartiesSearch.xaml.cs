@@ -112,8 +112,6 @@ namespace LANParty.Pages
         private async void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
             var partyId = ((Party)e.ClickedItem).ObjectId;
-            ParseDatabaseRequester dbRequester = new ParseDatabaseRequester();
-            ParseObject parseParty = await dbRequester.GetPartyById(partyId);
             this.Frame.Navigate(typeof(PartyDetailsPage), partyId);
         }
 

@@ -1,5 +1,4 @@
 ﻿using LANParty.Common;
-using LANParty.Models;
 using LANParty.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -23,7 +22,7 @@ namespace LANParty.Pages
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class InboxPage : Page
+    public sealed partial class MessagePage : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -47,13 +46,12 @@ namespace LANParty.Pages
         }
 
 
-        public InboxPage()
+        public MessagePage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            this.DataContext = new MessagesViewModel();
         }
 
         /// <summary>
@@ -69,6 +67,8 @@ namespace LANParty.Pages
         /// session. The state will be null the first time a page is visited.</param>
         private void navigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
+            var parseParty = (string)e.NavigationParameter;
+            this.DataContext = new MessageViewModel(parseParty);
         }
 
         /// <summary>
@@ -105,11 +105,5 @@ namespace LANParty.Pages
         }
 
         #endregion
-
-        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            var partyId = ((Message)e.ClickedItem).ObjectId;
-            this.Frame.Navigate(typeof(MessagePage), partyId);
-        }
     }
 }

@@ -33,6 +33,15 @@ namespace LANParty.Models
             return result;
         }
 
+        public async Task<ParseObject> GetMessageById(string objectId)
+        {
+            var query = from party in ParseObject.GetQuery("Message")
+                        where party.Get<string>("objectId").Equals(objectId)
+                        select party;
+            ParseObject result = await query.FirstOrDefaultAsync();
+            return result;
+        }
+
         public async Task<IEnumerable<ParseObject>> GetCreatedPartiesForUser(ParseUser user)
         {
             var query = from party in ParseObject.GetQuery("Party")

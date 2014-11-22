@@ -7,6 +7,7 @@ namespace LANParty.Models
 {
    public class Message
     {
+        public string ObjectId { get; set; }
         public string SenderId { get; set; }
         public string RevieverId { get; set; }
 
@@ -15,6 +16,7 @@ namespace LANParty.Models
 
         public Message(ParseObject obj)
         {
+            this.ObjectId = obj.ObjectId;
             this.SenderId = obj["senderId"].ToString();
             this.RevieverId = obj["recieverId"].ToString();
             this.Title = obj["title"].ToString();

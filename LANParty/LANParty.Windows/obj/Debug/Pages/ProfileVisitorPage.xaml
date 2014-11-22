@@ -50,8 +50,6 @@
                            Text="{Binding Username}"></TextBlock>
                 <Button x:ConnectionId='1' Content="Send Message"                     ></Button>
                 <Button Content="Add to Friends" Command="{Binding FriendsAdd}"></Button>
-                <Button Content="Logout" Command="{Binding Logout}"></Button>
-
             </StackPanel>
         </Grid>
     </Grid>

@@ -12,12 +12,15 @@
     <RootPropertyPathName Name="Spots" />
     <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="IsLoading" />
-    <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="ProfilePic" />
     <RootPropertyPathName Name="Messages" />
     <RootPropertyPathName Name="Login" />
     <RootPropertyPathName Name="Password" />
+    <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="Users" />
+    <RootPropertyPathName Name="Reply" />
+    <RootPropertyPathName Name="Body" />
+    <RootPropertyPathName Name="SenderUsername" />
     <RootPropertyPathName Name="Apply" />
     <RootPropertyPathName Name="Party" />
     <RootPropertyPathName Name="Description" />
@@ -35,6 +38,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="DataContext" />
       <RootProperty Name="Content" />
+      <RootProperty Name="Resources" />
       <RootProperty Name="BottomAppBar" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
@@ -145,6 +149,11 @@
     <RootType FullName="LANParty.Pages.JoinedParties" />
     <RootType FullName="LANParty.Pages.MainPage" />
     <RootType FullName="LANParty.Pages.ManageApplicationsPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.HyperlinkButton">
+      <RootProperty Name="Content" />
+      <RootProperty Name="FontSize" />
+    </RootType>
+    <RootType FullName="LANParty.Pages.MessagePage" />
     <RootType FullName="LANParty.Pages.PartiesSearch" />
     <RootType FullName="LANParty.Pages.PartyDetailsPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">

@@ -116,7 +116,6 @@ namespace LANParty.Pages
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             ParseUser currentUser = ParseUser.CurrentUser;
-            currentUser.Username = this.username.Text;
             byte[] bytes = ConvertBitmapToByteArray(this.pBitmap);
             ParseFile imgFile = new ParseFile("profilePic2.jpg", bytes);
             currentUser["profilePic"] = imgFile;

@@ -41,6 +41,8 @@
         <Grid Grid.Row="1">
             <StackPanel>
                 <ListView ItemsSource="{Binding Messages}"
+                          IsItemClickEnabled="True"
+                          ItemClick="ListView_ItemClick"
                           >
                     <ListView.ItemTemplate>
                         <DataTemplate>
