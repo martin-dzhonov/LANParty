@@ -147,6 +147,7 @@ namespace LANParty.ViewModels
 
         private async void RegisterUser()
         {
+            this.IsLoading = true;
             var user = new ParseUser()
             {
                 Username = this.Username,
@@ -171,11 +172,13 @@ namespace LANParty.ViewModels
                 this.Username = "";
                 this.Password = "";
                 this.Email = "";
+                this.IsLoading = false;
                 msgDialog.ShowAsync();
             }
             catch (Exception ex)
             {
                 MessageDialog msgDialog = new MessageDialog(ex.Message, "Error");
+                this.IsLoading = false;
                 msgDialog.ShowAsync();
             }
         }

@@ -47,6 +47,7 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         <Grid Grid.Row="1">
+            <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
             <StackPanel>
                 <TextBox Name="username" Text="{Binding Username, Mode=TwoWay}"></TextBox>
                 <TextBox Name="password" Text="{Binding Password, Mode=TwoWay}"></TextBox>
@@ -54,10 +55,19 @@
                 <Button Content="Register" Click="Button_Click"></Button>
                 <Button Content="DO SHIT" Click="Button_Click_2"></Button>
                 <TextBlock Name="log" Text="log"></TextBlock>
-                <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
             </StackPanel>
         </Grid>
-
     </Grid>
-    
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Label="Refresh" Icon="Refresh"/>
+            <AppBarButton Label="Help" Icon="Help" />
+
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="Edit" Icon="Edit"/>
+                <AppBarButton Label="Remove" Icon="Remove"/>
+                <AppBarButton Label="Add" Icon="Add"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>
