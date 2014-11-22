@@ -16,6 +16,7 @@
     <RootPropertyPathName Name="Login" />
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="Users" />
+    <RootPropertyPathName Name="Party" />
     <RootPropertyPathName Name="Apply" />
     <RootPropertyPathName Name="Description" />
     <RootPropertyPathName Name="Logout" />
@@ -62,6 +63,7 @@
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Children" />
       <RootProperty Name="Orientation" />
+      <RootProperty Name="DataContext" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="Name" />

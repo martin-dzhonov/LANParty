@@ -12,9 +12,29 @@ namespace LANParty.ViewModels
 {
     public class PartyViewModel : Bindable
     {
-        private Party _party;
         private ParseDatabaseRequester _dbRequester;
+
+        private Party _party;
+
+        public Party Party
+        {
+            get
+            {
+                return this._party;
+            }
+            set
+            {
+                if (value == this._party)
+                {
+                    return;
+                }
+                this._party = value;
+                OnPropertyChanged();
+            }
+        }
+
         private ObservableCollection<UserProfile> _users;
+
         public ObservableCollection<UserProfile> Users
         {
             get
@@ -32,55 +52,6 @@ namespace LANParty.ViewModels
             }
         }
 
-        public string ObjectId
-        {
-            get
-            {
-                return this._party.ObjectId;
-            }
-            set
-            {
-                if (value == this._party.ObjectId)
-                {
-                    return;
-                }
-                this._party.ObjectId = value;
-                OnPropertyChanged();
-            }
-        }
-        public string Title
-        {
-            get
-            {
-                return this._party.Title;
-            }
-            set
-            {
-                if (value == this._party.Title)
-                {
-                    return;
-                }
-                this._party.Title = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public string Description
-        {
-            get
-            {
-                return this._party.Description;
-            }
-            set
-            {
-                if (value == this._party.Description)
-                {
-                    return;
-                }
-                this._party.Description = value;
-                OnPropertyChanged();
-            }
-        }
         private bool _isLoading;
 
         public bool IsLoading
@@ -99,7 +70,9 @@ namespace LANParty.ViewModels
                 OnPropertyChanged();
             }
         }
+
         private ICommand _applyCommand;
+
         public ICommand Apply
         {
             get
@@ -111,6 +84,7 @@ namespace LANParty.ViewModels
                 return this._applyCommand;
             }
         }
+
         private async void ApplyForParty()
         {
             ParseObject party = await this._dbRequester.GetPartyById(this._party.ObjectId);
@@ -141,11 +115,9 @@ namespace LANParty.ViewModels
             }
         }
 
-        private string _partyId;
         public PartyViewModel(ParseObject party)
         {
             this._party = new Party(party);
-            this._partyId = party.ObjectId;
             this._users = new ObservableCollection<UserProfile>();
             this._dbRequester = new ParseDatabaseRequester();
             this.PopulateData(party);

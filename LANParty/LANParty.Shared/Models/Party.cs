@@ -1,11 +1,12 @@
-﻿using Parse;
+﻿using LANParty.Common;
+using Parse;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace LANParty.Models
 {
-    public class Party
+    public class Party : Bindable
     {
         public string ObjectId { get; set; }
         public string Title { get; set; }
