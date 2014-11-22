@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
+using Windows.ApplicationModel;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Media.Capture;
@@ -111,25 +113,34 @@ namespace LANParty.Pages
 
         #endregion
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
             ParseUser currentUser = ParseUser.CurrentUser;
             currentUser.Username = this.username.Text;
-            var image = this.profilePic;
-            currentUser.SaveAsync();
+            byte[] bytes = ConvertBitmapToByteArray(this.pBitmap);
+            ParseFile imgFile = new ParseFile("profilePic2.jpg", bytes);
+            currentUser["profilePic"] = imgFile;
+            await currentUser.SaveAsync();
         }
+        byte[] ConvertBitmapToByteArray(WriteableBitmap bitmap)
+        {
+            WriteableBitmap bmp = bitmap;
+
+            using (Stream stream = bmp.PixelBuffer.AsStream())
+            {
+                MemoryStream memoryStream = new MemoryStream();
+                stream.CopyTo(memoryStream);
+                return memoryStream.ToArray();
+            }
+        }
+
+        private WriteableBitmap pBitmap;
         private async void PickFile()
         {
-           
+
         }
         async private void CameraCapture()
         {
-            // Remember to set permissions in the manifest!
-
-            // using Windows.Media.Capture;
-            // using Windows.Storage;
-            // using Windows.UI.Xaml.Media.Imaging;
-
             CameraCaptureUI cameraUI = new CameraCaptureUI();
 
             cameraUI.PhotoSettings.AllowCropping = false;
@@ -145,11 +156,6 @@ namespace LANParty.Pages
 
                     BitmapImage bitmapCamera = new BitmapImage();
                     bitmapCamera.SetSource(streamCamera);
-                    // To display the image in a XAML image object, do this:
-                    // myImage.Source = bitmapCamera;
-
-                    // Convert the camera bitap to a WriteableBitmap object, 
-                    // which is often a more useful format.
 
                     int width = bitmapCamera.PixelWidth;
                     int height = bitmapCamera.PixelHeight;
@@ -159,6 +165,7 @@ namespace LANParty.Pages
                     using (var stream = await capturedMedia.OpenAsync(FileAccessMode.Read))
                     {
                         wBitmap.SetSource(stream);
+                        this.pBitmap = wBitmap;
                         this.profilePic.Source = wBitmap;
                     }
                 }

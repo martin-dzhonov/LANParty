@@ -29,6 +29,8 @@
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <Capability Name="picturesLibrary" />
+    <DeviceCapability Name="webcam" />
   </Capabilities>
   <build:Metadata>
     <build:Item Name="SharedGUID" Value="377f8e39-7b89-445e-8777-5bc5d7b135ea" />
