@@ -55,7 +55,8 @@
                     <DatePicker Margin="20 0 0 0" Name="datePicker" ></DatePicker>
                     
                 </StackPanel>
-                <ComboBox Name="categoryComboBox">
+                <ComboBox Name="categoryComboBox"
+                          SelectedIndex="0">
                     <TextBlock Text="Dota2"></TextBlock>
                     <TextBlock Text="League Of Legends"></TextBlock>
                     <TextBlock Text="Other"></TextBlock>

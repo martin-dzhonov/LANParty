@@ -106,27 +106,35 @@ namespace LANParty.Pages
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            var category = ((TextBlock)this.categoryComboBox.SelectedItem).Text;
-
-            ParseObject party = new ParseObject("Party");
-            party["title"] = this.title.Text;
-            party["description"] = this.description.Text;
-            party["category"] = category;
-            party["date"] = this.GetDate();
-            party["host"] = ParseUser.CurrentUser;
-            party["spots"] = 5;
-            try
+            if (((TextBlock)this.categoryComboBox.SelectedItem).Text == null)
             {
-                await party.SaveAsync();
-                MessageDialog msg = new MessageDialog("Party created !");
-                this.title.Text = "";
-                this.description.Text = "";
-                await msg.ShowAsync();
-            }
-            catch (Exception ex)
-            {
-                MessageDialog msg = new MessageDialog(ex.Message);
+                MessageDialog msg = new MessageDialog("No category selected !");
                 msg.ShowAsync();
+            }
+            else
+            {
+                var category = ((TextBlock)this.categoryComboBox.SelectedItem).Text;
+
+                ParseObject party = new ParseObject("Party");
+                party["title"] = this.title.Text;
+                party["description"] = this.description.Text;
+                party["category"] = category;
+                party["date"] = this.GetDate();
+                party["host"] = ParseUser.CurrentUser;
+                party["spots"] = 5;
+                try
+                {
+                    await party.SaveAsync();
+                    MessageDialog msg = new MessageDialog("Party created !");
+                    this.title.Text = "";
+                    this.description.Text = "";
+                    await msg.ShowAsync();
+                }
+                catch (Exception ex)
+                {
+                    MessageDialog msg = new MessageDialog(ex.Message);
+                    msg.ShowAsync();
+                }
             }
         }
 

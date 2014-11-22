@@ -120,7 +120,7 @@ namespace LANParty.Pages
 
         private void ListView_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
         {
-            
+
             this.singleTap = false;
 
             int itemIndex = 0;
@@ -134,10 +134,9 @@ namespace LANParty.Pages
                 itemIndex = itemIndex > lv.Items.Count ? lv.Items.Count : itemIndex;
             }
 
-            string partyId =  ((UserPartiesViewModel)this.DataContext).Parties[itemIndex].ObjectId;
+            string partyId = ((UserPartiesViewModel)this.DataContext).Parties[itemIndex].ObjectId;
 
             this.Frame.Navigate(typeof(PartyDetailsPage), partyId);
-
         }
     }
 }
