@@ -44,6 +44,7 @@
                 <TextBox Name="password" Text="{Binding Password, Mode=TwoWay}"></TextBox>
                 <Button Content="Login" Command="{Binding Login}"></Button>
                 <Button x:ConnectionId='1' Content="Register"                     ></Button>
+                <Button x:ConnectionId='2' Content="Test"                       ></Button>
             </StackPanel>
         </Grid>
 

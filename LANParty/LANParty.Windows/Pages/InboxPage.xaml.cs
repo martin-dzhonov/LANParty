@@ -81,6 +81,7 @@ namespace LANParty.Pages
         /// serializable state.</param>
         private void navigationHelper_SaveState(object sender, SaveStateEventArgs e)
         {
+            
         }
 
         #region NavigationHelper registration

@@ -16,6 +16,8 @@ using Windows.UI.Xaml.Navigation;
 using Parse;
 using LANParty.Models;
 using LANParty.ViewModels;
+using Windows.Networking.Connectivity;
+using Windows.UI.Popups;
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace LANParty.Pages
@@ -119,6 +121,26 @@ namespace LANParty.Pages
         }
         private void AddAppBarButton_Click(object sender, RoutedEventArgs e)
         {
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (this.IsConnected())
+            {
+                MessageDialog dialog = new MessageDialog("INTERNET CONNECTED");
+                dialog.ShowAsync();
+            }
+            else
+            {
+                MessageDialog dialog = new MessageDialog("NOT CONNECTED");
+                dialog.ShowAsync();
+            }
+        }
+        private bool IsConnected()
+        {
+            ConnectionProfile connections = NetworkInformation.GetInternetConnectionProfile();
+            bool internet = connections != null && connections.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess;
+            return internet;
         }
     }
 }
