@@ -59,17 +59,7 @@
         </Grid>
 
     </Grid>
-    <Page.BottomAppBar>
-        <CommandBar>
-            <AppBarButton Label="Refresh" Icon="Refresh"/>
-            <AppBarButton Label="Help" Icon="Help" />
+    
 
-            <CommandBar.SecondaryCommands>
-                <AppBarButton Label="Edit" Icon="Edit"/>
-                <AppBarButton Label="Remove" Icon="Remove"/>
-                <AppBarButton Label="Add" Icon="Add"/>
-            </CommandBar.SecondaryCommands>
-        </CommandBar>
-    </Page.BottomAppBar>
 </Page>
 

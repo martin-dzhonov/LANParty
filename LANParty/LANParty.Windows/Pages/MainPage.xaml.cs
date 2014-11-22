@@ -117,5 +117,8 @@ namespace LANParty.Pages
             //var asd = await req.GetApplicationsForParty("Fbb2YWBNDZ");
            // this.Frame.Navigate(typeof(ProfileVisitorPage), ParseUser.CurrentUser.ObjectId);
         }
+        private void AddAppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }

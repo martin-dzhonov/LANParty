@@ -32,6 +32,7 @@
       <RootProperty Name="DataContext" />
       <RootProperty Name="Resources" />
       <RootProperty Name="Content" />
+      <RootProperty Name="BottomAppBar" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Data.Binding">
       <RootProperty Name="RelativeSource" />
@@ -142,6 +143,16 @@
     <RootType FullName="LANParty.Pages.ManageApplicationsPage" />
     <RootType FullName="LANParty.Pages.PartiesSearch" />
     <RootType FullName="LANParty.Pages.PartyDetailsPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
+      <RootProperty Name="IsOpen" />
+      <RootProperty Name="PrimaryCommands" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
+      <RootProperty Name="Label" />
+      <RootProperty Name="Icon" />
+      <RootProperty Name="Command" />
+      <RootEvent Name="Click" />
+    </RootType>
     <RootType FullName="LANParty.Pages.ProfilePage" />
     <RootType FullName="LANParty.Pages.ProfileVisitorPage" />
     <RootType FullName="LANParty.Pages.RegisterPage" />
