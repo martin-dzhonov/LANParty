@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
+using Windows.UI.Popups;
 
 namespace LANParty.ViewModels
 {
@@ -113,20 +114,30 @@ namespace LANParty.ViewModels
         private async void ApplyForParty()
         {
             ParseObject party = await this._dbRequester.GetPartyById(this._party.ObjectId);
-
-            ParseObject application = new ParseObject("Application");
-            application["partyId"] = party.ObjectId;
-            application["host"] = party["host"];
-            application["guest"] = ParseUser.CurrentUser;
-            application["approved"] = false;
-            application["declined"] = false;
-            try
+            if (((ParseUser)party["host"]).ObjectId == ParseUser.CurrentUser.ObjectId)
             {
-                await application.SaveAsync();
+                MessageDialog msgDialog = new MessageDialog("This is your party, dummy !");
+                msgDialog.ShowAsync();
             }
-            catch (Exception ex)
+            else
             {
+                ParseObject application = new ParseObject("Application");
+                
+                application["partyId"] = party.ObjectId;
+                application["host"] = party["host"];
+                application["guest"] = ParseUser.CurrentUser;
+                application["approved"] = false;
+                application["declined"] = false;
+                try
+                {
+                    await application.SaveAsync();
+                    MessageDialog msgDialog = new MessageDialog("Successfully applied.");
+                    msgDialog.ShowAsync();
+                }
+                catch (Exception ex)
+                {
 
+                }
             }
         }
 

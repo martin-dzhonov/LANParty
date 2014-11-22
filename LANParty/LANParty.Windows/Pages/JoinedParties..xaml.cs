@@ -1,6 +1,7 @@
 ﻿using LANParty.Common;
 using LANParty.Models;
 using LANParty.ViewModels;
+using Parse;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -107,9 +108,10 @@ namespace LANParty.Pages
 
         #endregion
 
-        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        private async void ListView_ItemClick(object sender, ItemClickEventArgs e)
         {
-            var partyId = ((Party)e.ClickedItem).ObjectId;
+            ParseDatabaseRequester requester = new ParseDatabaseRequester();
+            ParseObject partyId =  await requester.GetPartyById(((Party)e.ClickedItem).ObjectId);
             this.Frame.Navigate(typeof(PartyDetailsPage), partyId);
         }
     }
