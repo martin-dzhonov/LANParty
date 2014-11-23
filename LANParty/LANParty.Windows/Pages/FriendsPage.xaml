@@ -32,14 +32,16 @@
                 <ColumnDefinition Width="120"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+
             <Button x:Name="backButton" Margin="39,59,39,0" Command="{Binding NavigationHelper.GoBackCommand, ElementName=pageRoot}"
                         Style="{StaticResource NavigationBackButtonNormalStyle}"
                         VerticalAlignment="Top"
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button"/>
+            <AppBarButton Grid.Column="1"  HorizontalAlignment="Right" Label="Friend Requests" Icon="AddFriend" Click="AppBar_Requests_Click" Height="96" Margin="0,45,14,-1"/>
             <TextBlock x:Name="pageTitle" Text="Friends" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="10,0,20,41"/>
         </Grid>
 
         <Grid Grid.Row="1">
@@ -51,6 +53,7 @@
                 </ListView>
             </StackPanel>
             <ProgressRing Foreground="Yellow" IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
+
         </Grid>
     </Grid>
 </Page>

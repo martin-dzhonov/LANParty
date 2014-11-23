@@ -44,14 +44,13 @@
                         <TextBlock FontSize="25"
                                    Margin="15 25 0 0"
                            Text="{Binding Username, Mode=TwoWay}" ></TextBlock>
-                        <Button x:ConnectionId='6' Margin="10 20 0 0 " Style="{StaticResource ButtonProfile}" Content="Edit Profile"                           ></Button>
+                        <Button x:ConnectionId='5' Margin="10 20 0 0 " Style="{StaticResource ButtonProfile}" Content="Edit Profile"                           ></Button>
                     </StackPanel>
                 </StackPanel>
                 <Button x:ConnectionId='1' Style="{StaticResource ButtonProfile}" Content="Search for party"                       ></Button>
                 <Button x:ConnectionId='2' Style="{StaticResource ButtonProfile}" Content="Created parties"                       ></Button>
                 <Button x:ConnectionId='3' Style="{StaticResource ButtonProfile}" Content="Joined parties"                       ></Button>
-                <Button x:ConnectionId='4' Style="{StaticResource ButtonProfile}" Content="Friend requests"                       ></Button>
-                <Button x:ConnectionId='5' Style="{StaticResource ButtonProfile}" Content="Create Party"                     ></Button>
+                <Button x:ConnectionId='4' Style="{StaticResource ButtonProfile}" Content="Create Party"                     ></Button>
 
             </StackPanel>
         </Grid>
@@ -59,8 +58,8 @@
     <Page.BottomAppBar>
         <CommandBar IsOpen="True" IsSticky="True">
             <AppBarButton Label="Logout" Icon="ClosePane" Command="{Binding Logout}"/>
-            <AppBarButton x:ConnectionId='7' Label="Inbox" Icon="Mail"                       />
-            <AppBarButton x:ConnectionId='8' Label="Friends" Icon="People"                           />
+            <AppBarButton x:ConnectionId='6' Label="Inbox" Icon="Mail"                       />
+            <AppBarButton x:ConnectionId='7' Label="Friends" Icon="People"                           />
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

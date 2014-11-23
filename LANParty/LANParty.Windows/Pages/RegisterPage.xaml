@@ -10,7 +10,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-  
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
@@ -39,10 +39,23 @@
         </Grid>
         <Grid Grid.Row="1">
             <StackPanel>
-                <TextBox Name="email" Text="{Binding Email, Mode=TwoWay}" ></TextBox>
-                <TextBox Name="username" Text="{Binding Username, Mode=TwoWay}"></TextBox>
-                <TextBox Name="passowrd" Text="{Binding Password, Mode=TwoWay}"></TextBox>
-                <Button Content="Register" Command="{Binding Register}"></Button>
+                <TextBox PlaceholderText="Username"
+                         HorizontalAlignment="Left"
+                         Style="{StaticResource TBSmall}"
+                         Name="username" Text="{Binding Username, Mode=TwoWay}"></TextBox>
+                <TextBox PlaceholderText="Email"
+                         HorizontalAlignment="Left"
+                         Style="{StaticResource TBSmall}"
+                         Name="email"
+                         Text="{Binding Email, Mode=TwoWay}" ></TextBox>
+                <TextBox PlaceholderText="Password"
+                         HorizontalAlignment="Left"
+                         Style="{StaticResource TBSmall}"
+                         Name="passowrd"
+                         Text="{Binding Password, Mode=TwoWay}"></TextBox>
+                <Button Style="{StaticResource ButtonProfile}"
+                        Content="Register"
+                        Command="{Binding Register}"></Button>
             </StackPanel>
             <ProgressRing  Foreground="Yellow" IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
         </Grid>

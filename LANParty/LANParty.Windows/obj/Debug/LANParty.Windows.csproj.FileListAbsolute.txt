@@ -178,4 +178,3 @@ C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\St
 C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Styles\MainStyles.g.i.cs
 C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Styles\MainStyles.g.cs
 C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Styles\MainStyles.xaml
-C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Styles\MainStyles.xbf

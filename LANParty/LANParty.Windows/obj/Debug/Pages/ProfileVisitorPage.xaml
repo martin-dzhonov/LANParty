@@ -39,19 +39,24 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
-            <StackPanel>            
-                <Image Name="profilePic" 
-                       Height="100" 
-                       Width="100"
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Image Name="profilePic" 
+                       Margin="15 10 10 10"
+                       Height="150" 
+                       Width="150" 
                        HorizontalAlignment="Left" 
                        Source="{Binding ProfilePic, Converter={StaticResource ParseFileToBitmapImageConverter}}"></Image>
-                <TextBlock FontSize="25" 
-                           Name="username" 
-                           Text="{Binding Username}"></TextBlock>
-                <Button x:ConnectionId='1' Content="Send Message"                     ></Button>
-                <Button Content="Add to Friends" Command="{Binding FriendsAdd}"></Button>
+
+                        <TextBlock FontSize="25"
+                                   Margin="15 25 0 0"
+                           Text="{Binding Username, Mode=TwoWay}" ></TextBlock>
+
+                </StackPanel>
+                <Button x:ConnectionId='1' Style="{StaticResource ButtonProfile}" Content="Send Message"                     ></Button>
+                <Button Style="{StaticResource ButtonProfile}" Content="Add to Friends" Command="{Binding FriendsAdd}"></Button>
             </StackPanel>
+            <ProgressRing  Foreground="Yellow" IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
         </Grid>
     </Grid>
     

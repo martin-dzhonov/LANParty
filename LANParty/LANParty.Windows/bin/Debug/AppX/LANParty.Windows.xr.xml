@@ -192,6 +192,15 @@
     <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
       <RootProperty Name="Content" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Label" />
+      <RootProperty Name="Icon" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Command" />
+      <RootEvent Name="Click" />
+    </RootType>
     <RootType FullName="LANParty.Pages.FriendsPage" />
     <RootType FullName="LANParty.Pages.InboxPage" />
     <RootType FullName="LANParty.Pages.JoinedParties" />
@@ -200,12 +209,6 @@
       <RootProperty Name="IsOpen" />
       <RootProperty Name="IsSticky" />
       <RootProperty Name="PrimaryCommands" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
-      <RootProperty Name="Label" />
-      <RootProperty Name="Icon" />
-      <RootProperty Name="Command" />
-      <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="LANParty.Pages.ManageApplicationsPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.HyperlinkButton">

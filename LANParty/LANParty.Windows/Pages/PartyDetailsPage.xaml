@@ -41,7 +41,7 @@
         <Grid Grid.Row="1">
             <StackPanel>
                 <StackPanel DataContext="{Binding Party}">
-                    <TextBlock Margin="15 15 0 0" FontSize="40" Text="{Binding Title}"></TextBlock>
+                    <TextBlock Margin="15 15 0 0" FontSize="38" Text="{Binding Title}"></TextBlock>
                     <TextBlock Margin="15 15 0 0" FontSize="25" Text="{Binding Description}"></TextBlock>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="15 15 0 0" FontSize="25" Text="Spots left: "></TextBlock>

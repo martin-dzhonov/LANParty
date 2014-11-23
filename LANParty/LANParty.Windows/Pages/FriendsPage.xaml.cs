@@ -109,5 +109,10 @@ namespace LANParty.Pages
         }
 
         #endregion
+
+        private void AppBar_Requests_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(FriendRequestsPage));
+        }
     }
 }

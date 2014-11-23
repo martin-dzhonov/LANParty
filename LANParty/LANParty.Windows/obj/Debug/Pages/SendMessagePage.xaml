@@ -10,7 +10,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-   
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
@@ -40,9 +40,9 @@
 
         <Grid Grid.Row="1">
             <StackPanel>
-                <TextBox Name="title"></TextBox>
-                <TextBox Name="description"></TextBox>
-                <Button x:ConnectionId='1' Content="Send"                     ></Button>
+                <TextBox PlaceholderText="Title" HorizontalAlignment="Left" Style="{StaticResource TBSmall}" Name="title"></TextBox>
+                <TextBox HorizontalAlignment="Left" Style="{StaticResource TBBig}" Name="description"></TextBox>
+                <Button x:ConnectionId='1' HorizontalAlignment="Left" Style="{StaticResource ButtonProfile}" Content="Send"                     ></Button>
             </StackPanel>
         </Grid>
     </Grid>

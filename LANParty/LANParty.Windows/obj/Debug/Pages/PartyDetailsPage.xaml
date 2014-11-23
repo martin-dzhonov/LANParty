@@ -39,10 +39,9 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
             <StackPanel>
                 <StackPanel DataContext="{Binding Party}">
-                    <TextBlock Margin="15 15 0 0" FontSize="40" Text="{Binding Title}"></TextBlock>
+                    <TextBlock Margin="15 15 0 0" FontSize="38" Text="{Binding Title}"></TextBlock>
                     <TextBlock Margin="15 15 0 0" FontSize="25" Text="{Binding Description}"></TextBlock>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Margin="15 15 0 0" FontSize="25" Text="Spots left: "></TextBlock>
@@ -61,6 +60,7 @@
                 </StackPanel>
                 <Button Style="{StaticResource ButtonProfile}" Content="Apply" Command="{Binding Apply}"></Button>
             </StackPanel>
+            <ProgressRing  Foreground="Yellow" IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
         </Grid>
     </Grid>
     
