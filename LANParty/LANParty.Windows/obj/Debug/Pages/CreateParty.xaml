@@ -38,21 +38,39 @@
         </Grid>
         <Grid Grid.Row="1">
             <StackPanel>
-                <TextBox Name="title" Text="Title"></TextBox>
-                <TextBox Name="description" Text="Description"></TextBox>
+                <TextBox Style="{StaticResource TBSmall}"
+                         HorizontalAlignment="Left"
+                         PlaceholderText="Title"
+                         Name="title"></TextBox>
+                <TextBox Style="{StaticResource TBBig}"
+                         HorizontalAlignment="Left"
+                         PlaceholderText="Additional information.."
+                         Name="description" ></TextBox>
                 <StackPanel Orientation="Horizontal">
-                    <TimePicker  Name="timePicker"></TimePicker>
-                    <DatePicker Margin="20 0 0 0" Name="datePicker" ></DatePicker>
-                    
+                    <TimePicker  Name="timePicker"
+                                 Margin="10 20 0 0"></TimePicker>
+                    <DatePicker Name="datePicker"
+                                Margin="20 20 0 0"></DatePicker>
                 </StackPanel>
-                <ComboBox Name="categoryComboBox"
+                <ComboBox Style="{StaticResource CategoryPickerComboBoxSmall}"
+                          HorizontalAlignment="Left"
+                          Name="categoryComboBox"
                           SelectedIndex="0">
                     <TextBlock Text="Dota2"></TextBlock>
                     <TextBlock Text="League Of Legends"></TextBlock>
                     <TextBlock Text="Other"></TextBlock>
                 </ComboBox>
-                <Button x:ConnectionId='1'  Content="Go"                     ></Button>
+                <TextBox Name="spots"
+                         HorizontalAlignment="Left"
+                         Margin="10 20 0 0" 
+                         Width="40"
+                         PlaceholderText="Spots"></TextBox>
+                <Button x:ConnectionId='1'  Style="{StaticResource ButtonProfile}"
+                         Margin="10 20 0 0"
+                         Content="Go"
+                                             ></Button>
             </StackPanel>
+            <ProgressRing Name="progressBar" Foreground="Yellow" IsActive="False" Width="80" Height="80"></ProgressRing>
         </Grid>
     </Grid>
 </Page>

@@ -8,7 +8,22 @@
     </Style>
     <Style TargetType="TextBox" x:Key="TBSmall">
         <Setter Property="Width" Value="250"></Setter>
-        <Setter Property="Margin" Value="0 20 20 0"></Setter>
+        <Setter Property="Margin" Value="10 20 20 10"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+    </Style>
+    <Style TargetType="TextBox" x:Key="TBBig">
+        <Setter Property="Width" Value="400"></Setter>
+        <Setter Property="Height" Value="100"></Setter>
+        <Setter Property="Margin" Value="10 20 20 10"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+    </Style>
+    <Style TargetType="ComboBox" x:Key="CategoryPickerComboBoxSmall">
+        <Setter Property="Width" Value="400"></Setter>
+        <Setter Property="Padding" Value="10 15 15 15"></Setter>
+        <Setter Property="Margin" Value="10 20 0 0"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
+    </Style>
+    <Style TargetType="TextBlock" x:Key="CategoryPickerTB">
         <Setter Property="FontSize" Value="20"></Setter>
     </Style>
     <Style TargetType="Button" x:Key="ButtonSmall">
@@ -16,7 +31,31 @@
         <Setter Property="Padding" Value="15 5 15 5"></Setter>
         <Setter Property="Margin" Value="0 10 0 0"></Setter>
     </Style>
+    <Style TargetType="Button" x:Key="ButtonProfile">
+        <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="Padding" Value="15 5 15 5"></Setter>
+        <Setter Property="Margin" Value="10 10 0 0"></Setter>
+    </Style>
     <x:String x:Key="AppName">LAN Party</x:String>
     <converters:ParseFileToBitmapImageConverter x:Name="ParseFileToBitmapImageConverter"></converters:ParseFileToBitmapImageConverter>
+    <DataTemplate x:Key="BasicPartyListViewTemaplate">
+        <StackPanel>
+            <TextBlock FontSize="25" Text="{Binding Title}"></TextBlock>
+            <TextBlock FontSize="25" Text="{Binding Spots}"></TextBlock>
+            <TextBlock FontSize="25" Text="{Binding Date}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="BasicUserListViewTemplate">
+        <StackPanel Orientation="Horizontal">
+            <Image Name="profilePic"
+                   Height="100"
+                   Width="100"
+                   HorizontalAlignment="Left"
+                   Source="{Binding ProfilePic, 
+                            Converter={StaticResource ParseFileToBitmapImageConverter}, 
+                            Mode=TwoWay}"></Image>
+            <TextBlock FontSize="25" Text="{Binding Username, Mode=TwoWay}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>
 </ResourceDictionary>
 

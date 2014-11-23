@@ -8,9 +8,6 @@
     <RootPropertyPathName Name="NavigationHelper" />
     <RootPropertyPathName Name="GoBackCommand" />
     <RootPropertyPathName Name="Parties" />
-    <RootPropertyPathName Name="Date" />
-    <RootPropertyPathName Name="Spots" />
-    <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="IsLoading" />
     <RootPropertyPathName Name="ProfilePic" />
     <RootPropertyPathName Name="UserJob" />
@@ -18,15 +15,18 @@
     <RootPropertyPathName Name="UserName" />
     <RootPropertyPathName Name="UserImage" />
     <RootPropertyPathName Name="Users" />
-    <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="Messages" />
+    <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="Login" />
     <RootPropertyPathName Name="Password" />
+    <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="Reply" />
     <RootPropertyPathName Name="Body" />
     <RootPropertyPathName Name="SenderUsername" />
     <RootPropertyPathName Name="Apply" />
     <RootPropertyPathName Name="Party" />
+    <RootPropertyPathName Name="Date" />
+    <RootPropertyPathName Name="Spots" />
     <RootPropertyPathName Name="Description" />
     <RootPropertyPathName Name="Logout" />
     <RootPropertyPathName Name="FriendsAdd" />
@@ -66,6 +66,8 @@
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
+      <RootMethod Name="GetColumnSpan" />
+      <RootMethod Name="SetColumnSpan" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
@@ -83,6 +85,8 @@
       <RootProperty Name="Name" />
       <RootProperty Name="SelectedIndex" />
       <RootProperty Name="Items" />
+      <RootProperty Name="Style" />
+      <RootProperty Name="HorizontalAlignment" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />
@@ -127,31 +131,33 @@
       <RootProperty Name="IsActive" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
-      <RootProperty Name="Margin" />
+      <RootProperty Name="Name" />
       <RootProperty Name="Foreground" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
+      <RootProperty Name="ItemTemplate" />
       <RootProperty Name="ItemsSource" />
       <RootProperty Name="IsItemClickEnabled" />
       <RootProperty Name="IsDoubleTapEnabled" />
-      <RootProperty Name="ItemTemplate" />
       <RootProperty Name="IsHoldingEnabled" />
       <RootEvent Name="ItemClick" />
       <RootEvent Name="DoubleTapped" />
       <RootEvent Name="Holding" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.DataTemplate">
-      <RootProperty Name="Template" />
-    </RootType>
     <RootType FullName="LANParty.Pages.CreatedPartiesPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Name" />
-      <RootProperty Name="Text" />
-      <RootProperty Name="PlaceholderText" />
       <RootProperty Name="Style" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Text" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TimePicker">
       <RootProperty Name="Name" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.DatePicker">
       <RootProperty Name="Name" />
@@ -160,20 +166,23 @@
     <RootType FullName="LANParty.Pages.CreateParty" />
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Name" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Source" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Stretch" />
     </RootType>
     <RootType FullName="LANParty.Pages.EditProfile" />
+    <RootType FullName="Windows.UI.Xaml.DataTemplate">
+      <RootProperty Name="Template" />
+    </RootType>
     <RootType FullName="System.String" />
     <RootType FullName="LANParty.Pages.FriendshipRequestUserControl" />
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
-      <RootProperty Name="Margin" />
       <RootProperty Name="ItemTemplate" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="LANParty.Pages.FriendRequestsPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
@@ -209,6 +218,7 @@
     <RootType FullName="Windows.UI.Xaml.FrameworkElement">
       <RootProperty Name="Width" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
       <RootProperty Name="FontSize" />
