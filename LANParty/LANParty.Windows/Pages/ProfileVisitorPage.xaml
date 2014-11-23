@@ -54,4 +54,11 @@
             </StackPanel>
         </Grid>
     </Grid>
+    <Page.BottomAppBar>
+        <CommandBar IsOpen="True" IsSticky="True">
+            <AppBarButton Label="Profile" Icon="Contact" Click="AppBar_Profile_Click"/>
+            <AppBarButton Label="Inbox" Icon="Mail" Click="AppBar_Inbox_Click"/>
+            <AppBarButton Label="Friends" Icon="People" Click="AppBar_Friends_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>

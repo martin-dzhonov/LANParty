@@ -178,14 +178,6 @@
     <RootType FullName="LANParty.Pages.InboxPage" />
     <RootType FullName="LANParty.Pages.JoinedParties" />
     <RootType FullName="LANParty.Pages.MainPage" />
-    <RootType FullName="LANParty.Pages.ManageApplicationsPage" />
-    <RootType FullName="Windows.UI.Xaml.Controls.HyperlinkButton">
-      <RootProperty Name="Content" />
-      <RootProperty Name="FontSize" />
-    </RootType>
-    <RootType FullName="LANParty.Pages.MessagePage" />
-    <RootType FullName="LANParty.Pages.PartiesSearch" />
-    <RootType FullName="LANParty.Pages.PartyDetailsPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
       <RootProperty Name="IsOpen" />
       <RootProperty Name="IsSticky" />
@@ -197,6 +189,14 @@
       <RootProperty Name="Command" />
       <RootEvent Name="Click" />
     </RootType>
+    <RootType FullName="LANParty.Pages.ManageApplicationsPage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.HyperlinkButton">
+      <RootProperty Name="Content" />
+      <RootProperty Name="FontSize" />
+    </RootType>
+    <RootType FullName="LANParty.Pages.MessagePage" />
+    <RootType FullName="LANParty.Pages.PartiesSearch" />
+    <RootType FullName="LANParty.Pages.PartyDetailsPage" />
     <RootType FullName="LANParty.Pages.ProfilePage" />
     <RootType FullName="LANParty.Pages.ProfileVisitorPage" />
     <RootType FullName="LANParty.Pages.RegisterPage" />

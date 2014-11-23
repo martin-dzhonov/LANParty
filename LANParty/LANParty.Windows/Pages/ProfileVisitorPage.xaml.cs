@@ -113,5 +113,19 @@ namespace LANParty.Pages
            var objectId =  ((UserViewModel)this.DataContext).ObjectId;
            this.Frame.Navigate(typeof(SendMessagePage), objectId);
         }
+
+        private void AppBar_Profile_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(ProfilePage));
+        }
+        private void AppBar_Inbox_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(InboxPage));
+
+        }
+        private void AppBar_Friends_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(FriendsPage));
+        }
     }
 }

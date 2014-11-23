@@ -113,5 +113,20 @@ namespace LANParty.Pages
             var partyId = ((UserProfile)e.ClickedItem).ObjectId;
             this.Frame.Navigate(typeof(ProfileVisitorPage), partyId);
         }
+
+        private void AppBar_Profile_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(ProfilePage));
+        }
+        private void AppBar_Inbox_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(InboxPage));
+
+        }
+        private void AppBar_Friends_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(FriendsPage));
+        }
+       
     }
 }

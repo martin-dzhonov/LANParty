@@ -59,7 +59,7 @@
         <CommandBar IsOpen="True" IsSticky="True">
             <AppBarButton Label="Logout" Icon="ClosePane" Command="{Binding Logout}"/>
             <AppBarButton Label="Inbox" Icon="Mail" Click="Button_Click_4"/>
-            <AppBarButton Label="Friend List" Icon="People" Click="AppBarButton_Click"/>
+            <AppBarButton Label="Friends" Icon="People" Click="AppBarButton_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

@@ -21,7 +21,8 @@ namespace LANParty.Models
         public async Task<IEnumerable<ParseUser>> GetFriendsFroCurrentUser()
         {
             var query = from party in ParseObject.GetQuery("FriendRequest")
-                        where party.Get<string>("recieverId").Equals(ParseUser.CurrentUser.ObjectId)
+                        where (party.Get<string>("recieverId").Equals(ParseUser.CurrentUser.ObjectId)
+                        || party.Get<string>("userId").Equals(ParseUser.CurrentUser.ObjectId))
                         && party.Get<bool>("approved") == true
                         select party;
             IEnumerable<ParseObject> result = await query.FindAsync();

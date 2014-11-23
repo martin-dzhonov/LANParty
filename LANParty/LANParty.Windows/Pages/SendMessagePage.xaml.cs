@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -116,7 +117,19 @@ namespace LANParty.Pages
             party["recieverId"] = this.recieverId;
             party["title"] = this.title.Text;
             party["body"] = this.description.Text;
-            await party.SaveAsync();
+            try
+            {
+                await party.SaveAsync();
+                MessageDialog dialog = new MessageDialog("Message sent.");
+                dialog.ShowAsync();
+                this.title.Text = "";
+                this.description.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageDialog dialog = new MessageDialog(ex.Message);
+                dialog.ShowAsync();
+            }
         }
     }
 }

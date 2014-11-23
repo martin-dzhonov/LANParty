@@ -82,7 +82,19 @@ namespace LANParty.Pages
         private void navigationHelper_SaveState(object sender, SaveStateEventArgs e)
         {
         }
+        private void AppBar_Profile_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(ProfilePage));
+        }
+        private void AppBar_Inbox_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(InboxPage));
 
+        }
+        private void AppBar_Friends_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(FriendsPage));
+        }
         #region NavigationHelper registration
 
         /// The methods provided in this section are simply used to allow

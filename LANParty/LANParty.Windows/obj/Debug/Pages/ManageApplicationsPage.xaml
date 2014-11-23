@@ -61,5 +61,12 @@
             </StackPanel>
         </Grid>
     </Grid>
+    <Page.BottomAppBar>
+        <CommandBar IsOpen="True" IsSticky="True">
+            <AppBarButton x:ConnectionId='2' Label="Profile" Icon="Contact"                             />
+            <AppBarButton x:ConnectionId='3' Label="Inbox" Icon="Mail"                           />
+            <AppBarButton x:ConnectionId='4' Label="Friends" Icon="People"                             />
+        </CommandBar>
+    </Page.BottomAppBar>
 </Page>
 
