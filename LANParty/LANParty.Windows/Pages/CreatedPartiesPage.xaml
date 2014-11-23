@@ -41,21 +41,13 @@
             <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
 
             <StackPanel>
-                <ListView ItemsSource="{Binding Parties}"
+                <ListView ItemTemplate="{StaticResource BasicPartyListViewTemaplate}"
+                          ItemsSource="{Binding Parties}"
                           IsItemClickEnabled="True"
                           ItemClick="ListView_ItemClick"
                           IsDoubleTapEnabled="True"
                           DoubleTapped="ListView_DoubleTapped"
                          >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <TextBlock FontSize="25" Text="{Binding Title}"></TextBlock>
-                                <TextBlock FontSize="25" Text="{Binding Spots}"></TextBlock>
-                                <TextBlock FontSize="25" Text="{Binding Date}"></TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
                 </ListView>
             </StackPanel>
         </Grid>

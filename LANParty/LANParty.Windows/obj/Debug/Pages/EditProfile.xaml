@@ -41,13 +41,20 @@
         <Grid Grid.Row="1">
             <StackPanel>
                 <Image Name="profilePic" 
-                       Height="100" 
-                       Width="100" 
+                       Margin="15 10 10 10"
+                       Height="150" 
+                       Width="150" 
                        HorizontalAlignment="Left" 
                        Source="{Binding ProfilePic, Converter={StaticResource ParseFileToBitmapImageConverter}}"></Image>
-                <Button x:ConnectionId='1' Content="Set image from camera"                       ></Button>
-                <Button x:ConnectionId='2' Content="Set image from gallery"                       ></Button>
-                <Button x:ConnectionId='3' Content="Save"                     ></Button>
+                <Button x:ConnectionId='1' Style="{StaticResource ButtonProfile}"
+                        Content="Set image from camera"
+                                              ></Button>
+                <Button x:ConnectionId='2' Style="{StaticResource ButtonProfile}" 
+                        Content="Set image from gallery"
+                                              ></Button>
+                <Button x:ConnectionId='3' Style="{StaticResource ButtonProfile}"
+                        Content="Save"
+                                            ></Button>
             </StackPanel>
         </Grid>
     </Grid>

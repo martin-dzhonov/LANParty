@@ -121,6 +121,7 @@ namespace LANParty.Pages
             currentUser["profilePic"] = imgFile;
             await currentUser.SaveAsync();
         }
+
         byte[] ConvertBitmapToByteArray(WriteableBitmap bitmap)
         {
             WriteableBitmap bmp = bitmap;

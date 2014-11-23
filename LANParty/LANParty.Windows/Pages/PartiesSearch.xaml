@@ -37,28 +37,21 @@
             <TextBlock x:Name="pageTitle" Text="Parties" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
+        
         <Grid Grid.Row="1">
             <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
             <StackPanel>
-                <ListView ItemsSource="{Binding Parties}"
+                <ListView ItemTemplate="{StaticResource BasicPartyListViewTemaplate}" 
+                          ItemsSource="{Binding Parties}"
                           IsItemClickEnabled="True"
                           ItemClick="ListView_ItemClick"
-                          IsHoldingEnabled="True"
-                          Holding="ListView_Holding"
                           >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <TextBlock FontSize="25" Text="{Binding Title}"></TextBlock>
-                                <TextBlock FontSize="25" Text="{Binding Spots}"></TextBlock>
-                                <TextBlock FontSize="25" Text="{Binding Date}"></TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
                 </ListView>
             </StackPanel>
         </Grid>
+        
     </Grid>
+    
     <Page.BottomAppBar>
         <CommandBar IsOpen="True" IsSticky="True">
             <AppBarButton Label="Profile" Icon="Contact" Click="AppBar_Profile_Click"/>

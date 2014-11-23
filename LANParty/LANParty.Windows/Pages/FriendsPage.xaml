@@ -10,11 +10,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Page.Resources>
-        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
-        <x:String x:Key="AppName">My Application</x:String>
-    </Page.Resources>
-
     <!--
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title
@@ -43,24 +38,17 @@
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button"/>
-            <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+            <TextBlock x:Name="pageTitle" Text="Friends" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
 
         <Grid Grid.Row="1">
             <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
             <StackPanel>
-                <ListView ItemsSource="{Binding Users}"
+                <ListView ItemTemplate="{StaticResource BasicUserListViewTemplate}"
+                          ItemsSource="{Binding Users}"
                           IsItemClickEnabled="True"
                           ItemClick="ListView_ItemClick">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Image Name="profilePic" Height="100" Width="100" HorizontalAlignment="Left" Source="{Binding ProfilePic, Converter={StaticResource ParseFileToBitmapImageConverter}, Mode=TwoWay}"></Image>
-                                <TextBlock FontSize="25" Text="{Binding Username, Mode=TwoWay}"></TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
                 </ListView>
             </StackPanel>
         </Grid>

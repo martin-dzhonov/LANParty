@@ -106,13 +106,14 @@ namespace LANParty.Pages
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (((TextBlock)this.categoryComboBox.SelectedItem).Text == null)
+            if (!this.IsDataValid())
             {
-                MessageDialog msg = new MessageDialog("No category selected !");
+                MessageDialog msg = new MessageDialog("Invalid input !");
                 msg.ShowAsync();
             }
             else
             {
+                this.progressBar.IsActive = true;
                 var category = ((TextBlock)this.categoryComboBox.SelectedItem).Text;
 
                 ParseObject party = new ParseObject("Party");
@@ -121,17 +122,20 @@ namespace LANParty.Pages
                 party["category"] = category;
                 party["date"] = this.GetDate();
                 party["host"] = ParseUser.CurrentUser;
-                party["spots"] = 5;
+                party["spots"] = int.Parse(this.spots.Text);
                 try
                 {
                     await party.SaveAsync();
+                    this.progressBar.IsActive = false;
                     MessageDialog msg = new MessageDialog("Party created !");
                     this.title.Text = "";
                     this.description.Text = "";
+                    this.spots.Text = "";
                     await msg.ShowAsync();
                 }
                 catch (Exception ex)
                 {
+                    this.progressBar.IsActive = true;
                     MessageDialog msg = new MessageDialog(ex.Message);
                     msg.ShowAsync();
                 }
@@ -145,6 +149,29 @@ namespace LANParty.Pages
             int minutes = this.timePicker.Time.Minutes;
             DateTime dateTime = new DateTime(date.Year, date.Month, date.Day, hour, minutes, 0);
             return dateTime;
+        }
+
+        private bool IsDataValid()
+        {
+            if (this.GetDate().CompareTo(DateTime.Now) < 0)
+            {
+                return false;
+            }
+            if (((TextBlock)this.categoryComboBox.SelectedItem).Text == null)
+            {
+                return false;
+            }
+            if (this.title.Text == "")
+            {
+                return false;
+            }
+            int n;
+            bool isNumeric = int.TryParse(this.spots.Text, out n);
+            if (!isNumeric)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

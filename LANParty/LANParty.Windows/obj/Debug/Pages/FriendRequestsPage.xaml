@@ -49,10 +49,14 @@
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
+        
         <Grid Grid.Row="1" Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
             <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
-            <GridView x:Name="GridViewFriendshipRequests" Margin="100,100,0,50" ItemTemplate="{StaticResource DataTemplateGridViewFriendshipRequests}"/>
+            <GridView x:Name="GridViewFriendshipRequests"
+                      ItemTemplate="{StaticResource DataTemplateGridViewFriendshipRequests}"
+                      Margin="100,100,0,50" />
         </Grid>
+        
     </Grid>
 </Page>
 

@@ -40,17 +40,11 @@
         <Grid Grid.Row="1">
             <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
             <StackPanel>
-                <ListView ItemsSource="{Binding Parties}"
+                <ListView ItemTemplate="{StaticResource BasicPartyListViewTemaplate}"
+                         ItemsSource="{Binding Parties}"
                           IsItemClickEnabled="True"
                           ItemClick="ListView_ItemClick"
                          >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <TextBlock FontSize="25" Text="{Binding Title}"></TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
                 </ListView>
             </StackPanel>
         </Grid>
