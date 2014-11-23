@@ -39,21 +39,32 @@
                         AutomationProperties.Name="Back"
                         AutomationProperties.AutomationId="BackButton"
                         AutomationProperties.ItemType="Navigation Button"/>
-            <TextBlock x:Name="pageTitle" Text="Login" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
-                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
+            <TextBlock HorizontalAlignment="Center"  x:Name="pageTitle" Text="Welcome" Style="{StaticResource HeaderTextBlockStyle}" Grid.Column="1" 
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="457,0,575,41"/>
         </Grid>
         <Grid Grid.Row="1">
-            <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
-            <StackPanel Margin="25,0,-25,0">
-                <TextBox Name="username" Text="{Binding Username, Mode=TwoWay}"></TextBox>
-                <TextBox Name="password" Text="{Binding Password, Mode=TwoWay}"></TextBox>
-                <Button Content="Login" Command="{Binding Login}"></Button>
-                <Button x:ConnectionId='1' Content="Register"                     ></Button>
-                <Button x:ConnectionId='2' Content="Test"                       ></Button>
-                <GridView x:Name="GridViewFriendshipRequests" Margin="100,100,0,50" ItemTemplate="{StaticResource DataTemplateGridViewFriendshipRequests}"/>
+            <StackPanel>
+                <Image Height="300"
+                       Width="300"
+                       Source="ms-appx:///Assets/lanparty.png"></Image>
+                <TextBox PlaceholderText="Username"
+                         Style="{StaticResource TBSmall}"
+                         Text="{Binding Username, Mode=TwoWay}"></TextBox>
+                <TextBox PlaceholderText="Pasword"
+                         Style="{StaticResource TBSmall}"
+                         Text="{Binding Password, Mode=TwoWay}"></TextBox>
+                <Button Style="{StaticResource ButtonSmall}"
+                        HorizontalAlignment="Center"
+                        Content="Login"
+                        Command="{Binding Login}"></Button>
+                <Button x:ConnectionId='1' Style="{StaticResource ButtonSmall}"
+                        HorizontalAlignment="Center"
+                        Content="Register"
+                                            ></Button>
             </StackPanel>
-        </Grid>
+            <ProgressRing Foreground="Yellow" IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
 
+        </Grid>
     </Grid>
 </Page>
 

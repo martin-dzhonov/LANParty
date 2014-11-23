@@ -36,16 +36,8 @@ namespace LANParty.Pages
             FriendshipRequest friendshipRequest = this.DataContext as FriendshipRequest;
             if (friendshipRequest != null)
             {
-                if (5 != 1)
-                {
-                    TextBlockAge.Text = 5 + " years old";
-                }
-                else
-                {
-                    TextBlockAge.Text = friendshipRequest + " year old";
-                }
                 TextBlockUserSays.Text = friendshipRequest.UserName + " says:";
-                TextBlockUserMessage.Text = "\"" + "HELLO !" + "\"";
+                TextBlockUserMessage.Text = "\"" + "Wow much reqest, please add" + "\"";
             }
             else
             {
@@ -58,7 +50,6 @@ namespace LANParty.Pages
         private void ButtonAccept_Click(object sender, RoutedEventArgs e)
         {
             this.Approved(this, new EventArgs());
-            
         }
 
         void timer_Tick(object sender, object e)

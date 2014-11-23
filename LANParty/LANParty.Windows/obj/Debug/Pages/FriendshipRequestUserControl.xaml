@@ -9,7 +9,7 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Grid x:Name="GridRoot" Background="#FF869ADD" Height="265" Width="500">
+    <Grid x:Name="GridRoot" Background="DarkSlateBlue" Height="265" Width="500">
         <Image HorizontalAlignment="Left" Height="160" Margin="10,10,0,0" VerticalAlignment="Top" Width="160" Stretch="UniformToFill" Source="{Binding UserImage}"/>
         <StackPanel x:Name="StackPanelUserInfo" Margin="175,10,0,10">
             <TextBlock FontSize="16" FontFamily="Segoe UI" Text="{Binding UserName}"/>

@@ -38,4 +38,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\RegistrationViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserPartiesViewModel.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Styles\MainStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
 </Project>

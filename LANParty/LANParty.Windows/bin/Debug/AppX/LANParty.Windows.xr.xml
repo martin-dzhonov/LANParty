@@ -37,8 +37,10 @@
     <RootType FullName="Windows.UI.Xaml.Application">
       <RootProperty Name="Resources" />
     </RootType>
-    <RootType FullName="System.String" />
-    <RootType FullName="LANParty.Converters.ParseFileToBitmapImageConverter" />
+    <RootType FullName="Windows.UI.Xaml.ResourceDictionary">
+      <RootProperty Name="MergedDictionaries" />
+      <RootProperty Name="Source" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="DataContext" />
       <RootProperty Name="Content" />
@@ -145,6 +147,8 @@
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Name" />
       <RootProperty Name="Text" />
+      <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="Style" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TimePicker">
       <RootProperty Name="Name" />
@@ -165,6 +169,7 @@
       <RootProperty Name="Stretch" />
     </RootType>
     <RootType FullName="LANParty.Pages.EditProfile" />
+    <RootType FullName="System.String" />
     <RootType FullName="LANParty.Pages.FriendshipRequestUserControl" />
     <RootType FullName="Windows.UI.Xaml.Controls.GridView">
       <RootProperty Name="Margin" />
@@ -201,5 +206,18 @@
     <RootType FullName="LANParty.Pages.ProfileVisitorPage" />
     <RootType FullName="LANParty.Pages.RegisterPage" />
     <RootType FullName="LANParty.Pages.SendMessagePage" />
+    <RootType FullName="Windows.UI.Xaml.FrameworkElement">
+      <RootProperty Name="Width" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Control">
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Padding" />
+    </RootType>
+    <RootType FullName="LANParty.Converters.ParseFileToBitmapImageConverter" />
+    <RootType FullName="Windows.UI.Xaml.Setter">
+      <RootProperty Name="Property" />
+      <RootProperty Name="Value" />
+    </RootType>
   </Roots.RootTypes>
 </Roots>

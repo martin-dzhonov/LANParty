@@ -1,4 +1,5 @@
 Assets\DefaultProfilePic.jpg
+Assets\lanparty.png
 Assets\Logo.scale-100.png
 Assets\SmallLogo.scale-100.png
 Assets\SplashScreen.scale-100.png
@@ -23,3 +24,4 @@ Pages\ProfilePage.xbf
 Pages\ProfileVisitorPage.xbf
 Pages\RegisterPage.xbf
 Pages\SendMessagePage.xbf
+Styles\MainStyles.xbf
