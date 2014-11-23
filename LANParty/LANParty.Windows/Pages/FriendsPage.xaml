@@ -43,7 +43,6 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
             <StackPanel>
                 <ListView ItemTemplate="{StaticResource BasicUserListViewTemplate}"
                           ItemsSource="{Binding Users}"
@@ -51,6 +50,7 @@
                           ItemClick="ListView_ItemClick">
                 </ListView>
             </StackPanel>
+            <ProgressRing Foreground="Yellow" IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
         </Grid>
     </Grid>
 </Page>

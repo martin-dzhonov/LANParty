@@ -38,14 +38,13 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         <Grid Grid.Row="1">
-            <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
             <StackPanel>
                 <TextBox Name="email" Text="{Binding Email, Mode=TwoWay}" ></TextBox>
                 <TextBox Name="username" Text="{Binding Username, Mode=TwoWay}"></TextBox>
                 <TextBox Name="passowrd" Text="{Binding Password, Mode=TwoWay}"></TextBox>
                 <Button Content="Register" Command="{Binding Register}"></Button>
             </StackPanel>
-           
+            <ProgressRing  Foreground="Yellow" IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
         </Grid>
     </Grid>
 </Page>

@@ -41,7 +41,7 @@
         <Grid Grid.Row="1">
             <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
             <StackPanel>
-                <ListView x:ConnectionId='1' ItemTemplate="{StaticResource BasicPartyListViewTemaplate}" 
+                <ListView x:ConnectionId='1' Margin="10 10 0 0" Width="526" HorizontalAlignment="Left" ItemTemplate="{StaticResource BasicPartyListViewTemaplate}" 
                           ItemsSource="{Binding Parties}"
                           IsItemClickEnabled="True"
                                                         

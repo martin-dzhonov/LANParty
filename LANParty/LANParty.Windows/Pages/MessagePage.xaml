@@ -47,13 +47,13 @@
                         IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="0,0,30,40"/>
         </Grid>
         <Grid Grid.Row="1">
-            <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
             <StackPanel>
                 <HyperlinkButton Content="{Binding SenderUsername}" FontSize="30"></HyperlinkButton>
                 <TextBlock Name="email" FontSize="30" Text="{Binding Title}" ></TextBlock>
                 <TextBlock Name="username" FontSize="30" Text="{Binding Body}" ></TextBlock>
                 <Button Content="Reply" Command="{Binding Reply}"></Button>
             </StackPanel>
+            <ProgressRing  Foreground="Yellow" IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
         </Grid>
     </Grid>
     <Page.BottomAppBar>

@@ -41,7 +41,7 @@
             <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
 
             <StackPanel>
-                <ListView ItemTemplate="{StaticResource BasicPartyListViewTemaplate}"
+                <ListView HorizontalAlignment="Left" Margin="10 10 0 0" Width="526" ItemTemplate="{StaticResource BasicPartyListViewTemaplate}"
                           ItemsSource="{Binding Parties}"
                           IsItemClickEnabled="True"
                           ItemClick="ListView_ItemClick"

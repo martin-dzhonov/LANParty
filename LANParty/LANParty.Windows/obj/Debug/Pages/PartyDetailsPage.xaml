@@ -42,22 +42,28 @@
             <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
             <StackPanel>
                 <StackPanel DataContext="{Binding Party}">
-                    <TextBlock FontSize="25" Text="{Binding Title}"></TextBlock>
-                    <TextBlock FontSize="25" Text="{Binding Description}"></TextBlock>
-                    <TextBlock FontSize="25" Text="{Binding Spots}"></TextBlock>
-                    <TextBlock FontSize="25" Text="{Binding Date}"></TextBlock>
+                    <TextBlock Margin="15 15 0 0" FontSize="40" Text="{Binding Title}"></TextBlock>
+                    <TextBlock Margin="15 15 0 0" FontSize="25" Text="{Binding Description}"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="15 15 0 0" FontSize="25" Text="Spots left: "></TextBlock>
+                        <TextBlock Margin="10 15 0 0" FontSize="25" Text="{Binding Spots}"></TextBlock>
+                    </StackPanel>
+                    <TextBlock Margin="15 15 0 0" FontSize="25" Text="{Binding Date}"></TextBlock>
                 </StackPanel>
                 <StackPanel>
-                    <ListView x:ConnectionId='1' ItemTemplate="{StaticResource BasicUserListViewTemplate}"
-                        ItemsSource="{Binding Users}"
-                          IsItemClickEnabled="True"
-                                                        >
+                    <ListView x:ConnectionId='1' Width="500"
+                              HorizontalAlignment="Left"
+                              ItemTemplate="{StaticResource BasicUserListViewTemplate}"
+                              ItemsSource="{Binding Users}"
+                              IsItemClickEnabled="True"
+                                                            >
                     </ListView>
                 </StackPanel>
-                <Button Content="Apply" Command="{Binding Apply}"></Button>
+                <Button Style="{StaticResource ButtonProfile}" Content="Apply" Command="{Binding Apply}"></Button>
             </StackPanel>
         </Grid>
     </Grid>
+    
     <Page.BottomAppBar>
         <CommandBar IsOpen="True" IsSticky="True">
             <AppBarButton x:ConnectionId='2' Label="Profile" Icon="Contact"                             />
@@ -65,5 +71,6 @@
             <AppBarButton x:ConnectionId='4' Label="Friends" Icon="People"                             />
         </CommandBar>
     </Page.BottomAppBar>
+    
 </Page>
 

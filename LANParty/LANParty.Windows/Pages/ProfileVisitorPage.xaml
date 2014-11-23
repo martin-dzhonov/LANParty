@@ -39,7 +39,6 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
             <StackPanel>            
                 <Image Name="profilePic" 
                        Height="100" 
@@ -52,6 +51,8 @@
                 <Button Content="Send Message" Click="Button_Click"></Button>
                 <Button Content="Add to Friends" Command="{Binding FriendsAdd}"></Button>
             </StackPanel>
+            <ProgressRing  Foreground="Yellow" IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
+
         </Grid>
     </Grid>
     
