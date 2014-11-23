@@ -113,15 +113,6 @@ namespace LANParty.Pages
             this.Frame.Navigate(typeof(RegisterPage));
         }
 
-        private async void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-           // ParseDatabaseRequester req = new ParseDatabaseRequester();
-            //var asd = await req.GetApplicationsForParty("Fbb2YWBNDZ");
-           // this.Frame.Navigate(typeof(ProfileVisitorPage), ParseUser.CurrentUser.ObjectId);
-        }
-        private void AddAppBarButton_Click(object sender, RoutedEventArgs e)
-        {
-        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
