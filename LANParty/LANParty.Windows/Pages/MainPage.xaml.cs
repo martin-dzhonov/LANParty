@@ -114,16 +114,10 @@ namespace LANParty.Pages
             this.Frame.Navigate(typeof(RegisterPage));
         }
 
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(FriendRequestsPage));
         }
-        private bool IsConnected()
-        {
-            ConnectionProfile connections = NetworkInformation.GetInternetConnectionProfile();
-            bool internet = connections != null && connections.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess;
-            return internet;
-        }
+       
     }
 }

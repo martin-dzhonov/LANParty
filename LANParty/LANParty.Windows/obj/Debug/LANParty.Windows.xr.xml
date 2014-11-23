@@ -16,12 +16,12 @@
     <RootPropertyPathName Name="UserImage" />
     <RootPropertyPathName Name="Users" />
     <RootPropertyPathName Name="Messages" />
-    <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="Login" />
     <RootPropertyPathName Name="Password" />
     <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="Reply" />
     <RootPropertyPathName Name="Body" />
+    <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="SenderUsername" />
     <RootPropertyPathName Name="Apply" />
     <RootPropertyPathName Name="Party" />
@@ -211,10 +211,6 @@
       <RootProperty Name="PrimaryCommands" />
     </RootType>
     <RootType FullName="LANParty.Pages.ManageApplicationsPage" />
-    <RootType FullName="Windows.UI.Xaml.Controls.HyperlinkButton">
-      <RootProperty Name="Content" />
-      <RootProperty Name="FontSize" />
-    </RootType>
     <RootType FullName="LANParty.Pages.MessagePage" />
     <RootType FullName="LANParty.Pages.PartiesSearch" />
     <RootType FullName="LANParty.Pages.PartyDetailsPage" />
@@ -231,18 +227,19 @@
       <RootProperty Name="FontSize" />
       <RootProperty Name="Padding" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Setter">
+      <RootProperty Name="Property" />
+      <RootProperty Name="Value" />
+    </RootType>
     <RootType FullName="LANParty.Converters.ParseFileToBitmapImageConverter" />
     <RootType FullName="Windows.UI.Xaml.Controls.Border">
       <RootProperty Name="Height" />
       <RootProperty Name="Width" />
       <RootProperty Name="BorderThickness" />
+      <RootProperty Name="CornerRadius" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="Padding" />
       <RootProperty Name="Child" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Setter">
-      <RootProperty Name="Property" />
-      <RootProperty Name="Value" />
     </RootType>
   </Roots.RootTypes>
 </Roots>

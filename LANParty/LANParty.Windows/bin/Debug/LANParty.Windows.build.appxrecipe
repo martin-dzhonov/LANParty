@@ -53,6 +53,9 @@
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Styles\MainStyles.xbf">
       <PackagePath>Styles\MainStyles.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Styles\Templates.xbf">
+      <PackagePath>Styles\Templates.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\ChooseCategoryPage.xbf">
       <PackagePath>Pages\ChooseCategoryPage.xbf</PackagePath>
     </AppxPackagedFile>

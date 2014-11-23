@@ -48,10 +48,13 @@
         </Grid>
         <Grid Grid.Row="1">
             <StackPanel>
-                <HyperlinkButton Content="{Binding SenderUsername}" FontSize="30"></HyperlinkButton>
-                <TextBlock Name="email" FontSize="30" Text="{Binding Title}" ></TextBlock>
-                <TextBlock Name="username" FontSize="30" Text="{Binding Body}" ></TextBlock>
-                <Button Content="Reply" Command="{Binding Reply}"></Button>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock FontSize="25" Margin="10 10 10 0" Text="From:"></TextBlock>
+                    <TextBlock  Margin="10 10 0 0" Text="{Binding SenderUsername}" FontSize="30"></TextBlock>
+                </StackPanel>
+                <TextBlock Margin="10 10 10 0" Name="email" FontSize="30" Text="{Binding Title}" ></TextBlock>
+                <TextBlock Margin="10 10 10 0" Name="username" FontSize="30" Text="{Binding Body}" ></TextBlock>
+                <Button Style="{StaticResource ButtonProfile}" Content="Reply" Command="{Binding Reply}"></Button>
             </StackPanel>
             <ProgressRing  Foreground="Yellow" IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
         </Grid>

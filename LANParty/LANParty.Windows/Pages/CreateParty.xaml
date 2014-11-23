@@ -58,6 +58,7 @@
                           SelectedIndex="0">
                     <TextBlock Text="Dota2"></TextBlock>
                     <TextBlock Text="League Of Legends"></TextBlock>
+                    <TextBlock Text="CS:GO"></TextBlock>
                     <TextBlock Text="Other"></TextBlock>
                 </ComboBox>
                 <TextBox Name="spots"

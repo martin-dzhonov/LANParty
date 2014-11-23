@@ -10,7 +10,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-   
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ChildrenTransitions>
             <TransitionCollection>
@@ -40,17 +40,11 @@
 
         <Grid Grid.Row="1">
             <StackPanel>
-                <ListView x:ConnectionId='1' ItemsSource="{Binding Messages}"
+                <ListView x:ConnectionId='1' ItemTemplate="{StaticResource MessageListViewTemplate}"
+                          ItemsSource="{Binding Messages}"
                           IsItemClickEnabled="True"
                                                         
                           >
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <TextBlock FontSize="25" Text="{Binding Title}"></TextBlock>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
                 </ListView>
             </StackPanel>
             <ProgressRing Foreground="Yellow" IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>

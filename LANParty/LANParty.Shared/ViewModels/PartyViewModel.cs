@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
+using Windows.Networking.Connectivity;
 using Windows.UI.Popups;
 
 namespace LANParty.ViewModels
@@ -87,41 +88,50 @@ namespace LANParty.ViewModels
 
         private async void ApplyForParty()
         {
-            ParseObject party = await this._dbRequester.GetPartyById(this._party.ObjectId);
-            var spots = (Int64)party["spots"];
-
-            if (((ParseUser)party["host"]).ObjectId == ParseUser.CurrentUser.ObjectId)
+            if (!this.IsConnected())
             {
-                MessageDialog msgDialog = new MessageDialog("This is your party, dummy !");
-                await msgDialog.ShowAsync();
-            }
-            else if (spots <= 0)
-            {
-                MessageDialog msgDialog = new MessageDialog("No spots left !");
+                MessageDialog msgDialog = new MessageDialog("No internet connection, try again later !");
                 await msgDialog.ShowAsync();
             }
             else
             {
-                this.IsLoading = true;
-                ParseObject application = new ParseObject("Application");
+                ParseObject party = await this._dbRequester.GetPartyById(this._party.ObjectId);
+                var spots = (Int64)party["spots"];
 
-                application["partyId"] = party.ObjectId;
-                application["host"] = party["host"];
-                application["guest"] = ParseUser.CurrentUser;
-                application["approved"] = false;
-                application["declined"] = false;
-                try
+                if (((ParseUser)party["host"]).ObjectId == ParseUser.CurrentUser.ObjectId)
                 {
-                    await application.SaveAsync();
-                    MessageDialog msgDialog = new MessageDialog("Successfully applied.");
-                    this.IsLoading = false;
+                    MessageDialog msgDialog = new MessageDialog("This is your party, dummy !");
                     await msgDialog.ShowAsync();
                 }
-                catch (Exception ex)
+
+                else if (spots <= 0)
                 {
-                    MessageDialog msgDialog = new MessageDialog(ex.Message);
-                    this.IsLoading = false;
-                    msgDialog.ShowAsync();
+                    MessageDialog msgDialog = new MessageDialog("No spots left !");
+                    await msgDialog.ShowAsync();
+                }
+                else
+                {
+                    this.IsLoading = true;
+                    ParseObject application = new ParseObject("Application");
+
+                    application["partyId"] = party.ObjectId;
+                    application["host"] = party["host"];
+                    application["guest"] = ParseUser.CurrentUser;
+                    application["approved"] = false;
+                    application["declined"] = false;
+                    try
+                    {
+                        await application.SaveAsync();
+                        MessageDialog msgDialog = new MessageDialog("Successfully applied.");
+                        this.IsLoading = false;
+                        await msgDialog.ShowAsync();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageDialog msgDialog = new MessageDialog(ex.Message);
+                        this.IsLoading = false;
+                        msgDialog.ShowAsync();
+                    }
                 }
             }
         }
@@ -157,6 +167,13 @@ namespace LANParty.ViewModels
                 this._users.Add(new UserProfile(user));
             }
             this.IsLoading = false;
+        }
+
+        private bool IsConnected()
+        {
+            ConnectionProfile connections = NetworkInformation.GetInternetConnectionProfile();
+            bool internet = connections != null && connections.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess;
+            return internet;
         }
     }
 }
