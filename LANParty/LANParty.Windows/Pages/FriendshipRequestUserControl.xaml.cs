@@ -35,16 +35,16 @@ namespace LANParty.Pages
             FriendshipRequest friendshipRequest = this.DataContext as FriendshipRequest;
             if (friendshipRequest != null)
             {
-                if (friendshipRequest.UserAge != 1)
+                if (5 != 1)
                 {
-                    TextBlockAge.Text = friendshipRequest.UserAge + " years old";
+                    TextBlockAge.Text = 5 + " years old";
                 }
                 else
                 {
                     TextBlockAge.Text = friendshipRequest + " year old";
                 }
                 TextBlockUserSays.Text = friendshipRequest.UserName + " says:";
-                TextBlockUserMessage.Text = "\"" + friendshipRequest.UserMessage + "\"";
+                TextBlockUserMessage.Text = "\"" + "HELLO !" + "\"";
             }
             else
             {

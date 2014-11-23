@@ -11,39 +11,40 @@ namespace LANParty.ViewModels
     public class FriendRequestsViewModel : Bindable
     {
         private ParseDatabaseRequester _dbRequester;
-        private ObservableCollection<UserProfile> _users;
+        private ObservableCollection<FriendshipRequest> _requests;
 
-        public ObservableCollection<UserProfile> Users
+        public ObservableCollection<FriendshipRequest> Requests
         {
             get
             {
-                return this._users;
+                return this._requests;
             }
             set
             {
-                if (value == this._users)
+                if (value == this._requests)
                 {
                     return;
                 }
-                this._users = value;
+                this._requests = value;
                 OnPropertyChanged();
             }
         }
 
         public FriendRequestsViewModel()
         {
-            this._users = new ObservableCollection<UserProfile>();
+            this._requests = new ObservableCollection<FriendshipRequest>();
             this._dbRequester = new ParseDatabaseRequester();
             this.PopulateData();
         }
 
         private async void PopulateData()
         {
-            IEnumerable<ParseObject> requests = await this._dbRequester.GetFriendRequestsForCurrentUser();
-            foreach (ParseObject obj in requests)
+            IEnumerable<ParseObject> asd = await this._dbRequester.GetFriendRequestsForCurrentUser();
+            foreach (ParseObject item in asd)
             {
-                ParseUser user = await ((ParseUser)obj["friend"]).FetchAsync();
-                this._users.Add(new UserProfile(user));
+                ParseUser friendCandidate = await ((ParseUser)item["friend"]).FetchAsync();
+                Uri url = ((ParseFile)friendCandidate["profilePic"]).Url;
+                this._requests.Add(new FriendshipRequest() { UserName = friendCandidate.Username, UserImage = url.ToString()});
             }
         }
     }

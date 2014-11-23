@@ -15,11 +15,12 @@
     <RootPropertyPathName Name="ProfilePic" />
     <RootPropertyPathName Name="UserJob" />
     <RootPropertyPathName Name="UserGender" />
-    <RootPropertyPathName Name="Username" />
+    <RootPropertyPathName Name="UserName" />
     <RootPropertyPathName Name="UserImage" />
     <RootPropertyPathName Name="Messages" />
     <RootPropertyPathName Name="Login" />
     <RootPropertyPathName Name="Password" />
+    <RootPropertyPathName Name="Username" />
     <RootPropertyPathName Name="Users" />
     <RootPropertyPathName Name="Reply" />
     <RootPropertyPathName Name="Body" />

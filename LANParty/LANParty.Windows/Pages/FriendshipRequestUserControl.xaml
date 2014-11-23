@@ -12,7 +12,7 @@
     <Grid x:Name="GridRoot" Background="#FF869ADD" Height="265" Width="500">
         <Image HorizontalAlignment="Left" Height="160" Margin="10,10,0,0" VerticalAlignment="Top" Width="160" Stretch="UniformToFill" Source="{Binding UserImage}"/>
         <StackPanel x:Name="StackPanelUserInfo" Margin="175,10,0,10">
-            <TextBlock FontSize="16" FontFamily="Segoe UI" Text="{Binding Username}"/>
+            <TextBlock FontSize="16" FontFamily="Segoe UI" Text="{Binding UserName}"/>
             <TextBlock FontSize="16" FontFamily="Segoe UI" Text="wants to be your friend!" Margin="0,2,0,0"/>
             <TextBlock x:Name="TextBlockAge" FontSize="16" FontFamily="Segoe UI" Margin="0,5,0,0"/>
             <TextBlock FontSize="16" FontFamily="Segoe UI" Margin="0,2,0,0" Text="{Binding UserGender}"/>
