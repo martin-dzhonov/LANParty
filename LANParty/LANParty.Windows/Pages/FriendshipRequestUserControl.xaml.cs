@@ -48,8 +48,8 @@ namespace LANParty.Pages
             }
             else
             {
-                ButtonAccept.Visibility = Visibility.Collapsed;
-                ButtonIgnore.Visibility = Visibility.Collapsed;
+                //ButtonAccept.Visibility = Visibility.Collapsed;
+               // ButtonIgnore.Visibility = Visibility.Collapsed;
                 this.Ignored(this, null);
             }
         }

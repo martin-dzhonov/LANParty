@@ -28,6 +28,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Party.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\UserProfile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ApplicationsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FriendRequestsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MessagesViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MessageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PartiesViewModel.cs" />

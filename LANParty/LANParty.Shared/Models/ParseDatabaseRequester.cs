@@ -119,5 +119,14 @@ namespace LANParty.Models
             ParseObject result = await query.FirstOrDefaultAsync();
             return result;
         }
+
+        public async Task<IEnumerable<ParseObject>> GetFriendRequestsForCurrentUser()
+        {
+            var query = from party in ParseObject.GetQuery("FriendRequest")
+                        where party.Get<string>("userId").Equals(ParseUser.CurrentUser.ObjectId)
+                        select party;
+            IEnumerable<ParseObject> result = await query.FindAsync();
+            return result;
+        }
     }
 }

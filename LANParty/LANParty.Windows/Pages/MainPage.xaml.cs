@@ -56,33 +56,9 @@ namespace LANParty.Pages
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            //this.DataContext = new UserViewModel();
-            friendshipRequestList = new ObservableCollection<FriendshipRequest>();
-            friendshipRequestList.Add(new FriendshipRequest() { UserName = "Doge", UserAge = 3, UserGender = "Male", UserJob = "Dog", UserMessage = "wow such request\nplz accept\nmuch friend", UserImage = "http://discoverygc.com/wiki/images/thumb/3/34/Doge_(1).jpg/264px-Doge_(1).jpg" });
-            friendshipRequestList.Add(new FriendshipRequest() { UserName = "GlaDOS", UserAge = 532, UserGender = "Female", UserJob = "Not a homicidal AI", UserMessage = "Please accept my friend request so I can use you as test sub.. Ehm, so I could give you some cake. Really.", UserImage = "http://images.wikia.com/half-life/en/images/4/4d/Glados_new_body.jpg" });
-            friendshipRequestList.Add(new FriendshipRequest() { UserName = "Nigerian Prince", UserAge = 52, UserGender = "Male", UserJob = "Prince", UserMessage = "Hello friend. I'm looking for someone I can trust with a bank transfer involving $500.000.000. Please accept my request and send me your information as soon as possible.", UserImage = "http://ethicsalarms.files.wordpress.com/2011/03/nigerian-prince.jpg" });
-            friendshipRequestList.Add(new FriendshipRequest() { UserName = "John Shepard", UserAge = 32, UserGender = "Male", UserJob = "Commander", UserMessage = "Hi, I'm Commander Shepard, and this is my favorite app on the Citadel.", UserImage = "http://images4.wikia.nocookie.net/__cb20120213040953/knowyourmeme/images/thumb/2/20/Commander_Shepard.jpg/398px-Commander_Shepard.jpg" });
-            friendshipRequestList.Add(new FriendshipRequest() { UserName = "Slenderman", UserAge = 99999999, UserGender = "Not available", UserJob = "bzzzrrtrt", UserMessage = "Á̳̙̰͖͝ĺ̞̭̜͖̭͖̩̝̻͠ẃ̷̥̠̜̹̻͙̳̩a͏̦͓͇̭y̨̞̺̖͇͍s̨̠̖͠ ̧͖̹̠͍̦͇͟ͅͅẃ̸̭̗̗̳͖̖̭̫a̷̶̮̹̮̩̯̟̲t̖̯͉c҉̖h̢̖̹̤͇̥̙̻̬͘è̢̤̭̣̠͕ş͉̲ͅ,̵̧͎̜ ̪̟̭̱̗̤̟̥ͅn̪̙̙͍̳̲̳̟o̴͉ ̠͈̦̩͚̞̝̺̯͠e̖̼̟̤̪̟y̸̟̝̖e̶̦͢͝ͅs̴̫̥̳͇͚͎̘͝ͅ.͏̴̳͉̺̣̥͘ ͕̳̫͙͚̼͍͜\nḐ͉̹͔̩̤͔͔̕o̧̖̦̺̲̲̖͢n̮͉̠͕̗͚̖̥͘ͅ'̹̫̬͙̲̲͙̞t͉̠̩̜ ̢̘̻̙ļ̶̡͎̺o͎͓̗͚̗ó̦̫̥̹k͚ͅ,҉̢̣͎͇͙̺̠̜ ̮̫̘͖͡o̶̞͔̳̕r̥̫̩̮̬͙͈̪̀̕ ̭͉ͅí̞̺̳͕͚t̡͔͎͇́͝ ̢҉̯̩̪͍͍̜͈t̸̢̢̯̥ą̼̘̬̳k̷̕͏͕̣̲̘̜̟e̸̷҉̖̲̫̪̭ș̬̝̖͟͠ ̸͏̴̩̱̻̙̗͔̥y̭̹̞o͖̺͠ư͙̯̘͟.͉̳̺̺̹̙̩̳͡ ̳̬̬͍̬̺̗\nL̨̥̮͚͍e͇̲̕̕á̧̫̤̠̤̤̥͚͝v̴͖̤͇̟̳̥͔̤͟e̢͓̝̯͇͘ ͕͍̳̕ͅm̴̥̳͍͉̙͕͍̫̩e̵̛̠̮͓̦̖̤̗ ̶̸̙͖͚̬̣ą̼̥̼́͡l̳͟͟ͅơ̴̼͕̗ͅn̶̴̝̣̥̗e̜.̰̖̣͓̹̭͕̟ ̠̳̙̯́͞\nḆ̸̩̹͟͜è̤͍h̡̛̯̮̝i̢̛͚̝̻̺͓͔̲̗̲n̨̛͕͙̺̠̫d̸̴̘̝ ̶̺͎̟̹͉͕͎͞y̹̞̟̙̮̭̭̫o̵̺̹͟͠ù̧̞͖̟͎̯̩̹̘.̷̗̠̟͙̥̞̞̝", UserImage = "http://d38zt8ehae1tnt.cloudfront.net/Slenderman__109647.jpg" });
-            GridViewFriendshipRequests.ItemsSource = friendshipRequestList;
-        }
-       public  ObservableCollection<FriendshipRequest> friendshipRequestList = new ObservableCollection<FriendshipRequest>();
-
-        void MainPage_Loaded(object sender, RoutedEventArgs e)
-        {
-            
+            this.DataContext = new UserViewModel();
         }
 
-        public static void MainPage_UserIgnored(object sender, EventArgs e)
-        {
-            FriendshipRequestUserControl friendshipRequestUserControl = sender as FriendshipRequestUserControl;
-            FriendshipRequest friendshipRequest = friendshipRequestUserControl.DataContext as FriendshipRequest;
-            ((Window.Current.Content as Frame).Content as MainPage).RemoveRequest(friendshipRequest);
-        }
-
-        private void RemoveRequest(FriendshipRequest friendshipRequest)
-        {
-            friendshipRequestList.Remove(friendshipRequest);
-        }
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also
         /// provided when recreating a page from a prior session.

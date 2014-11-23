@@ -258,10 +258,12 @@ namespace LANParty.ViewModels
 
         private async void AddToFriends()
         {
-            ParseObject application = new ParseObject("Friend");
+            ParseObject application = new ParseObject("FriendRequest");
             application["userId"] = ParseUser.CurrentUser.ObjectId;
             ParseUser friend = await this._dbRequester.GetUserById(this._objectId);
             application["friend"] = friend;
+            application["approved"] = false;
+            application["declined"] = false;
             try
             {
                 await application.SaveAsync();

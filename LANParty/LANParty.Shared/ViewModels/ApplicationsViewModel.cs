@@ -64,7 +64,7 @@ namespace LANParty.ViewModels
             foreach (ParseObject obj in asd)
             {
                 ParseUser user = await ((ParseUser)obj["guest"]).FetchAsync();
-                this._users.Add(new UserProfile((ParseUser)obj["guest"]));
+                this._users.Add(new UserProfile(user));
                 this._applicationsIds.Add(obj.ObjectId.ToString());
             }
             this.IsLoading = false;
