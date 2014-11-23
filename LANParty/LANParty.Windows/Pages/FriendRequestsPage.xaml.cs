@@ -1,6 +1,8 @@
 ﻿using LANParty.Common;
+using LANParty.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -13,12 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-using Parse;
-using LANParty.Models;
-using LANParty.ViewModels;
-using Windows.Networking.Connectivity;
-using Windows.UI.Popups;
-using System.Collections.ObjectModel;
+
 // The Basic Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234237
 
 namespace LANParty.Pages
@@ -26,7 +23,7 @@ namespace LANParty.Pages
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class FriendRequestsPage : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -50,13 +47,18 @@ namespace LANParty.Pages
         }
 
 
-        public MainPage()
+        public FriendRequestsPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            //this.DataContext = new UserViewModel();
+            this.Loaded += FriendRequestsPage_Loaded;
+        }
+        ObservableCollection<FriendshipRequest> friendshipRequestList = new ObservableCollection<FriendshipRequest>();
+
+        void FriendRequestsPage_Loaded(object sender, RoutedEventArgs e)
+        {
             friendshipRequestList = new ObservableCollection<FriendshipRequest>();
             friendshipRequestList.Add(new FriendshipRequest() { UserName = "Doge", UserAge = 3, UserGender = "Male", UserJob = "Dog", UserMessage = "wow such request\nplz accept\nmuch friend", UserImage = "http://discoverygc.com/wiki/images/thumb/3/34/Doge_(1).jpg/264px-Doge_(1).jpg" });
             friendshipRequestList.Add(new FriendshipRequest() { UserName = "GlaDOS", UserAge = 532, UserGender = "Female", UserJob = "Not a homicidal AI", UserMessage = "Please accept my friend request so I can use you as test sub.. Ehm, so I could give you some cake. Really.", UserImage = "http://images.wikia.com/half-life/en/images/4/4d/Glados_new_body.jpg" });
@@ -65,18 +67,11 @@ namespace LANParty.Pages
             friendshipRequestList.Add(new FriendshipRequest() { UserName = "Slenderman", UserAge = 99999999, UserGender = "Not available", UserJob = "bzzzrrtrt", UserMessage = "Á̳̙̰͖͝ĺ̞̭̜͖̭͖̩̝̻͠ẃ̷̥̠̜̹̻͙̳̩a͏̦͓͇̭y̨̞̺̖͇͍s̨̠̖͠ ̧͖̹̠͍̦͇͟ͅͅẃ̸̭̗̗̳͖̖̭̫a̷̶̮̹̮̩̯̟̲t̖̯͉c҉̖h̢̖̹̤͇̥̙̻̬͘è̢̤̭̣̠͕ş͉̲ͅ,̵̧͎̜ ̪̟̭̱̗̤̟̥ͅn̪̙̙͍̳̲̳̟o̴͉ ̠͈̦̩͚̞̝̺̯͠e̖̼̟̤̪̟y̸̟̝̖e̶̦͢͝ͅs̴̫̥̳͇͚͎̘͝ͅ.͏̴̳͉̺̣̥͘ ͕̳̫͙͚̼͍͜\nḐ͉̹͔̩̤͔͔̕o̧̖̦̺̲̲̖͢n̮͉̠͕̗͚̖̥͘ͅ'̹̫̬͙̲̲͙̞t͉̠̩̜ ̢̘̻̙ļ̶̡͎̺o͎͓̗͚̗ó̦̫̥̹k͚ͅ,҉̢̣͎͇͙̺̠̜ ̮̫̘͖͡o̶̞͔̳̕r̥̫̩̮̬͙͈̪̀̕ ̭͉ͅí̞̺̳͕͚t̡͔͎͇́͝ ̢҉̯̩̪͍͍̜͈t̸̢̢̯̥ą̼̘̬̳k̷̕͏͕̣̲̘̜̟e̸̷҉̖̲̫̪̭ș̬̝̖͟͠ ̸͏̴̩̱̻̙̗͔̥y̭̹̞o͖̺͠ư͙̯̘͟.͉̳̺̺̹̙̩̳͡ ̳̬̬͍̬̺̗\nL̨̥̮͚͍e͇̲̕̕á̧̫̤̠̤̤̥͚͝v̴͖̤͇̟̳̥͔̤͟e̢͓̝̯͇͘ ͕͍̳̕ͅm̴̥̳͍͉̙͕͍̫̩e̵̛̠̮͓̦̖̤̗ ̶̸̙͖͚̬̣ą̼̥̼́͡l̳͟͟ͅơ̴̼͕̗ͅn̶̴̝̣̥̗e̜.̰̖̣͓̹̭͕̟ ̠̳̙̯́͞\nḆ̸̩̹͟͜è̤͍h̡̛̯̮̝i̢̛͚̝̻̺͓͔̲̗̲n̨̛͕͙̺̠̫d̸̴̘̝ ̶̺͎̟̹͉͕͎͞y̹̞̟̙̮̭̭̫o̵̺̹͟͠ù̧̞͖̟͎̯̩̹̘.̷̗̠̟͙̥̞̞̝", UserImage = "http://d38zt8ehae1tnt.cloudfront.net/Slenderman__109647.jpg" });
             GridViewFriendshipRequests.ItemsSource = friendshipRequestList;
         }
-       public  ObservableCollection<FriendshipRequest> friendshipRequestList = new ObservableCollection<FriendshipRequest>();
-
-        void MainPage_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        public static void MainPage_UserIgnored(object sender, EventArgs e)
+        public static void FriendRequestsPage_UserIgnored(object sender, EventArgs e)
         {
             FriendshipRequestUserControl friendshipRequestUserControl = sender as FriendshipRequestUserControl;
             FriendshipRequest friendshipRequest = friendshipRequestUserControl.DataContext as FriendshipRequest;
-            ((Window.Current.Content as Frame).Content as MainPage).RemoveRequest(friendshipRequest);
+            ((Window.Current.Content as Frame).Content as FriendRequestsPage).RemoveRequest(friendshipRequest);
         }
 
         private void RemoveRequest(FriendshipRequest friendshipRequest)
@@ -132,22 +127,5 @@ namespace LANParty.Pages
         }
 
         #endregion
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(RegisterPage));
-        }
-
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(FriendRequestsPage));
-        }
-        private bool IsConnected()
-        {
-            ConnectionProfile connections = NetworkInformation.GetInternetConnectionProfile();
-            bool internet = connections != null && connections.GetNetworkConnectivityLevel() == NetworkConnectivityLevel.InternetAccess;
-            return internet;
-        }
     }
 }

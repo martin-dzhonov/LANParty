@@ -9,6 +9,8 @@ Pages\ChooseCategoryPage.xbf
 Pages\CreatedPartiesPage.xbf
 Pages\CreateParty.xbf
 Pages\EditProfile.xbf
+Pages\FriendRequestsPage.xbf
+Pages\FriendshipRequestUserControl.xbf
 Pages\InboxPage.xbf
 Pages\JoinedParties..xbf
 Pages\MainPage.xbf

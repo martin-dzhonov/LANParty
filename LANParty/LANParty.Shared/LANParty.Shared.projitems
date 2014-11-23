@@ -22,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Common\RelayCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Common\SuspensionManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\ParseFileToBitmapImageConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\FriendshipRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Message.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ParseDatabaseRequester.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Party.cs" />

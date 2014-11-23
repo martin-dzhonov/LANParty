@@ -20,117 +20,125 @@
     <AppXManifest Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-11-22T20:51:29.418</Modified>
+      <Modified>2014-11-23T12:16:34.078</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\LANParty.Windows.exe">
       <PackagePath>LANParty.Windows.exe</PackagePath>
-      <Modified>2014-11-23T00:16:32.427</Modified>
+      <Modified>2014-11-23T12:17:32.174</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\packages\parse.1.3.1\lib\netcore45\Parse.dll">
       <PackagePath>Parse.dll</PackagePath>
-      <Modified>2014-11-21T19:12:02.107</Modified>
+      <Modified>2014-11-23T11:47:19.002</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\packages\parse.1.3.1\lib\netcore45\Parse.WinRT.dll">
       <PackagePath>Parse.WinRT.dll</PackagePath>
-      <Modified>2014-11-21T19:12:02.089</Modified>
+      <Modified>2014-11-23T11:47:18.986</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\Assets\DefaultProfilePic.jpg">
       <PackagePath>Assets\DefaultProfilePic.jpg</PackagePath>
-      <Modified>2014-11-21T19:12:00.433</Modified>
+      <Modified>2014-11-23T11:47:18.333</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-11-21T19:12:00.435</Modified>
+      <Modified>2014-11-23T11:47:18.334</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-11-21T19:12:00.437</Modified>
+      <Modified>2014-11-23T11:47:18.335</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-11-21T19:12:00.438</Modified>
+      <Modified>2014-11-23T11:47:18.336</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-11-21T19:12:00.439</Modified>
+      <Modified>2014-11-23T11:47:18.337</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2014-11-22T18:58:52.025</Modified>
+      <Modified>2014-11-23T12:16:33.311</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\ChooseCategoryPage.xbf">
       <PackagePath>Pages\ChooseCategoryPage.xbf</PackagePath>
-      <Modified>2014-11-22T18:58:52.025</Modified>
+      <Modified>2014-11-23T11:48:13.069</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\CreatedPartiesPage.xbf">
       <PackagePath>Pages\CreatedPartiesPage.xbf</PackagePath>
-      <Modified>2014-11-22T18:58:52.028</Modified>
+      <Modified>2014-11-23T11:48:13.069</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\CreateParty.xbf">
       <PackagePath>Pages\CreateParty.xbf</PackagePath>
-      <Modified>2014-11-22T18:58:52.028</Modified>
+      <Modified>2014-11-23T11:48:13.070</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\EditProfile.xbf">
       <PackagePath>Pages\EditProfile.xbf</PackagePath>
-      <Modified>2014-11-22T20:59:30.761</Modified>
+      <Modified>2014-11-23T11:48:13.072</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\FriendRequestsPage.xbf">
+      <PackagePath>Pages\FriendRequestsPage.xbf</PackagePath>
+      <Modified>2014-11-23T12:16:33.314</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\FriendshipRequestUserControl.xbf">
+      <PackagePath>Pages\FriendshipRequestUserControl.xbf</PackagePath>
+      <Modified>2014-11-23T12:16:33.314</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\InboxPage.xbf">
       <PackagePath>Pages\InboxPage.xbf</PackagePath>
-      <Modified>2014-11-22T20:59:30.762</Modified>
+      <Modified>2014-11-23T11:48:13.073</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\JoinedParties..xbf">
       <PackagePath>Pages\JoinedParties..xbf</PackagePath>
-      <Modified>2014-11-22T18:58:52.033</Modified>
+      <Modified>2014-11-23T11:48:13.075</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\MainPage.xbf">
       <PackagePath>Pages\MainPage.xbf</PackagePath>
-      <Modified>2014-11-22T22:06:12.279</Modified>
+      <Modified>2014-11-23T12:16:33.317</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\ManageApplicationsPage.xbf">
       <PackagePath>Pages\ManageApplicationsPage.xbf</PackagePath>
-      <Modified>2014-11-22T18:58:52.034</Modified>
+      <Modified>2014-11-23T11:48:13.077</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\MessagePage.xbf">
       <PackagePath>Pages\MessagePage.xbf</PackagePath>
-      <Modified>2014-11-22T20:59:30.767</Modified>
+      <Modified>2014-11-23T11:48:13.079</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\PartiesSearch.xbf">
       <PackagePath>Pages\PartiesSearch.xbf</PackagePath>
-      <Modified>2014-11-22T18:58:52.035</Modified>
+      <Modified>2014-11-23T11:48:13.080</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\PartyDetailsPage.xbf">
       <PackagePath>Pages\PartyDetailsPage.xbf</PackagePath>
-      <Modified>2014-11-22T18:58:52.035</Modified>
+      <Modified>2014-11-23T11:48:13.084</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\ProfilePage.xbf">
       <PackagePath>Pages\ProfilePage.xbf</PackagePath>
-      <Modified>2014-11-22T18:58:52.036</Modified>
+      <Modified>2014-11-23T11:48:13.094</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\ProfileVisitorPage.xbf">
       <PackagePath>Pages\ProfileVisitorPage.xbf</PackagePath>
-      <Modified>2014-11-22T20:59:30.768</Modified>
+      <Modified>2014-11-23T11:48:13.104</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\RegisterPage.xbf">
       <PackagePath>Pages\RegisterPage.xbf</PackagePath>
-      <Modified>2014-11-22T18:58:52.040</Modified>
+      <Modified>2014-11-23T11:48:13.105</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\SendMessagePage.xbf">
       <PackagePath>Pages\SendMessagePage.xbf</PackagePath>
-      <Modified>2014-11-22T18:58:52.041</Modified>
+      <Modified>2014-11-23T11:48:13.107</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\LANParty.Windows.xr.xml">
       <PackagePath>LANParty.Windows.xr.xml</PackagePath>
-      <Modified>2014-11-22T20:59:30.721</Modified>
+      <Modified>2014-11-23T12:16:33.227</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-11-22T20:51:29.266</Modified>
+      <Modified>2014-11-23T12:16:33.900</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

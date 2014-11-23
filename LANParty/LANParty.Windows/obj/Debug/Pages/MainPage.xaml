@@ -9,7 +9,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    
+    <Page.Resources>
+        <DataTemplate x:Key="DataTemplateGridViewFriendshipRequests">
+            <local:FriendshipRequestUserControl />
+        </DataTemplate>
+    </Page.Resources>
    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.ChildrenTransitions>
@@ -39,17 +44,16 @@
         </Grid>
         <Grid Grid.Row="1">
             <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
-            <StackPanel>
+            <StackPanel Margin="25,0,-25,0">
                 <TextBox Name="username" Text="{Binding Username, Mode=TwoWay}"></TextBox>
                 <TextBox Name="password" Text="{Binding Password, Mode=TwoWay}"></TextBox>
                 <Button Content="Login" Command="{Binding Login}"></Button>
                 <Button x:ConnectionId='1' Content="Register"                     ></Button>
                 <Button x:ConnectionId='2' Content="Test"                       ></Button>
+                <GridView x:Name="GridViewFriendshipRequests" Margin="100,100,0,50" ItemTemplate="{StaticResource DataTemplateGridViewFriendshipRequests}"/>
             </StackPanel>
         </Grid>
 
     </Grid>
-    
-
 </Page>
 
