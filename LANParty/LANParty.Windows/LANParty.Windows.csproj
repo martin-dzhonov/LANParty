@@ -121,6 +121,9 @@
     <Compile Include="Pages\FriendshipRequestUserControl.xaml.cs">
       <DependentUpon>FriendshipRequestUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FriendsPage.xaml.cs">
+      <DependentUpon>FriendsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\InboxPage.xaml.cs">
       <DependentUpon>InboxPage.xaml</DependentUpon>
     </Compile>
@@ -192,6 +195,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\FriendshipRequestUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\FriendsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

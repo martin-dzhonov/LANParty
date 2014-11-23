@@ -3,7 +3,6 @@ using LANParty.Models;
 using LANParty.ViewModels;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -24,7 +23,7 @@ namespace LANParty.Pages
     /// <summary>
     /// A basic page that provides characteristics common to most applications.
     /// </summary>
-    public sealed partial class FriendRequestsPage : Page
+    public sealed partial class FriendsPage : Page
     {
 
         private NavigationHelper navigationHelper;
@@ -48,41 +47,15 @@ namespace LANParty.Pages
         }
 
 
-        public FriendRequestsPage()
+        public FriendsPage()
         {
             this.InitializeComponent();
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
-            this.Loaded += FriendRequestsPage_Loaded;
-            this.DataContext = new FriendRequestsViewModel();
-            GridViewFriendshipRequests.ItemsSource = ((FriendRequestsViewModel)this.DataContext).Requests;
+            this.DataContext = new FriendsViewModel();
         }
 
-        void FriendRequestsPage_Loaded(object sender, RoutedEventArgs e)
-        {
-            //FriendRequestsViewModel vm = new FriendRequestsViewModel();
-        }
-        public static void FriendRequestsPage_UserDeclined(object sender, EventArgs e)
-        {
-            FriendshipRequestUserControl friendshipRequestUserControl = sender as FriendshipRequestUserControl;
-            FriendshipRequest friendshipRequest = friendshipRequestUserControl.DataContext as FriendshipRequest;
-            ((Window.Current.Content as Frame).Content as FriendRequestsPage).RemoveRequest(friendshipRequest);
-        }
-        public static void FriendRequestsPage_UserApproved(object sender, EventArgs e)
-        {
-            FriendshipRequestUserControl friendshipRequestUserControl = sender as FriendshipRequestUserControl;
-            FriendshipRequest friendshipRequest = friendshipRequestUserControl.DataContext as FriendshipRequest;
-            ((Window.Current.Content as Frame).Content as FriendRequestsPage).ApproveRequest(friendshipRequest);
-        }
-        private void RemoveRequest(FriendshipRequest friendshipRequest)
-        {
-            ((FriendRequestsViewModel)this.DataContext).DeclineRequest(friendshipRequest);
-        }
-        private void ApproveRequest(FriendshipRequest friendshipRequest)
-        {
-            ((FriendRequestsViewModel)this.DataContext).ApproveRequest(friendshipRequest);
-        }
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also
         /// provided when recreating a page from a prior session.
@@ -109,7 +82,11 @@ namespace LANParty.Pages
         private void navigationHelper_SaveState(object sender, SaveStateEventArgs e)
         {
         }
-
+        private void ListView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            var partyId = ((UserProfile)e.ClickedItem).ObjectId;
+            this.Frame.Navigate(typeof(ProfileVisitorPage), partyId);
+        }
         #region NavigationHelper registration
 
         /// The methods provided in this section are simply used to allow

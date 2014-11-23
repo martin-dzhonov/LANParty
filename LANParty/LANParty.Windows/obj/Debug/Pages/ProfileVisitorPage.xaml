@@ -39,7 +39,8 @@
         </Grid>
 
         <Grid Grid.Row="1">
-            <StackPanel>
+            <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
+            <StackPanel>            
                 <Image Name="profilePic" 
                        Height="100" 
                        Width="100"

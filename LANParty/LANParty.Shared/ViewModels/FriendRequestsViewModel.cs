@@ -30,7 +30,24 @@ namespace LANParty.ViewModels
                 OnPropertyChanged();
             }
         }
+        private bool _isLoading;
 
+        public bool IsLoading
+        {
+            get
+            {
+                return this._isLoading;
+            }
+            set
+            {
+                if (value == this._isLoading)
+                {
+                    return;
+                }
+                this._isLoading = value;
+                OnPropertyChanged();
+            }
+        }
         public FriendRequestsViewModel()
         {
             this._requests = new ObservableCollection<FriendshipRequest>();
@@ -40,6 +57,7 @@ namespace LANParty.ViewModels
 
         private async void PopulateData()
         {
+            this.IsLoading = true;
             IEnumerable<ParseObject> asd = await this._dbRequester.GetFriendRequestsForCurrentUser();
             foreach (ParseObject item in asd)
             {
@@ -47,6 +65,7 @@ namespace LANParty.ViewModels
                 Uri url = ((ParseFile)friendCandidate["profilePic"]).Url;
                 this._requests.Add(new FriendshipRequest() {ObjectId = item.ObjectId, UserName = friendCandidate.Username, UserImage = url.ToString()});
             }
+            this.IsLoading = false;
         }
 
         public async void DeclineRequest(FriendshipRequest request)

@@ -39,6 +39,7 @@
         </Grid>
 
         <Grid Grid.Row="1">
+            <ProgressRing IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
             <StackPanel>
                 <ListView ItemsSource="{Binding Messages}"
                           IsItemClickEnabled="True"

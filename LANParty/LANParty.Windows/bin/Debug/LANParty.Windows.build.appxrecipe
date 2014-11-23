@@ -65,6 +65,9 @@
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\FriendshipRequestUserControl.xbf">
       <PackagePath>Pages\FriendshipRequestUserControl.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\FriendsPage.xbf">
+      <PackagePath>Pages\FriendsPage.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\InboxPage.xbf">
       <PackagePath>Pages\InboxPage.xbf</PackagePath>
     </AppxPackagedFile>

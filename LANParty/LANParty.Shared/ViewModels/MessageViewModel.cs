@@ -96,7 +96,24 @@ namespace LANParty.ViewModels
                 return this._replyCommand;
             }
         }
+        private bool _isLoading;
 
+        public bool IsLoading
+        {
+            get
+            {
+                return this._isLoading;
+            }
+            set
+            {
+                if (value == this._isLoading)
+                {
+                    return;
+                }
+                this._isLoading = value;
+                OnPropertyChanged();
+            }
+        }
         private void MessageReply()
         {
             App.RootFrame.Navigate(typeof(SendMessagePage), this._senderId);
@@ -109,12 +126,14 @@ namespace LANParty.ViewModels
 
         private async void PopulateData(string messageId)
         {
+            this.IsLoading = true;
             ParseObject parseMessage = await this._dbRequester.GetMessageById(messageId);
             ParseUser user = await this._dbRequester.GetUserById(parseMessage["senderId"].ToString());
             this.SenderId = user.ObjectId;
             this.SenderUsername = user.Username;
             this.Title = parseMessage["title"].ToString();
             this.Body = parseMessage["body"].ToString();
+            this.IsLoading = false;
         }
     }
 }

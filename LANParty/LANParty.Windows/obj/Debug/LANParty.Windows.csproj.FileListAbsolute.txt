@@ -169,3 +169,8 @@ C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Pa
 C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Pages\FriendRequestsPage.g.cs
 C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Pages\FriendRequestsPage.xaml
 C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Pages\FriendRequestsPage.xbf
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Pages\FriendsPage.g.i.cs
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Pages\FriendsPage.g.cs
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Pages\FriendsPage.xaml
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\obj\Debug\Pages\FriendsPage.xbf
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.Windows\bin\Debug\Pages\FriendsPage.xbf

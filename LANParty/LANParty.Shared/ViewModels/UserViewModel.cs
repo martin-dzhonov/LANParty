@@ -258,19 +258,26 @@ namespace LANParty.ViewModels
 
         private async void AddToFriends()
         {
+            this.IsLoading = true;
             ParseObject application = new ParseObject("FriendRequest");
             application["userId"] = ParseUser.CurrentUser.ObjectId;
             ParseUser friend = await this._dbRequester.GetUserById(this._objectId);
+            application["recieverId"] = friend.ObjectId;
             application["friend"] = friend;
             application["approved"] = false;
             application["declined"] = false;
             try
             {
                 await application.SaveAsync();
+                this.IsLoading = false;
+                MessageDialog msgDialog = new MessageDialog("Request sent.");
+                msgDialog.ShowAsync();
             }
             catch (Exception ex)
             {
-
+                this.IsLoading = false;
+                MessageDialog msgDialog = new MessageDialog(ex.Message);
+                msgDialog.ShowAsync();
             }
         }
 

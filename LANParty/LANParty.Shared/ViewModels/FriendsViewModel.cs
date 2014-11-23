@@ -8,23 +8,24 @@ using System.Text;
 
 namespace LANParty.ViewModels
 {
-    public class MessagesViewModel : Bindable
+    public class FriendsViewModel : Bindable
     {
         private ParseDatabaseRequester _dbRequester;
-        private ObservableCollection<Message> _messages;
-        public ObservableCollection<Message> Messages
+        private ObservableCollection<UserProfile> _users;
+
+        public ObservableCollection<UserProfile> Users
         {
             get
             {
-                return this._messages;
+                return this._users;
             }
             set
             {
-                if (value == this._messages)
+                if (value == this._users)
                 {
                     return;
                 }
-                this._messages = value;
+                this._users = value;
                 OnPropertyChanged();
             }
         }
@@ -46,9 +47,9 @@ namespace LANParty.ViewModels
                 OnPropertyChanged();
             }
         }
-        public MessagesViewModel()
+        public FriendsViewModel()
         {
-            this._messages = new ObservableCollection<Message>();
+            this._users = new ObservableCollection<UserProfile>();
             this._dbRequester = new ParseDatabaseRequester();
             this.PopulateData();
         }
@@ -56,10 +57,10 @@ namespace LANParty.ViewModels
         private async void PopulateData()
         {
             this.IsLoading = true;
-            IEnumerable<ParseObject> asd = await this._dbRequester.GetMessagesForCurrentUser();
-            foreach (ParseObject obj in asd)
+            IEnumerable<ParseUser> asd = await this._dbRequester.GetFriendsFroCurrentUser();
+            foreach (ParseUser item in asd)
             {
-                this._messages.Add(new Message(obj));
+                this._users.Add(new UserProfile(item));
             }
             this.IsLoading = false;
         }

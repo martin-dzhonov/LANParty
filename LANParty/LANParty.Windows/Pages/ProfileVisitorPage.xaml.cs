@@ -106,7 +106,6 @@ namespace LANParty.Pages
             navigationHelper.OnNavigatedFrom(e);
         }
 
-
         #endregion
 
         private void Button_Click(object sender, RoutedEventArgs e)
