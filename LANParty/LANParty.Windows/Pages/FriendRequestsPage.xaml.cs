@@ -55,25 +55,35 @@ namespace LANParty.Pages
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
             this.Loaded += FriendRequestsPage_Loaded;
-            FriendRequestsViewModel vm = new FriendRequestsViewModel();
+            this.DataContext = new FriendRequestsViewModel();
+            GridViewFriendshipRequests.ItemsSource = ((FriendRequestsViewModel)this.DataContext).Requests;
+
+            //FriendRequestsViewModel vm = new FriendRequestsViewModel();
         }
-        ObservableCollection<FriendshipRequest> friendshipRequestList = new ObservableCollection<FriendshipRequest>();
 
         void FriendRequestsPage_Loaded(object sender, RoutedEventArgs e)
         {
-            FriendRequestsViewModel vm = new FriendRequestsViewModel();
-            GridViewFriendshipRequests.ItemsSource = vm.Requests;
+            //FriendRequestsViewModel vm = new FriendRequestsViewModel();
         }
-        public static void FriendRequestsPage_UserIgnored(object sender, EventArgs e)
+        public static void FriendRequestsPage_UserDeclined(object sender, EventArgs e)
         {
             FriendshipRequestUserControl friendshipRequestUserControl = sender as FriendshipRequestUserControl;
             FriendshipRequest friendshipRequest = friendshipRequestUserControl.DataContext as FriendshipRequest;
             ((Window.Current.Content as Frame).Content as FriendRequestsPage).RemoveRequest(friendshipRequest);
         }
-
+        public static void FriendRequestsPage_UserApproved(object sender, EventArgs e)
+        {
+            FriendshipRequestUserControl friendshipRequestUserControl = sender as FriendshipRequestUserControl;
+            FriendshipRequest friendshipRequest = friendshipRequestUserControl.DataContext as FriendshipRequest;
+            ((Window.Current.Content as Frame).Content as FriendRequestsPage).ApproveRequest(friendshipRequest);
+        }
         private void RemoveRequest(FriendshipRequest friendshipRequest)
         {
-            friendshipRequestList.Remove(friendshipRequest);
+            ((FriendRequestsViewModel)this.DataContext).DeclineRequest(friendshipRequest);
+        }
+        private void ApproveRequest(FriendshipRequest friendshipRequest)
+        {
+            ((FriendRequestsViewModel)this.DataContext).ApproveRequest(friendshipRequest);
         }
         /// <summary>
         /// Populates the page with content passed during navigation. Any saved state is also

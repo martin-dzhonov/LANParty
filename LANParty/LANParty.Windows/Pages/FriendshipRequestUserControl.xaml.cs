@@ -22,7 +22,7 @@ namespace LANParty.Pages
     public sealed partial class FriendshipRequestUserControl : UserControl
     {
         public event EventHandler Ignored;
-
+        public event EventHandler Approved;
         public FriendshipRequestUserControl()
         {
             this.InitializeComponent();
@@ -31,7 +31,8 @@ namespace LANParty.Pages
 
         async void FriendshipRequestUserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            this.Ignored += FriendRequestsPage.FriendRequestsPage_UserIgnored;
+            this.Ignored += FriendRequestsPage.FriendRequestsPage_UserDeclined;
+            this.Approved += FriendRequestsPage.FriendRequestsPage_UserApproved;
             FriendshipRequest friendshipRequest = this.DataContext as FriendshipRequest;
             if (friendshipRequest != null)
             {
@@ -56,13 +57,8 @@ namespace LANParty.Pages
 
         private void ButtonAccept_Click(object sender, RoutedEventArgs e)
         {
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 2);
-            timer.Tick += timer_Tick;
-            ButtonAccept.Visibility = Visibility.Collapsed;
-            ButtonIgnore.Visibility = Visibility.Collapsed;
-            ProgressRing.IsActive = true;
-            timer.Start();
+            this.Approved(this, new EventArgs());
+            
         }
 
         void timer_Tick(object sender, object e)

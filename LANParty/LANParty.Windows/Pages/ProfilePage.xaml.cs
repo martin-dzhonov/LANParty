@@ -129,5 +129,15 @@ namespace LANParty.Pages
         {
             this.Frame.Navigate(typeof(InboxPage));
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(FriendRequestsPage));
+        }
+
+        private void AppBarButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(FriendsPage));
+        }
     }
 }

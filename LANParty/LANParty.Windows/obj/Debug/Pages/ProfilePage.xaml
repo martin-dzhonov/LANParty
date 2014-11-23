@@ -43,7 +43,7 @@
                     <TextBlock FontSize="25"
                            Name="username"
                            Text="{Binding Username, Mode=TwoWay}" ></TextBlock>
-                        <Button x:ConnectionId='5' Content="Edit Profile"                           ></Button>
+                        <Button x:ConnectionId='6' Content="Edit Profile"                           ></Button>
 
                     </StackPanel>
                 </StackPanel>
@@ -51,14 +51,15 @@
                 <Button x:ConnectionId='2' Content="Search for party"                       ></Button>
                 <Button x:ConnectionId='3' Content="Created parties"                       ></Button>
                 <Button x:ConnectionId='4' Content="Joined parties"                       ></Button>
+                <Button x:ConnectionId='5' Content="Friend requests"                       ></Button>
             </StackPanel>
         </Grid>
     </Grid>
     <Page.BottomAppBar>
         <CommandBar IsOpen="True" IsSticky="True">
             <AppBarButton Label="Logout" Icon="ClosePane" Command="{Binding Logout}"/>
-            <AppBarButton x:ConnectionId='6' Label="Inbox" Icon="Mail"                       />
-            <AppBarButton Label="Friend List" Icon="People"/>
+            <AppBarButton x:ConnectionId='7' Label="Inbox" Icon="Mail"                       />
+            <AppBarButton x:ConnectionId='8' Label="Friend List" Icon="People"                           />
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

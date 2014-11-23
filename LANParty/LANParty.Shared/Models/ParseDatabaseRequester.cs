@@ -17,6 +17,22 @@ namespace LANParty.Models
             IEnumerable<ParseObject> results = await query.FindAsync();
             return results;
         }
+
+        public async Task<IEnumerable<ParseUser>> GetFriendsFroCurrentUser()
+        {
+            var query = from party in ParseObject.GetQuery("FriendRequest")
+                        where party.Get<string>("userId").Equals(ParseUser.CurrentUser.ObjectId)
+                        && party.Get<bool>("approved") == true
+                        select party;
+            IEnumerable<ParseObject> result = await query.FindAsync();
+            List<ParseUser> users = new List<ParseUser>();
+            foreach (ParseObject item in result)
+            {
+                ParseUser user = await ((ParseUser)item["friend"]).FetchAsync();
+                users.Add(user);
+            }
+            return users;
+        }
         public async Task<ParseUser> GetUserById(string objectId)
         {
             var query2 = ParseUser.Query.WhereEqualTo("objectId", objectId);
@@ -32,7 +48,14 @@ namespace LANParty.Models
             ParseObject result = await query.FirstOrDefaultAsync();
             return result;
         }
-
+        public async Task<ParseObject> GetFriendRequestById(string objectId)
+        {
+            var query = from party in ParseObject.GetQuery("FriendRequest")
+                        where party.Get<string>("objectId").Equals(objectId) 
+                        select party;
+            ParseObject result = await query.FirstOrDefaultAsync();
+            return result;
+        }
         public async Task<ParseObject> GetMessageById(string objectId)
         {
             var query = from party in ParseObject.GetQuery("Message")
@@ -123,7 +146,9 @@ namespace LANParty.Models
         public async Task<IEnumerable<ParseObject>> GetFriendRequestsForCurrentUser()
         {
             var query = from party in ParseObject.GetQuery("FriendRequest")
-                        where party.Get<string>("userId").Equals(ParseUser.CurrentUser.ObjectId)
+                        where party.Get<string>("userId").Equals(ParseUser.CurrentUser.ObjectId) 
+                        && party.Get<bool>("approved") != true
+                        && party.Get<bool>("declined") != true
                         select party;
             IEnumerable<ParseObject> result = await query.FindAsync();
             return result;

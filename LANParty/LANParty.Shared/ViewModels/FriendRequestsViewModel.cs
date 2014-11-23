@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using Windows.UI.Popups;
 
 namespace LANParty.ViewModels
 {
@@ -44,7 +45,28 @@ namespace LANParty.ViewModels
             {
                 ParseUser friendCandidate = await ((ParseUser)item["friend"]).FetchAsync();
                 Uri url = ((ParseFile)friendCandidate["profilePic"]).Url;
-                this._requests.Add(new FriendshipRequest() { UserName = friendCandidate.Username, UserImage = url.ToString()});
+                this._requests.Add(new FriendshipRequest() {ObjectId = item.ObjectId, UserName = friendCandidate.Username, UserImage = url.ToString()});
+            }
+        }
+
+        public async void DeclineRequest(FriendshipRequest request)
+        {
+            if (request != null)
+            {
+                ParseObject parseRequest = await this._dbRequester.GetFriendRequestById(request.ObjectId);
+                parseRequest["declined"] = true;
+                await parseRequest.SaveAsync();
+                this._requests.Remove(request);
+            }
+        }
+        public async void ApproveRequest(FriendshipRequest request)
+        {
+            if (request != null)
+            {
+                ParseObject parseRequest = await this._dbRequester.GetFriendRequestById(request.ObjectId);
+                parseRequest["approved"] = true;
+                parseRequest.SaveAsync();
+                this._requests.Remove(request);
             }
         }
     }
