@@ -115,17 +115,18 @@ namespace LANParty.Pages
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            ParseUser currentUser = ParseUser.CurrentUser;
-            byte[] bytes = ConvertBitmapToByteArray(this.pBitmap);
-            ParseFile imgFile = new ParseFile("profilePic2.jpg", bytes);
-            currentUser["profilePic"] = imgFile;
-            await currentUser.SaveAsync();
+            //ParseUser currentUser = ParseUser.CurrentUser;
+            //byte[] bytes = bmp.ToByteArray();// ConvertBitmapToByteArray(this.pBitmap);
+            //ParseFile imgFile = new ParseFile("profilePic2.jpg", bytes);
+           // currentUser["profilePic"] = imgFile;
+           // await currentUser.SaveAsync();
         }
 
         byte[] ConvertBitmapToByteArray(WriteableBitmap bitmap)
         {
             WriteableBitmap bmp = bitmap;
-
+            
+            Stream stream2 = bmp.PixelBuffer.AsStream();
             using (Stream stream = bmp.PixelBuffer.AsStream())
             {
                 MemoryStream memoryStream = new MemoryStream();
@@ -137,7 +138,36 @@ namespace LANParty.Pages
         private WriteableBitmap pBitmap;
         private async void PickFile()
         {
+            Windows.Storage.Pickers.FileOpenPicker openPicker = new Windows.Storage.Pickers.FileOpenPicker();
+            openPicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
+            openPicker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
 
+            // Filter to include a sample subset of file types.
+            openPicker.FileTypeFilter.Clear();
+            openPicker.FileTypeFilter.Add(".bmp");
+            openPicker.FileTypeFilter.Add(".png");
+            openPicker.FileTypeFilter.Add(".jpeg");
+            openPicker.FileTypeFilter.Add(".jpg");
+
+            // Open the file picker.
+            Windows.Storage.StorageFile file = await openPicker.PickSingleFileAsync();
+
+            // file is null if user cancels the file picker.
+            if (file != null)
+            {
+                // Open a stream for the selected file.
+                Windows.Storage.Streams.IRandomAccessStream fileStream =
+                    await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
+
+                // Set the image source to the selected bitmap.
+                Windows.UI.Xaml.Media.Imaging.BitmapImage bitmapImage =
+                    new Windows.UI.Xaml.Media.Imaging.BitmapImage();
+
+                bitmapImage.SetSource(fileStream);
+                this.pBitmap = new WriteableBitmap(bitmapImage.PixelWidth, bitmapImage.PixelHeight);
+                this.pBitmap.SetSource(fileStream);
+                this.profilePic.Source = bitmapImage;
+            }
         }
         async private void CameraCapture()
         {
