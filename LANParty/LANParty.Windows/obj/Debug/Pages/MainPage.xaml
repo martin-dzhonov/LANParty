@@ -56,7 +56,8 @@
                         Content="Register"
                                             ></Button>
             </StackPanel>
-            <ProgressRing Foreground="Yellow" IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
+            <ProgressRing Foreground="Yellow"
+                          IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
         </Grid>
     </Grid>
 </Page>

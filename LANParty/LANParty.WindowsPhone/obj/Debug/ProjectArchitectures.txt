@@ -1,0 +1,1 @@
+C:\Users\Martin\Documents\GitHub\LANParty\LANParty\LANParty.WindowsPhone\LANParty.WindowsPhone.csproj;neutral

@@ -1,0 +1,72 @@
+﻿<Page
+    x:Name="pageRoot"
+    x:Class="LANParty.Pages.PartyDetailsPage"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:LANParty.Pages"
+    xmlns:common="using:LANParty.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Back button and page title -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock x:Name="pageTitle" Text="Party Details" Style="{StaticResource HeaderTextBlockStyle}" 
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" Margin="10,0,31,34" Grid.ColumnSpan="2"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <ScrollViewer>
+                <StackPanel>
+                    <StackPanel DataContext="{Binding Party}">
+                        <TextBlock Margin="15 15 0 0" FontSize="38" Text="{Binding Title}"></TextBlock>
+                        <TextBlock Margin="15 15 0 0" FontSize="25" Text="{Binding Description}"></TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="15 15 0 0" FontSize="25" Text="Spots left: "></TextBlock>
+                            <TextBlock Margin="10 15 0 0" FontSize="25" Text="{Binding Spots}"></TextBlock>
+                        </StackPanel>
+                        <TextBlock Margin="15 15 0 0" FontSize="25" Text="{Binding Date}"></TextBlock>
+                    </StackPanel>
+                    <StackPanel>
+                        <ListView x:ConnectionId='1' Width="500"
+                              HorizontalAlignment="Left"
+                              ItemTemplate="{StaticResource BasicUserListViewTemplate}"
+                              ItemsSource="{Binding Users}"
+                              IsItemClickEnabled="True"
+                                                            >
+                        </ListView>
+                    </StackPanel>
+                    <Button Style="{StaticResource ButtonProfile}" Content="Apply" Command="{Binding Apply}"></Button>
+                </StackPanel>
+            </ScrollViewer>
+            <ProgressRing  Foreground="Yellow" IsActive="{Binding IsLoading, Mode=TwoWay}" Width="80" Height="80"></ProgressRing>
+        </Grid>
+    </Grid>
+
+    <Page.BottomAppBar>
+        <CommandBar IsOpen="True" IsSticky="True">
+            <AppBarButton x:ConnectionId='2' Label="Profile" Icon="Contact"                             />
+            <AppBarButton x:ConnectionId='3' Label="Inbox" Icon="Mail"                           />
+            <AppBarButton x:ConnectionId='4' Label="Friends" Icon="People"                             />
+        </CommandBar>
+    </Page.BottomAppBar>
+
+</Page>
+
