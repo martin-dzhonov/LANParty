@@ -1,7 +1,7 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
     <LocalAssembly PathName="c:\users\martin\documents\github\lanparty\lanparty\lanparty.windowsphone\obj\debug\intermediatexaml\lanparty.windowsphone.exe" HashGuid="e5e56a19-be9e-0227-88d5-a9d9a02e6fc0" />
-    <ReferenceAssembly PathName="c:\users\martin\desktop\parse.dll" HashGuid="4aa23e2f-e4a0-423c-41b6-d3a8bf370a51" />
-    <ReferenceAssembly PathName="c:\users\martin\desktop\parse.winrt.dll" HashGuid="686a4480-5b84-291b-04f2-3ed7db81ad6f" />
+    <ReferenceAssembly PathName="c:\users\martin\documents\github\lanparty\lanparty\lanparty.windowsphone\bin\debug\parse.dll" HashGuid="4aa23e2f-e4a0-423c-41b6-d3a8bf370a51" />
+    <ReferenceAssembly PathName="c:\users\martin\documents\github\lanparty\lanparty\lanparty.windowsphone\bin\debug\parse.winrt.dll" HashGuid="686a4480-5b84-291b-04f2-3ed7db81ad6f" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>
